@@ -1,0 +1,27 @@
+:root{--bg:#17110b;--panel:#211810;--ink:#efe6d6;--muted:#b8a894;--gold:#d9b25c;--line:#3a2c1d;--link:#e8c777}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 Georgia,'Times New Roman',serif}
+a{color:var(--link)}
+header{border-bottom:1px solid var(--line);background:#120d08}
+nav{max-width:860px;margin:0 auto;padding:12px 16px;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center}
+nav .home{font-family:'Cinzel',Georgia,serif;color:var(--gold);text-decoration:none;font-weight:700;letter-spacing:.04em;margin-right:auto}
+nav a{color:var(--muted);text-decoration:none;font-size:15px}
+nav a:hover,nav a[aria-current]{color:var(--gold)}
+main{max-width:860px;margin:0 auto;padding:28px 16px 64px}
+h1,h2,h3{font-family:'Cinzel',Georgia,serif;color:var(--gold);font-weight:700;line-height:1.25}
+h1{font-size:30px;margin:0 0 6px}
+h2{font-size:21px;margin:36px 0 10px;padding-top:14px;border-top:1px solid var(--line)}
+h3{font-size:17px;margin:22px 0 4px}
+.date{color:var(--muted);font-style:italic;margin:0 0 18px}
+ul{padding-left:1.25em}
+li{margin:4px 0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin:16px 0}
+.button{display:inline-block;background:#8c6a2c;color:#fff7e6;text-decoration:none;padding:12px 22px;border-radius:8px;font-weight:700}
+.button:hover{background:#a37d36}
+pre{white-space:pre-wrap;word-break:break-word;font:13px/1.5 ui-monospace,Menlo,Consolas,monospace;color:var(--muted);background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px}
+.hero{text-align:center;padding:12px 0 8px}
+.hero img{max-width:min(520px,100%);height:auto}
+.hero p{font-size:20px;color:var(--muted);margin:8px auto 0;max-width:640px}
+.stores{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:24px 0}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px;text-align:center;padding:20px 16px}
