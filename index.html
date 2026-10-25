@@ -137,9 +137,9 @@ footer .legal{margin-top:6px}
 <header class="top"><nav><a class="home" href="index.html">Court of Squares</a><a class="opt" href="#pieces">Pieces</a><a class="opt" href="#play">Ways to play</a><a class="opt" href="#garden">Garden</a><a class="opt" href="#community">Community</a><a class="beta" href="beta.html">Android beta</a></nav></header>
 
 <picture>
-<source media="(max-width:700px)" srcset="img/hero-mobile.webp">
-<source srcset="img/hero-1400.webp 1400w, img/hero-2400.webp 2400w" sizes="100vw">
-<img class="hero-art" src="img/hero-1400.webp" alt="A white queen and a dark knight face each other on a marble board on a castle terrace at sunset" width="2400" height="1029" fetchpriority="high">
+<source media="(max-width:700px)" srcset="hero-mobile.webp">
+<source srcset="hero-1400.webp 1400w, hero-2400.webp 2400w" sizes="100vw">
+<img class="hero-art" src="hero-1400.webp" alt="A white queen and a dark knight face each other on a marble board on a castle terrace at sunset" width="2400" height="1029" fetchpriority="high">
 </picture>
 
 <div class="pitch">
@@ -169,7 +169,7 @@ footer .legal{margin-top:6px}
 <div class="court">
 <div class="pedestals" role="tablist" aria-label="The eight new pieces"></div>
 <div class="portrait" id="portrait" role="tabpanel" aria-live="polite">
-<img id="p-img" src="img/piece-archer.webp" alt="" width="200" height="330">
+<img id="p-img" src="piece-archer.webp" alt="" width="200" height="330">
 <div><h3 id="p-name">Archer</h3><p class="worth" id="p-worth"></p><p id="p-rule"></p></div>
 </div>
 <div class="board-wrap">
@@ -226,10 +226,10 @@ footer .legal{margin-top:6px}
 <h2>Make it yours</h2>
 <p class="lede">Choose your table, background, music and piece set. Earn crests, banners and seasonal tables, and gild your favourite pieces from bronze up to platinum as you master them.</p>
 <div class="sets">
-<figure><img src="img/set-court.webp" alt="The Court piece set in blue and gold" loading="lazy" decoding="async" width="1400" height="552"><figcaption>Court</figcaption></figure>
-<figure><img src="img/set-woodland.webp" alt="The Woodland piece set, carved as forest animals" loading="lazy" decoding="async" width="1400" height="461"><figcaption>Woodland</figcaption></figure>
-<figure><img src="img/set-greek.webp" alt="The Greek piece set in white marble and gold" loading="lazy" decoding="async" width="1400" height="468"><figcaption>Greek</figcaption></figure>
-<figure><img src="img/set-halloween.webp" alt="The Halloween piece set" loading="lazy" decoding="async" width="1400" height="582"><figcaption>Halloween</figcaption></figure>
+<figure><img src="set-court.webp" alt="The Court piece set in blue and gold" loading="lazy" decoding="async" width="1400" height="552"><figcaption>Court</figcaption></figure>
+<figure><img src="set-woodland.webp" alt="The Woodland piece set, carved as forest animals" loading="lazy" decoding="async" width="1400" height="461"><figcaption>Woodland</figcaption></figure>
+<figure><img src="set-greek.webp" alt="The Greek piece set in white marble and gold" loading="lazy" decoding="async" width="1400" height="468"><figcaption>Greek</figcaption></figure>
+<figure><img src="set-halloween.webp" alt="The Halloween piece set" loading="lazy" decoding="async" width="1400" height="582"><figcaption>Halloween</figcaption></figure>
 </div>
 </section>
 
@@ -311,7 +311,7 @@ function show(i){
   const p = P[i];
   [...row.children].forEach((b,j)=>{ b.setAttribute('aria-selected', String(j===i)); b.tabIndex = j===i ? 0 : -1; });
   const img = document.getElementById('p-img');
-  img.src = `img/piece-${p.id}.webp`; img.alt = `The ${p.name}`;
+  img.src = `piece-${p.id}.webp`; img.alt = `The ${p.name}`;
   document.getElementById('p-name').textContent = p.name;
   document.getElementById('p-worth').textContent = `Worth ${p.worth} point${p.worth===1?'':'s'} when you build an army`;
   document.getElementById('p-rule').textContent = p.rule;
@@ -332,7 +332,7 @@ function show(i){
 P.forEach((p,i)=>{
   const b = document.createElement('button');
   b.type = 'button'; b.setAttribute('role','tab'); b.setAttribute('aria-controls','portrait');
-  b.innerHTML = `<img src="img/piece-${p.id}.webp" alt="" height="92"><span>${p.name}</span>`;
+  b.innerHTML = `<img src="piece-${p.id}.webp" alt="" height="92"><span>${p.name}</span>`;
   b.addEventListener('click', ()=>show(i));
   b.addEventListener('keydown', e=>{
     const n = e.key==='ArrowRight' ? (i+1)%P.length : e.key==='ArrowLeft' ? (i+P.length-1)%P.length : -1;
