@@ -3,34 +3,344 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Court of Squares</title>
-<meta name="description" content="Court of Squares: chess with new pieces, armies, a Pilgrimage and a Garden.">
+<title>Court of Squares · Calm chess with eight new pieces</title>
+<meta name="description" content="Court of Squares is a calm, painterly chess game with eight new pieces, armies you build yourself, a roguelite Pilgrimage, a daily puzzle Garden and online play. Coming to iPhone, iPad, Android and Steam.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Court of Squares · Calm chess with eight new pieces">
+<meta property="og:description" content="Every rule you know, plus an Archer that shoots, a Jester that chain-jumps and six more new pieces. Coming to iPhone, iPad, Android and Steam.">
+<meta property="og:image" content="https://toasgaard.github.io/court-of-squares/og-image.jpg">
+<meta property="og:url" content="https://toasgaard.github.io/court-of-squares/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1a120b">
 <link rel="icon" href="icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+:root{--walnut:#1a120b;--lacquer:#241910;--ivory:#f1e7d3;--soft:#c9b9a1;--gilt:#d9b25c;--gilt-deep:#a8823a;--blue:#3a5db0;--garnet:#a8262c;--rule:#3b2c1c}
+body{background:var(--walnut);color:var(--ivory);font:500 20px/1.6 'Cormorant Garamond',Georgia,serif}
+a{color:var(--gilt)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gilt);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* Header */
+header.top{position:sticky;top:0;z-index:5;background:rgba(18,12,7,.93);backdrop-filter:blur(6px)}
+header.top nav{max-width:1120px;padding:10px 20px}
+header.top nav a{font:600 15px/1 'Cinzel',Georgia,serif;letter-spacing:.03em}
+header.top nav .beta{color:var(--walnut);background:var(--gilt);padding:9px 14px;border-radius:999px}
+header.top nav .beta:hover{background:#e7c573;color:var(--walnut)}
+@media (max-width:620px){header.top nav .opt{display:none}}
+
+/* Hero */
+.hero-art{display:block;width:100%;height:auto;aspect-ratio:2400/1029;object-fit:cover;background:#2a1d12}
+@media (max-width:700px){.hero-art{aspect-ratio:1000/833}}
+.pitch{text-align:center;padding:34px 20px 0;max-width:820px;margin:0 auto}
+.pitch h1{font:700 clamp(28px,4.4vw,46px)/1.15 'Cinzel',Georgia,serif;color:var(--ivory);margin:0 0 14px}
+.pitch p{font-size:22px;color:var(--soft);margin:0 auto;max-width:660px}
+.pitch .status{margin:20px auto 0;color:var(--gilt);font-style:italic}
+.actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:22px 0 0}
+.btn{display:inline-block;font:600 16px/1 'Cinzel',Georgia,serif;letter-spacing:.03em;text-decoration:none;padding:15px 22px;border-radius:999px;border:1px solid var(--gilt);color:var(--gilt)}
+.btn.primary{background:var(--gilt);color:var(--walnut)}
+.btn:hover{background:#e7c573;border-color:#e7c573;color:var(--walnut)}
+
+/* Socials, front and centre */
+.socials{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:820px;margin:30px auto 0;padding:0 20px}
+.socials a{display:block;text-decoration:none;color:var(--ivory);background:var(--lacquer);border:1px solid var(--rule);border-radius:12px;padding:12px 16px}
+.socials a:hover{border-color:var(--gilt)}
+.socials b{display:block;font:600 17px/1.3 'Cinzel',Georgia,serif;color:var(--gilt)}
+.socials span{display:block;font-size:17px;line-height:1.3;color:var(--soft)}
+@media (max-width:700px){.socials{grid-template-columns:repeat(2,1fr)}}
+
+/* Sections */
+main.home{max-width:1120px;padding:0 20px}
+main.home section{padding:76px 0 0}
+main.home h2,.community h2{font:700 clamp(26px,3.4vw,36px)/1.2 'Cinzel',Georgia,serif;color:var(--gilt);margin:0 0 10px;border:0;padding:0}
+.lede{color:var(--soft);font-size:21px;max-width:720px;margin:0 0 26px}
+
+/* Meet the court: the one bold element */
+.court{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:28px;align-items:center;background:radial-gradient(120% 90% at 30% 0%,#2e2013 0%,var(--lacquer) 55%,#1d140c 100%);border:1px solid var(--rule);border-radius:18px;padding:22px}
+.pedestals{grid-column:1/-1;display:grid;grid-template-columns:repeat(8,1fr);gap:6px}
+.pedestals button{appearance:none;background:none;border:0;border-bottom:2px solid transparent;color:var(--soft);cursor:pointer;padding:6px 2px 8px;font:600 13px/1.2 'Cinzel',Georgia,serif;display:flex;flex-direction:column;align-items:center;gap:6px}
+.pedestals img{height:92px;width:auto;filter:saturate(.7) brightness(.78);transition:filter .2s,transform .2s}
+.pedestals button[aria-selected="true"]{color:var(--gilt);border-bottom-color:var(--gilt)}
+.pedestals button[aria-selected="true"] img,.pedestals button:hover img{filter:none;transform:translateY(-3px)}
+.portrait{display:flex;gap:20px;align-items:center}
+.portrait img{height:330px;width:auto;flex:none;filter:drop-shadow(0 18px 24px rgba(0,0,0,.55))}
+.portrait h3{font:700 32px/1.1 'Cinzel',Georgia,serif;color:var(--ivory);margin:0 0 4px}
+.portrait .worth{color:var(--gilt);font-style:italic;margin:0 0 10px}
+.portrait p{margin:0}
+.board-wrap{display:flex;flex-direction:column;align-items:center;gap:12px}
+.board{display:grid;grid-template-columns:repeat(9,1fr);width:min(100%,430px);aspect-ratio:1;border:6px solid #3a2716;border-radius:6px;box-shadow:0 0 0 1px var(--gilt-deep),0 20px 40px rgba(0,0,0,.45)}
+.sq{position:relative;background:#dccaa6}
+.sq.dk{background:#8a6744}
+.sq::after{content:"";position:absolute;inset:0;margin:auto;border-radius:50%;opacity:0;transform:scale(.3);transition:opacity .3s,transform .3s;transition-delay:var(--d,0s)}
+.sq.move::after{width:32%;height:32%;background:var(--blue);opacity:1;transform:none}
+.sq.cap::after{width:72%;height:72%;box-shadow:inset 0 0 0 3px var(--garnet);opacity:1;transform:none}
+.sq.both::after{width:72%;height:72%;box-shadow:inset 0 0 0 3px var(--blue);background:radial-gradient(circle,var(--blue) 0 22%,transparent 24%);opacity:1;transform:none}
+.sq.shoot::after{width:74%;height:74%;opacity:1;transform:none;background:radial-gradient(circle,var(--garnet) 0 17%,transparent 19% 42%,var(--garnet) 44% 55%,transparent 57%)}
+.sq.jump::after{width:42%;height:42%;background:var(--garnet);border-radius:3px;opacity:1;transform:rotate(45deg)}
+.sq .glyph{position:absolute;inset:8%;display:grid;place-items:center;font:700 clamp(14px,3vw,24px)/1 'Cinzel',Georgia,serif;color:var(--walnut);background:var(--gilt);border-radius:50%;box-shadow:0 2px 6px rgba(0,0,0,.4)}
+.sq .foe{position:absolute;inset:20%;border-radius:50%;background:#24160d;box-shadow:inset 0 0 0 2px #c9b48c}
+.legend{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 16px;font-size:16px;color:var(--soft);margin:0;padding:0;list-style:none}
+.legend li{display:flex;align-items:center;gap:7px;margin:0}
+.legend i{display:inline-block;width:16px;height:16px;border-radius:50%;flex:none}
+.l-move{background:var(--blue);transform:scale(.55)}
+.l-both{box-shadow:inset 0 0 0 2px var(--blue);background:radial-gradient(circle,var(--blue) 0 24%,transparent 26%)}
+.l-cap{box-shadow:inset 0 0 0 2px var(--garnet)}
+.l-shoot{background:radial-gradient(circle,var(--garnet) 0 17%,transparent 19% 42%,var(--garnet) 44% 58%,transparent 60%)}
+.l-jump{background:var(--garnet);transform:rotate(45deg) scale(.7);border-radius:2px!important}
+.l-foe{background:#24160d;box-shadow:inset 0 0 0 2px #c9b48c}
+@media (max-width:860px){.court{grid-template-columns:1fr;padding:16px}.portrait img{height:220px}.pedestals{grid-template-columns:repeat(4,1fr)}.pedestals img{height:72px}}
+@media (max-width:460px){.portrait{flex-direction:column;align-items:flex-start}.portrait img{height:180px}}
+@media (prefers-reduced-motion:reduce){.sq::after,.pedestals img{transition:none}}
+
+/* Ways to play */
+.modes{display:grid;grid-template-columns:repeat(3,1fr);gap:0 36px}
+.modes .group{border-top:2px solid var(--gilt-deep);padding-top:4px}
+.modes h3{font:700 18px/1.3 'Cinzel',Georgia,serif;color:var(--ivory);margin:20px 0 2px}
+.modes .group > h3:first-child{color:var(--gilt);font-size:15px;letter-spacing:.04em;margin-top:10px}
+.modes p{margin:0;color:var(--soft)}
+@media (max-width:860px){.modes{grid-template-columns:1fr;gap:28px}}
+
+/* Garden */
+.seasons{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:0;padding:0;list-style:none}
+.seasons li{padding:16px 16px 18px;border-radius:12px;color:var(--ivory);margin:0}
+.seasons b{display:block;font:700 18px/1.3 'Cinzel',Georgia,serif;margin-bottom:4px}
+.seasons span{font-size:18px;line-height:1.4;display:block;opacity:.92}
+.spring{background:linear-gradient(160deg,#3c4e2c,#26301c)}
+.summer{background:linear-gradient(160deg,#5c4b1e,#33290f)}
+.autumn{background:linear-gradient(160deg,#6a2f1a,#3a1a0f)}
+.winter{background:linear-gradient(160deg,#2e3d52,#1b2431)}
+@media (max-width:760px){.seasons{grid-template-columns:repeat(2,1fr)}}
+
+/* Piece sets */
+.sets{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 20px 16px;margin:0 -20px}
+.sets figure{flex:0 0 min(86%,760px);margin:0;scroll-snap-align:start;background:var(--lacquer);border:1px solid var(--rule);border-radius:14px;padding:16px 16px 10px}
+.sets img{width:100%;height:auto;display:block}
+.sets figcaption{font:600 16px/1.3 'Cinzel',Georgia,serif;color:var(--gilt);margin-top:8px}
+
+/* Calm by design */
+.calm{columns:2;column-gap:44px;margin:0;padding-left:1.1em}
+.calm li{break-inside:avoid;margin:0 0 12px}
+.calm b{color:var(--ivory)}
+@media (max-width:700px){.calm{columns:1}}
+
+/* Community */
+.community{margin-top:80px;background:var(--lacquer);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:56px 0 60px}
+.community .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
+footer{background:#120c07}
+footer .legal{margin-top:6px}
+</style>
 </head>
 <body>
-<header><nav><a class="home" href="index.html">Court of Squares</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="delete-account.html">Delete account</a><a href="licenses.html">Licenses</a></nav></header>
-<main>
-<div class="hero">
-<picture><source srcset="logo.webp" type="image/webp"><img src="logo.png" alt="Court of Squares" width="520" height="388"></picture>
-<p>A calm, beautiful take on chess, with new pieces, armies you build yourself, a Pilgrimage, a Garden that grows with every daily puzzle, and online play.</p>
+<header class="top"><nav><a class="home" href="index.html">Court of Squares</a><a class="opt" href="#pieces">Pieces</a><a class="opt" href="#play">Ways to play</a><a class="opt" href="#garden">Garden</a><a class="opt" href="#community">Community</a><a class="beta" href="beta.html">Android beta</a></nav></header>
+
+<picture>
+<source media="(max-width:700px)" srcset="img/hero-mobile.webp">
+<source srcset="img/hero-1400.webp 1400w, img/hero-2400.webp 2400w" sizes="100vw">
+<img class="hero-art" src="img/hero-1400.webp" alt="A white queen and a dark knight face each other on a marble board on a castle terrace at sunset" width="2400" height="1029" fetchpriority="high">
+</picture>
+
+<div class="pitch">
+<h1>Calm chess, with eight new pieces</h1>
+<p>Every rule you know, on ornate tables with soft music and pieces that glide. Then an Archer that shoots, a Jester that chain-jumps, armies you build yourself and a garden that grows with the daily puzzle.</p>
+<p class="status">Coming soon to iPhone, iPad, Android and Steam. Free, with no ads.</p>
+<div class="actions">
+<a class="btn primary" href="beta.html">Join the Android beta</a>
+<a class="btn" href="https://www.youtube.com/@CourtofSquares" rel="noopener">Watch on YouTube</a>
 </div>
-<div class="stores">
-<!-- Add the store links when the listings are live, for example:
-<a class="button" href="https://store.steampowered.com/app/YOUR_APP_ID">Steam</a>
-<a class="button" href="https://apps.apple.com/app/idYOUR_APP_ID">App Store</a>
-<a class="button" href="https://play.google.com/store/apps/details?id=YOUR.PACKAGE.NAME">Google Play</a>
--->
 </div>
-<div class="card">
-<h3>Support</h3>
-<p>Questions, problems or account requests: <a href="mailto:courtofsquares@gmail.com">courtofsquares@gmail.com</a></p>
-<p>Join the community: <a href="https://discord.gg/DWXYmJSMmR" rel="noopener">Discord</a> · <a href="https://www.youtube.com/@CourtofSquares" rel="noopener">YouTube</a> · <a href="https://www.tiktok.com/@courtofsquares" rel="noopener">TikTok</a> · <a href="https://www.instagram.com/courtofsquares/" rel="noopener">Instagram</a> · <a href="https://x.com/CourtofSquares" rel="noopener">X</a> · <a href="https://www.facebook.com/profile.php?id=61595226989676" rel="noopener">Facebook</a></p>
-<p><a href="privacy.html">Privacy policy</a> · <a href="terms.html">Terms of service</a> · <a href="delete-account.html">Delete your account</a> · <a href="licenses.html">Open-source licenses</a></p>
+
+<div class="socials" role="navigation" aria-label="Follow Court of Squares">
+<a href="https://discord.gg/DWXYmJSMmR" rel="noopener"><b>Discord</b><span>Chat, beta news and feedback</span></a>
+<a href="https://www.youtube.com/@CourtofSquares" rel="noopener"><b>YouTube</b><span>Trailers and devlogs</span></a>
+<a href="https://www.tiktok.com/@courtofsquares" rel="noopener"><b>TikTok</b><span>Short clips and new pieces</span></a>
+<a href="https://www.instagram.com/courtofsquares/" rel="noopener"><b>Instagram</b><span>Art, boards and piece sets</span></a>
+<a href="https://x.com/CourtofSquares" rel="noopener"><b>X</b><span>Updates and launch news</span></a>
+<a href="https://www.facebook.com/profile.php?id=61595226989676" rel="noopener"><b>Facebook</b><span>News and events</span></a>
 </div>
+
+<main class="home">
+
+<section id="pieces">
+<h2>Meet the court</h2>
+<p class="lede">Eight pieces you won't find in any other chess set, each with its own move and its own short lesson in the game. Pick one to see how it moves.</p>
+<div class="court">
+<div class="pedestals" role="tablist" aria-label="The eight new pieces"></div>
+<div class="portrait" id="portrait" role="tabpanel" aria-live="polite">
+<img id="p-img" src="img/piece-archer.webp" alt="" width="200" height="330">
+<div><h3 id="p-name">Archer</h3><p class="worth" id="p-worth"></p><p id="p-rule"></p></div>
+</div>
+<div class="board-wrap">
+<div class="board" id="board" role="img" aria-label=""></div>
+<ul class="legend">
+<li><i class="l-both"></i>moves or captures</li>
+<li><i class="l-move"></i>moves only</li>
+<li><i class="l-cap"></i>captures only</li>
+<li><i class="l-shoot"></i>shoots, stays put</li>
+<li><i class="l-foe"></i>enemy</li>
+<li><i class="l-jump"></i>lands after a jump</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="play">
+<h2>Ways to play</h2>
+<p class="lede">Play the classic game, or bring the new pieces in. The clock is off unless you want one, and any game can add rule twists like King of the Hill.</p>
+<div class="modes">
+<div class="group"><h3>At your own pace</h3>
+<h3>Classic</h3><p>Chess as you know it, against the computer or a friend on the same device.</p>
+<h3>Muster</h3><p>Build your own army on a points budget, then take it into battle.</p>
+<h3>Draft</h3><p>You and your opponent take turns picking pieces from one shared pool.</p>
+<h3>Pawnstorm</h3><p>A king and a wall of pawns each. Short, sharp and surprisingly deep.</p>
+</div>
+<div class="group"><h3>Challenges</h3>
+<h3>Pilgrimage</h3><p>A roguelite journey, stage by stage, with relics and an army that grows as you go.</p>
+<h3>Daily Puzzle</h3><p>A new puzzle every day. Solving it grows a garden you design.</p>
+<h3>Weekly Challenge</h3><p>Everyone faces the same army. Win in the fewest moves to top the week's leaderboard.</p>
+<h3>Lessons</h3><p>Short lessons on every piece, checkmate, draws, castling and more.</p>
+</div>
+<div class="group"><h3>Online</h3>
+<h3>Ranked</h3><p>Climb from Commoner to Sovereign. Every ranked game is checked by the server, so the ladder stays fair.</p>
+<h3>Friends</h3><p>Play friends, send emotes and keep your head-to-head record.</p>
+<h3>Visit gardens</h3><p>Look around other players' gardens and leave them a flower.</p>
+<h3>One account everywhere</h3><p>Phone, tablet and PC share the same progress when you sign in.</p>
+</div>
+</div>
+</section>
+
+<section id="garden">
+<h2>A garden through the seasons</h2>
+<p class="lede">Each daily puzzle you solve grows your garden. Lay out paths, beds and decorations, and watch it change through the year, with seasonal tables and decorations to earn along the way.</p>
+<ol class="seasons">
+<li class="spring"><b>Spring</b><span>Blossom, fresh shoots and pale morning light.</span></li>
+<li class="summer"><b>Summer</b><span>Full beds and long golden evenings.</span></li>
+<li class="autumn"><b>Autumn</b><span>Falling leaves, lanterns and a Halloween event.</span></li>
+<li class="winter"><b>Winter</b><span>Frost, quiet snow and the Winter Festival.</span></li>
+</ol>
+</section>
+
+<section id="sets">
+<h2>Make it yours</h2>
+<p class="lede">Choose your table, background, music and piece set. Earn crests, banners and seasonal tables, and gild your favourite pieces from bronze up to platinum as you master them.</p>
+<div class="sets">
+<figure><img src="img/set-court.webp" alt="The Court piece set in blue and gold" loading="lazy" decoding="async" width="1400" height="552"><figcaption>Court</figcaption></figure>
+<figure><img src="img/set-woodland.webp" alt="The Woodland piece set, carved as forest animals" loading="lazy" decoding="async" width="1400" height="461"><figcaption>Woodland</figcaption></figure>
+<figure><img src="img/set-greek.webp" alt="The Greek piece set in white marble and gold" loading="lazy" decoding="async" width="1400" height="468"><figcaption>Greek</figcaption></figure>
+<figure><img src="img/set-halloween.webp" alt="The Halloween piece set" loading="lazy" decoding="async" width="1400" height="582"><figcaption>Halloween</figcaption></figure>
+</div>
+</section>
+
+<section id="calm">
+<h2>Calm by design</h2>
+<ul class="calm">
+<li><b>No ads, ever.</b> The game is free. The optional Court Pass is one purchase that opens the full Pilgrimage, garden decorating and every cosmetic you earn.</li>
+<li><b>No clock unless you want one,</b> or anything from 1-minute bullet to 30-minute classical.</li>
+<li><b>Press and hold any piece</b> to see exactly how it moves.</li>
+<li><b>Close-up or top-down board,</b> with coordinates, legal moves and move trails on or off.</li>
+<li><b>Comfortable on any device:</b> adjustable text size, pinch to zoom, and lighter effects for older phones and longer battery life.</li>
+<li><b>Twelve languages:</b> English, Spanish, Portuguese, French, German, Italian, Polish, Turkish, Russian, Japanese, Korean and Chinese.</li>
+</ul>
+</section>
 </main>
-<footer><div class="social"><a href="https://discord.gg/DWXYmJSMmR" rel="noopener">Discord</a> · <a href="https://www.youtube.com/@CourtofSquares" rel="noopener">YouTube</a> · <a href="https://www.tiktok.com/@courtofsquares" rel="noopener">TikTok</a> · <a href="https://www.instagram.com/courtofsquares/" rel="noopener">Instagram</a> · <a href="https://x.com/CourtofSquares" rel="noopener">X</a> · <a href="https://www.facebook.com/profile.php?id=61595226989676" rel="noopener">Facebook</a></div>Court of Squares · <a href="mailto:courtofsquares@gmail.com">courtofsquares@gmail.com</a></footer>
+
+<div class="community" id="community">
+<div class="wrap">
+<h2>Join the court</h2>
+<p class="lede">Follow along for new pieces, seasonal events and launch news, or help test the game before it's out.</p>
+<div class="row">
+<a class="btn primary" href="beta.html">Join the Android beta</a>
+<a class="btn" href="https://discord.gg/DWXYmJSMmR" rel="noopener">Join the Discord</a>
+<a class="btn" href="mailto:courtofsquares@gmail.com">Email us</a>
+</div>
+</div>
+</div>
+
+<footer><div class="social"><a href="https://discord.gg/DWXYmJSMmR" rel="noopener">Discord</a> · <a href="https://www.youtube.com/@CourtofSquares" rel="noopener">YouTube</a> · <a href="https://www.tiktok.com/@courtofsquares" rel="noopener">TikTok</a> · <a href="https://www.instagram.com/courtofsquares/" rel="noopener">Instagram</a> · <a href="https://x.com/CourtofSquares" rel="noopener">X</a> · <a href="https://www.facebook.com/profile.php?id=61595226989676" rel="noopener">Facebook</a></div>
+<div>Court of Squares · <a href="mailto:courtofsquares@gmail.com">courtofsquares@gmail.com</a></div>
+<div class="legal"><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="delete-account.html">Delete your account</a> · <a href="licenses.html">Licenses</a></div></footer>
+
+<script>
+// The eight new pieces and how they move. 9 x 9 board, the piece in the middle, forward is up.
+const C = 4;
+const P = [
+  {id:'archer', name:'Archer', worth:3, rule:"Steps one square in any direction but never captures by moving. It shoots an enemy exactly two squares away in a straight line, if the square between is empty, and stays where it is."},
+  {id:'jester', name:'Jester', worth:1, rule:"Steps one square diagonally. It captures by jumping diagonally over an adjacent enemy to the empty square beyond, and can keep jumping in the same move, taking a piece with every jump."},
+  {id:'nightrider', name:'Nightrider', worth:4, rule:"Makes a knight's L-shaped leap, and can keep leaping the same way in a straight line as long as each landing square is empty."},
+  {id:'lancer', name:'Lancer', worth:3, rule:"Charges any distance straight forward, or steps one square sideways or back. It also captures one square diagonally forward."},
+  {id:'herald', name:'Herald', worth:3, rule:"Leaps three squares one way and one to the side, a long L. It jumps over pieces and always stays on squares of one colour."},
+  {id:'falconer', name:'Falconer', worth:3, rule:"Leaps three squares one way and two to the side, jumping over pieces. It can also step one square in any direction."},
+  {id:'abbess', name:'Abbess', worth:4, rule:"Moves up to two squares straight up, down, left or right (it can't jump), or one square diagonally."},
+  {id:'pilgrim', name:'Pilgrim', worth:1, rule:"Steps one square diagonally forward. It captures one square straight ahead or to either side, and promotes on the far rank."}
+];
+const ALL8 = [[1,0],[-1,0],[0,1],[0,-1],[1,1],[1,-1],[-1,1],[-1,-1]];
+const DIAG = [[1,1],[1,-1],[-1,1],[-1,-1]];
+const ORTH = [[1,0],[-1,0],[0,1],[0,-1]];
+function leaps(a,b){ const s=new Set(); for (const [x,y] of [[a,b],[b,a]]) for (const sx of [1,-1]) for (const sy of [1,-1]) s.add((x*sx)+','+(y*sy)); return [...s].map(t=>t.split(',').map(Number)); }
+const inB = (f,r) => f>=0 && f<9 && r>=0 && r<9;
+
+// Each mark: square plus kind (move | cap | both | shoot | jump | foe). Later marks on a square win.
+function marks(id){
+  const m = new Map(); const add = (dx,dy,kind) => { const f=C+dx, r=C+dy; if (inB(f,r)) m.set(r*9+f,kind); };
+  switch (id){
+    case 'archer': ALL8.forEach(([x,y])=>{ add(x,y,'move'); add(2*x,2*y,'shoot'); }); break;
+    case 'jester': DIAG.forEach(([x,y])=>add(x,y,'move')); add(1,1,'foe'); add(2,2,'jump'); add(3,3,'foe'); add(4,4,'jump'); break;
+    case 'nightrider': leaps(1,2).forEach(([x,y])=>{ for (let k=1;k<9;k++) add(x*k,y*k,'both'); }); break;
+    case 'lancer': for (let k=1;k<9;k++) add(0,k,'both'); [[1,0],[-1,0],[0,-1]].forEach(([x,y])=>add(x,y,'both')); add(1,1,'cap'); add(-1,1,'cap'); break;
+    case 'herald': leaps(3,1).forEach(([x,y])=>add(x,y,'both')); break;
+    case 'falconer': leaps(3,2).forEach(([x,y])=>add(x,y,'both')); ALL8.forEach(([x,y])=>add(x,y,'both')); break;
+    case 'abbess': ORTH.forEach(([x,y])=>{ add(x,y,'both'); add(2*x,2*y,'both'); }); DIAG.forEach(([x,y])=>add(x,y,'both')); break;
+    case 'pilgrim': add(1,1,'move'); add(-1,1,'move'); add(0,1,'cap'); add(1,0,'cap'); add(-1,0,'cap'); break;
+  }
+  return m;
+}
+
+const board = document.getElementById('board');
+const squares = [];
+for (let r=8; r>=0; r--) for (let f=0; f<9; f++){
+  const d = document.createElement('div');
+  d.className = 'sq' + ((f+r)%2===0 ? ' dk' : '');
+  board.appendChild(d); squares[r*9+f] = d;
+}
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const row = document.querySelector('.pedestals');
+
+function show(i){
+  const p = P[i];
+  [...row.children].forEach((b,j)=>{ b.setAttribute('aria-selected', String(j===i)); b.tabIndex = j===i ? 0 : -1; });
+  const img = document.getElementById('p-img');
+  img.src = `img/piece-${p.id}.webp`; img.alt = `The ${p.name}`;
+  document.getElementById('p-name').textContent = p.name;
+  document.getElementById('p-worth').textContent = `Worth ${p.worth} point${p.worth===1?'':'s'} when you build an army`;
+  document.getElementById('p-rule').textContent = p.rule;
+  squares.forEach(s=>{ s.classList.remove('move','cap','both','shoot','jump'); s.innerHTML=''; s.style.removeProperty('--d'); });
+  squares[C*9+C].innerHTML = `<span class="glyph" aria-hidden="true">${p.name[0]}</span>`;
+  const list = marks(p.id);
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    for (const [idx,kind] of list){
+      const s = squares[idx];
+      if (kind==='foe'){ s.innerHTML = '<span class="foe"></span>'; continue; }
+      if (!reduce){ const f=idx%9, r=(idx-f)/9; s.style.setProperty('--d', (Math.hypot(f-C,r-C)*0.05).toFixed(2)+'s'); }
+      s.classList.add(kind);
+    }
+  }));
+  board.setAttribute('aria-label', `How the ${p.name} moves: ${p.rule}`);
+}
+
+P.forEach((p,i)=>{
+  const b = document.createElement('button');
+  b.type = 'button'; b.setAttribute('role','tab'); b.setAttribute('aria-controls','portrait');
+  b.innerHTML = `<img src="img/piece-${p.id}.webp" alt="" height="92"><span>${p.name}</span>`;
+  b.addEventListener('click', ()=>show(i));
+  b.addEventListener('keydown', e=>{
+    const n = e.key==='ArrowRight' ? (i+1)%P.length : e.key==='ArrowLeft' ? (i+P.length-1)%P.length : -1;
+    if (n>=0){ e.preventDefault(); show(n); row.children[n].focus(); }
+  });
+  row.appendChild(b);
+});
+show(0);
+</script>
 </body>
 </html>
