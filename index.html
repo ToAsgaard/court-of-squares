@@ -117,6 +117,9 @@ main.home h2,.community h2{font:700 clamp(26px,3.4vw,36px)/1.2 'Cinzel',Georgia,
 @media (prefers-reduced-motion:reduce){.sq::after,.pedestals img{transition:none}}
 
 /* Pilgrimage */
+.camp{margin:0 0 26px}
+.camp img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--rule);box-shadow:0 18px 40px rgba(0,0,0,.4)}
+.camp figcaption{margin-top:10px;color:var(--soft);font-style:italic;font-size:18px}
 .pilgrim{background:linear-gradient(180deg,#22180f 0%,#1c140c 100%);border:1px solid var(--rule);border-radius:18px;padding:28px 26px 30px}
 .road{list-style:none;margin:6px 0 10px;padding:0;display:grid;grid-template-columns:repeat(16,1fr);align-items:center;position:relative}
 .road::before{content:"";position:absolute;left:3%;right:3%;top:50%;border-top:2px dashed var(--gilt-deep);opacity:.6}
@@ -165,15 +168,23 @@ main.home h2,.community h2{font:700 clamp(26px,3.4vw,36px)/1.2 'Cinzel',Georgia,
 @media (max-width:860px){.modes{grid-template-columns:1fr;gap:28px}}
 
 /* Garden */
-.seasons{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:0;padding:0;list-style:none}
-.seasons li{padding:16px 16px 18px;border-radius:12px;color:var(--ivory);margin:0}
+.garden-view{position:relative;aspect-ratio:1400/787;border-radius:16px;overflow:hidden;border:1px solid var(--rule);box-shadow:0 24px 50px rgba(0,0,0,.45);background:#2a1d12}
+.garden-view img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s ease}
+.garden-view img.on{opacity:1}
+.seasons{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:12px 0 0;padding:0;list-style:none}
+.seasons li{margin:0}
+.seasons button{appearance:none;width:100%;height:100%;text-align:left;cursor:pointer;padding:14px 16px 16px;border-radius:12px;color:var(--ivory);border:2px solid transparent;opacity:.6;transition:opacity .25s,border-color .25s;font:inherit}
+.seasons button:hover{opacity:.85}
+.seasons button[aria-selected="true"]{opacity:1;border-color:var(--gilt)}
 .seasons b{display:block;font:700 18px/1.3 'Cinzel',Georgia,serif;margin-bottom:4px}
 .seasons span{font-size:18px;line-height:1.4;display:block;opacity:.92}
-.spring{background:linear-gradient(160deg,#3c4e2c,#26301c)}
-.summer{background:linear-gradient(160deg,#5c4b1e,#33290f)}
-.autumn{background:linear-gradient(160deg,#6a2f1a,#3a1a0f)}
-.winter{background:linear-gradient(160deg,#2e3d52,#1b2431)}
-@media (max-width:760px){.seasons{grid-template-columns:repeat(2,1fr)}}
+.spring button{background:linear-gradient(160deg,#3c4e2c,#26301c)}
+.summer button{background:linear-gradient(160deg,#5c4b1e,#33290f)}
+.autumn button{background:linear-gradient(160deg,#6a2f1a,#3a1a0f)}
+.winter button{background:linear-gradient(160deg,#2e3d52,#1b2431)}
+.garden-note{margin:12px 0 0;color:var(--soft);font-style:italic}
+@media (max-width:760px){.seasons{grid-template-columns:repeat(2,1fr)}.seasons span{font-size:16px}}
+@media (prefers-reduced-motion:reduce){.garden-view img,.seasons button{transition:none}}
 
 /* Piece sets */
 .sets{display:grid;grid-template-columns:1fr;gap:18px}
@@ -299,6 +310,7 @@ footer .legal{margin-top:6px}
 <h2>The Pilgrimage</h2>
 <p class="lede">A roguelite journey with no end. Lead a small band of pilgrims from battle to battle against armies that keep growing and keep getting smarter. Every piece you lose stays lost, so every capture you allow matters for the rest of the road.</p>
 <div class="pilgrim">
+<figure class="camp"><img src="pilgrim-camp.webp" alt="The Pilgrimage camp: your band, the next battle against the Pawn Wall, relics and the tithe shop, around a campfire at dusk" width="1600" height="900" loading="lazy" decoding="async"><figcaption>The camp between battles: check your band, size up the next enemy, choose relics and spend tithes at the shop.</figcaption></figure>
 <ol class="road" aria-label="The road: stages 1 to 15 and beyond, with a boss every 5th stage and a relic every 3rd">
 <li class="free"><span>1</span></li>
 <li class="free"><span>2</span></li>
@@ -379,12 +391,19 @@ footer .legal{margin-top:6px}
 <section id="garden">
 <h2>A garden through the seasons</h2>
 <p class="lede">Each daily puzzle you solve grows your garden. Lay out paths, beds and decorations, and watch it change through the year, with seasonal tables and decorations to earn along the way.</p>
-<ol class="seasons">
-<li class="spring"><b>Spring</b><span>Blossom, fresh shoots and pale morning light.</span></li>
-<li class="summer"><b>Summer</b><span>Full beds and long golden evenings.</span></li>
-<li class="autumn"><b>Autumn</b><span>Falling leaves, lanterns and a Halloween event.</span></li>
-<li class="winter"><b>Winter</b><span>Frost, quiet snow and the Winter Festival.</span></li>
+<div class="garden-view" aria-live="polite">
+<img src="garden-spring.webp" alt="The same garden in spring, framed with tulips, daffodils and a bird's nest" width="1400" height="787" loading="lazy" decoding="async" data-season="spring" class="on">
+<img src="garden-summer.webp" alt="The same garden in summer, framed with sunflowers, roses and lavender" width="1400" height="787" loading="lazy" decoding="async" data-season="summer">
+<img src="garden-autumn.webp" alt="The same garden in autumn, framed with pumpkins, maple leaves and acorns" width="1400" height="787" loading="lazy" decoding="async" data-season="autumn">
+<img src="garden-winter.webp" alt="The same garden in winter, framed with snow, holly and pine cones" width="1400" height="787" loading="lazy" decoding="async" data-season="winter">
+</div>
+<ol class="seasons" role="tablist" aria-label="Seasons">
+<li class="spring"><button type="button" role="tab" aria-selected="true" data-season="spring"><b>Spring</b><span>Blossom, fresh shoots and pale morning light.</span></button></li>
+<li class="summer"><button type="button" role="tab" aria-selected="false" data-season="summer"><b>Summer</b><span>Full beds and long golden evenings.</span></button></li>
+<li class="autumn"><button type="button" role="tab" aria-selected="false" data-season="autumn"><b>Autumn</b><span>Falling leaves, lanterns and a Halloween event.</span></button></li>
+<li class="winter"><button type="button" role="tab" aria-selected="false" data-season="winter"><b>Winter</b><span>Frost, quiet snow and the Winter Festival.</span></button></li>
 </ol>
+<p class="garden-note">One player's garden through the year. Your beds, statues and trophies stay where you put them while the season changes around them.</p>
 </section>
 
 <section id="sets">
@@ -575,6 +594,33 @@ show(0);
       if (f && f.dataset.ready) send(f, visible ? 'playVideo' : 'pauseVideo');
     }), { threshold: [0, 0.5], rootMargin: '200px 0px' }).observe(box);
   });
+})();
+
+// Garden seasons: tap a season, or let it turn on its own while in view (stops once you choose one).
+(() => {
+  const view = document.querySelector('.garden-view'); if (!view) return;
+  const imgs = [...view.querySelectorAll('img')], tabs = [...document.querySelectorAll('.seasons button')];
+  const order = tabs.map(t => t.dataset.season);
+  let current = 0, timer = null, chosen = false;
+  const show = i => {
+    current = i;
+    imgs.forEach(im => im.classList.toggle('on', im.dataset.season === order[i]));
+    tabs.forEach((t, j) => { t.setAttribute('aria-selected', String(j === i)); t.tabIndex = j === i ? 0 : -1; });
+  };
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => { chosen = true; clearInterval(timer); show(i); });
+    t.addEventListener('keydown', e => {
+      const n = e.key === 'ArrowRight' ? (i + 1) % tabs.length : e.key === 'ArrowLeft' ? (i + tabs.length - 1) % tabs.length : -1;
+      if (n >= 0) { e.preventDefault(); chosen = true; clearInterval(timer); show(n); tabs[n].focus(); }
+    });
+  });
+  imgs.forEach(im => { im.loading = 'eager'; });   // so the next season is ready to fade in
+  show(0);
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(([e]) => {
+    clearInterval(timer);
+    if (e.isIntersecting && !chosen) timer = setInterval(() => show((current + 1) % order.length), 3500);
+  }, { threshold: 0.6 }).observe(view);
 })();
 </script>
 </body>
