@@ -157,7 +157,10 @@ main.home h2,.community h2{font:700 clamp(26px,3.4vw,36px)/1.2 'Cinzel',Georgia,
 .sets{display:grid;grid-template-columns:1fr;gap:18px}
 .sets figure{margin:0;background:var(--lacquer);border:1px solid var(--rule);border-radius:14px;padding:16px 16px 12px;display:flex;flex-direction:column}
 .sets img{display:block;width:100%;height:auto;aspect-ratio:3/1;object-fit:contain}
-.sets figcaption{font:600 16px/1.3 'Cinzel',Georgia,serif;color:var(--gilt);margin-top:10px}
+.sets figcaption{margin-top:10px;display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 12px}
+.sets figcaption b{font:600 17px/1.3 'Cinzel',Georgia,serif;color:var(--gilt)}
+.sets figcaption span{font-size:18px;color:var(--soft)}
+.sets-note{margin:14px 0 0;color:var(--soft);font-style:italic}
 
 /* Calm by design */
 .calm{columns:2;column-gap:44px;margin:0;padding-left:1.1em}
@@ -168,6 +171,14 @@ main.home h2,.community h2{font:700 clamp(26px,3.4vw,36px)/1.2 'Cinzel',Georgia,
 /* Community */
 .community{margin-top:80px;background:var(--lacquer);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:56px 0 60px}
 .community .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
+.mail{position:relative}
+.mail button.btn{background:none;cursor:pointer}
+.mail button.btn:hover,.mail button.btn[aria-expanded="true"]{background:#e7c573;color:var(--walnut)}
+.mail-menu{position:absolute;left:0;bottom:calc(100% + 10px);z-index:4;min-width:260px;background:#2c2015;border:1px solid var(--gilt-deep);border-radius:14px;padding:14px;box-shadow:0 14px 34px rgba(0,0,0,.5)}
+.mail-menu p{margin:0 0 10px;color:var(--ivory);font-size:19px}
+.mail-menu button,.mail-menu a{display:block;width:100%;text-align:left;font:600 15px/1 'Cinzel',Georgia,serif;letter-spacing:.03em;color:var(--gilt);background:var(--walnut);border:1px solid var(--rule);border-radius:10px;padding:12px 14px;margin-top:8px;cursor:pointer;text-decoration:none}
+.mail-menu button:hover,.mail-menu a:hover{border-color:var(--gilt)}
+@media (max-width:520px){.mail-menu{left:auto;right:0}}
 footer{background:#120c07}
 footer .legal{margin-top:6px}
 </style>
@@ -324,11 +335,12 @@ footer .legal{margin-top:6px}
 <h2>Make it yours</h2>
 <p class="lede">Choose your table, background, music and piece set. Earn crests, banners and seasonal tables, and gild your favourite pieces from bronze up to platinum as you master them.</p>
 <div class="sets">
-<figure><img src="set-court.webp" alt="The Court piece set in blue and gold" loading="lazy" decoding="async" width="1400" height="552"><figcaption>Court</figcaption></figure>
-<figure><img src="set-woodland.webp" alt="The Woodland piece set, carved as forest animals" loading="lazy" decoding="async" width="1400" height="461"><figcaption>Woodland</figcaption></figure>
-<figure><img src="set-greek.webp" alt="The Greek piece set in white marble and gold" loading="lazy" decoding="async" width="1400" height="468"><figcaption>Greek</figcaption></figure>
-<figure><img src="set-halloween.webp" alt="The Halloween piece set" loading="lazy" decoding="async" width="1400" height="582"><figcaption>Halloween</figcaption></figure>
+<figure><img src="set-basic.webp" alt="The Basic piece set: classic king, queen, bishop, knight, rook and pawn in ivory and gold" loading="lazy" decoding="async" width="1400" height="429"><figcaption><b>Basic</b><span>The familiar shapes, for classic play.</span></figcaption></figure>
+<figure><img src="set-court.webp" alt="The Court piece set in blue and gold" loading="lazy" decoding="async" width="1400" height="552"><figcaption><b>Court</b><span>One of many sets with its own character.</span></figcaption></figure>
+<figure><img src="set-sweetheart.webp" alt="The eight new pieces in a cute pink and gold set: Jester, Pilgrim, Herald, Abbess, Archer, Nightrider, Lancer and Falconer" loading="lazy" decoding="async" width="1400" height="455"><figcaption><b>Sweetheart</b><span>Every set has its own take on all eight new pieces.</span></figcaption></figure>
+<figure><img src="set-halloween.webp" alt="The Halloween piece set" loading="lazy" decoding="async" width="1400" height="582"><figcaption><b>Halloween</b><span>Seasonal sets arrive with the year's events.</span></figcaption></figure>
 </div>
+<p class="sets-note">A few examples from the collection. More sets, tables and backgrounds are waiting in the game.</p>
 </section>
 
 <section id="calm">
@@ -351,7 +363,14 @@ footer .legal{margin-top:6px}
 <div class="row">
 <a class="btn primary" href="beta.html">Join the Android beta</a>
 <a class="btn" href="https://discord.gg/DWXYmJSMmR" rel="noopener">Join the Discord</a>
-<a class="btn" href="mailto:courtofsquares@gmail.com">Email us</a>
+<div class="mail">
+<button class="btn" type="button" id="mail-btn" aria-expanded="false" aria-controls="mail-menu">Email us</button>
+<div class="mail-menu" id="mail-menu" hidden>
+<p>courtofsquares@gmail.com</p>
+<button type="button" id="mail-copy">Copy address</button>
+<a href="mailto:courtofsquares@gmail.com">Open your mail app</a>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -439,6 +458,26 @@ P.forEach((p,i)=>{
   row.appendChild(b);
 });
 show(0);
+
+// Email us: copy the address or open the mail app.
+(() => {
+  const btn = document.getElementById('mail-btn'), menu = document.getElementById('mail-menu'), copy = document.getElementById('mail-copy');
+  const address = 'courtofsquares@gmail.com';
+  const close = () => { menu.hidden = true; btn.setAttribute('aria-expanded','false'); };
+  btn.addEventListener('click', e => { e.stopPropagation(); const open = menu.hidden; menu.hidden = !open; btn.setAttribute('aria-expanded', String(open)); if (open) copy.focus(); });
+  document.addEventListener('click', e => { if (!menu.contains(e.target)) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !menu.hidden){ close(); btn.focus(); } });
+  copy.addEventListener('click', async () => {
+    let ok = false;
+    try { await navigator.clipboard.writeText(address); ok = true; }
+    catch (_) {
+      const t = document.createElement('textarea'); t.value = address; t.setAttribute('readonly',''); t.style.position='fixed'; t.style.opacity='0';
+      document.body.appendChild(t); t.select(); try { ok = document.execCommand('copy'); } catch (_) {} t.remove();
+    }
+    copy.textContent = ok ? 'Copied' : 'Select the address above to copy';
+    setTimeout(() => { copy.textContent = 'Copy address'; }, 2200);
+  });
+})();
 </script>
 </body>
 </html>
