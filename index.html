@@ -57,6 +57,14 @@ main.home section{padding:76px 0 0}
 main.home h2,.community h2{font:700 clamp(26px,3.4vw,36px)/1.2 'Cinzel',Georgia,serif;color:var(--gilt);margin:0 0 10px;border:0;padding:0}
 .lede{color:var(--soft);font-size:21px;max-width:720px;margin:0 0 26px}
 
+/* Videos */
+.video{position:relative;aspect-ratio:16/9;width:100%;background:#0e0905 center/cover no-repeat;border:1px solid var(--rule);border-radius:16px;overflow:hidden;box-shadow:0 24px 50px rgba(0,0,0,.45)}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video .start{position:absolute;inset:0;display:grid;place-items:center;background:rgba(10,6,3,.25);border:0;cursor:pointer;color:var(--walnut)}
+.video .start span{display:grid;place-items:center;width:84px;height:84px;border-radius:50%;background:var(--gilt);box-shadow:0 8px 24px rgba(0,0,0,.5);font-size:30px;padding-left:6px}
+.video .start:hover span{background:#e7c573}
+.video-note{margin:10px 0 0;font-size:17px;color:var(--soft);font-style:italic}
+
 /* Meet the court: the one bold element */
 .court{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:28px;align-items:center;background:radial-gradient(120% 90% at 30% 0%,#2e2013 0%,var(--lacquer) 55%,#1d140c 100%);border:1px solid var(--rule);border-radius:18px;padding:22px}
 .pedestals{grid-column:1/-1;display:grid;grid-template-columns:repeat(8,1fr);gap:6px}
@@ -198,7 +206,7 @@ footer .legal{margin-top:6px}
 <p class="status">Coming soon to iPhone, iPad, Android and Steam. Free, with no ads.</p>
 <div class="actions">
 <a class="btn primary" href="beta.html">Join the Android beta</a>
-<a class="btn" href="https://www.youtube.com/@CourtofSquares" rel="noopener">Watch on YouTube</a>
+<a class="btn" href="#trailer">Watch the trailer</a>
 </div>
 </div>
 
@@ -215,6 +223,12 @@ footer .legal{margin-top:6px}
 </div>
 
 <main class="home">
+
+<section id="trailer">
+<h2>Watch the trailer</h2>
+<div class="video" data-yt="0lBtSt2Io14" data-title="Court of Squares trailer"></div>
+<p class="video-note">Plays muted as it comes into view. Tap the speaker to turn the sound on.</p>
+</section>
 
 <section id="pieces">
 <h2>Meet the court</h2>
@@ -337,7 +351,7 @@ footer .legal{margin-top:6px}
 <div class="sets">
 <figure><img src="set-basic.webp" alt="The Basic piece set: classic king, queen, bishop, knight, rook and pawn in ivory and gold" loading="lazy" decoding="async" width="1400" height="429"><figcaption><b>Basic</b><span>The familiar shapes, for classic play.</span></figcaption></figure>
 <figure><img src="set-court.webp" alt="The Court piece set in blue and gold" loading="lazy" decoding="async" width="1400" height="552"><figcaption><b>Court</b><span>One of many sets with its own character.</span></figcaption></figure>
-<figure><img src="set-sweetheart.webp" alt="The eight new pieces in a cute pink and gold set: Jester, Pilgrim, Herald, Abbess, Archer, Nightrider, Lancer and Falconer" loading="lazy" decoding="async" width="1400" height="455"><figcaption><b>Sweetheart</b><span>Every set has its own take on all eight new pieces.</span></figcaption></figure>
+<figure><img src="set-cute.webp" alt="The eight new pieces in the Cute set, pink and gold: Jester, Pilgrim, Herald, Abbess, Archer, Nightrider, Lancer and Falconer" loading="lazy" decoding="async" width="1400" height="455"><figcaption><b>Cute</b><span>Every set has its own take on all eight new pieces.</span></figcaption></figure>
 <figure><img src="set-halloween.webp" alt="The Halloween piece set" loading="lazy" decoding="async" width="1400" height="582"><figcaption><b>Halloween</b><span>Seasonal sets arrive with the year's events.</span></figcaption></figure>
 </div>
 <p class="sets-note">A few examples from the collection. More sets, tables and backgrounds are waiting in the game.</p>
@@ -476,6 +490,48 @@ show(0);
     }
     copy.textContent = ok ? 'Copied' : 'Select the address above to copy';
     setTimeout(() => { copy.textContent = 'Copy address'; }, 2200);
+  });
+})();
+
+// Videos: each <div class="video" data-yt="VIDEO_ID"> loads when it nears the screen, plays muted while at least
+// half of it is in view and pauses when scrolled away. With reduced motion set, it waits for a tap instead.
+(() => {
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const send = (frame, func) => { try { frame.contentWindow.postMessage(JSON.stringify({event:'command', func, args:[]}), '*'); } catch (_) {} };
+  const load = (box, play) => {
+    if (box.querySelector('iframe')) return box.querySelector('iframe');
+    const id = box.dataset.yt;
+    const f = document.createElement('iframe');
+    f.src = `https://www.youtube.com/embed/${id}?enablejsapi=1&mute=1&playsinline=1&rel=0&modestbranding=1${play ? '&autoplay=1' : ''}&origin=${encodeURIComponent(location.origin)}`;
+    f.title = box.dataset.title || 'Video';
+    f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    f.referrerPolicy = 'strict-origin-when-cross-origin';
+    f.allowFullscreen = true;
+    f.addEventListener('load', () => {
+      f.dataset.ready = '1';
+      send(f, 'mute');
+      // The player takes a moment to start listening, so ask a few times while it's in view.
+      [300, 1000, 2000].forEach(ms => setTimeout(() => { if (box.dataset.visible === '1' && !reduce) send(f, 'playVideo'); }, ms));
+    });
+    box.querySelector('.start')?.remove();
+    box.appendChild(f);
+    return f;
+  };
+  document.querySelectorAll('.video[data-yt]').forEach(box => {
+    box.style.backgroundImage = `url(https://i.ytimg.com/vi/${box.dataset.yt}/hqdefault.jpg)`;
+    const start = document.createElement('button');
+    start.type = 'button'; start.className = 'start'; start.setAttribute('aria-label', 'Play ' + (box.dataset.title || 'video'));
+    start.innerHTML = '<span aria-hidden="true">&#9654;</span>';
+    start.addEventListener('click', () => { const f = load(box, true); if (f.dataset.ready) send(f, 'playVideo'); });
+    box.appendChild(start);
+    if (reduce || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(entries => entries.forEach(e => {
+      const visible = e.intersectionRatio >= 0.5;
+      box.dataset.visible = visible ? '1' : '0';
+      if (e.isIntersecting && !box.querySelector('iframe')) load(box, false);   // preload as it nears
+      const f = box.querySelector('iframe');
+      if (f && f.dataset.ready) send(f, visible ? 'playVideo' : 'pauseVideo');
+    }), { threshold: [0, 0.5], rootMargin: '200px 0px' }).observe(box);
   });
 })();
 </script>
