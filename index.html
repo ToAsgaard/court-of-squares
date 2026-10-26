@@ -195,6 +195,14 @@ main.home h2,.community h2{font:700 clamp(26px,3.4vw,36px)/1.2 'Cinzel',Georgia,
 .sets figcaption span{font-size:18px;color:var(--soft)}
 .sets-note{margin:14px 0 0;color:var(--soft);font-style:italic}
 
+/* Save, watch, share */
+.keep{display:grid;grid-template-columns:repeat(3,1fr);gap:0 36px}
+.keep > div{border-top:2px solid var(--gilt-deep);padding-top:12px;margin-bottom:26px}
+.keep h3{font:700 18px/1.3 'Cinzel',Georgia,serif;color:var(--ivory);margin:0 0 4px}
+.keep p{margin:0;color:var(--soft)}
+@media (max-width:860px){.keep{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.keep{grid-template-columns:1fr}}
+
 /* Calm by design */
 .calm{columns:2;column-gap:44px;margin:0;padding-left:1.1em}
 .calm li{break-inside:avoid;margin:0 0 12px}
@@ -416,6 +424,18 @@ footer .legal{margin-top:6px}
 <figure><img src="set-halloween.webp" alt="The Halloween piece set" loading="lazy" decoding="async" width="1400" height="582"><figcaption><b>Halloween</b><span>Seasonal sets arrive with the year's events.</span></figcaption></figure>
 </div>
 <p class="sets-note">A few examples from the collection. More sets, tables and backgrounds are waiting in the game.</p>
+</section>
+
+<section id="keep">
+<h2>Save it, watch it, share it</h2>
+<p class="lede">The little things that make a game yours to keep.</p>
+<div class="keep">
+<div><h3>Your armies</h3><p>Build Muster armies and save your favourites. Share one as a code that a friend can paste straight in.</p></div>
+<div><h3>Replays</h3><p>Watch your recent games again. Keep the last 5, 10 or 25.</p></div>
+<div><h3>Finish later</h3><p>Save a game against the computer or a friend on the same device and pick it up any time. Online, offer to save a game and both finish it within 30 days.</p></div>
+<div><h3>Share the moment</h3><p>After a game, share a picture of the result or, on phones, a short video clip of the game.</p></div>
+<div><h3>Watch mode</h3><p>Set two computers against each other and let games play on repeat, with the music on. Good company for a quiet evening.</p></div>
+</div>
 </section>
 
 <section id="calm">
