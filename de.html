@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Court of Squares · Entspanntes Schach mit acht neuen Figuren</title>
+<meta name="description" content="Court of Squares ist ein entspanntes, malerisches Schachspiel mit acht neuen Figuren, selbst zusammengestellten Armeen, einer Roguelite-Pilgerreise, einem Garten voller Tagesrätsel und Online-Partien. Bald für iPhone, iPad, Android und Steam.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Court of Squares · Entspanntes Schach mit acht neuen Figuren">
+<meta property="og:description" content="Alle Regeln, die du kennst – plus ein Schütze, der schießt, ein Narr, der in Ketten springt, und sechs weitere neue Figuren. Bald für iPhone, iPad, Android und Steam.">
+<meta property="og:image" content="https://toasgaard.github.io/court-of-squares/og-image.jpg">
+<meta property="og:url" content="https://toasgaard.github.io/court-of-squares/de.html">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1a120b">
+<link rel="alternate" hreflang="en" href="https://toasgaard.github.io/court-of-squares/index.html">
+<link rel="alternate" hreflang="es" href="https://toasgaard.github.io/court-of-squares/es.html">
+<link rel="alternate" hreflang="pt-BR" href="https://toasgaard.github.io/court-of-squares/pt.html">
+<link rel="alternate" hreflang="fr" href="https://toasgaard.github.io/court-of-squares/fr.html">
+<link rel="alternate" hreflang="de" href="https://toasgaard.github.io/court-of-squares/de.html">
+<link rel="alternate" hreflang="it" href="https://toasgaard.github.io/court-of-squares/it.html">
+<link rel="alternate" hreflang="pl" href="https://toasgaard.github.io/court-of-squares/pl.html">
+<link rel="alternate" hreflang="tr" href="https://toasgaard.github.io/court-of-squares/tr.html">
+<link rel="alternate" hreflang="ru" href="https://toasgaard.github.io/court-of-squares/ru.html">
+<link rel="alternate" hreflang="ja" href="https://toasgaard.github.io/court-of-squares/ja.html">
+<link rel="alternate" hreflang="ko" href="https://toasgaard.github.io/court-of-squares/ko.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://toasgaard.github.io/court-of-squares/zh.html">
+<link rel="alternate" hreflang="x-default" href="https://toasgaard.github.io/court-of-squares/">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+:root{--walnut:#1a120b;--lacquer:#241910;--ivory:#f1e7d3;--soft:#c9b9a1;--gilt:#d9b25c;--gilt-deep:#a8823a;--blue:#3a5db0;--garnet:#a8262c;--rule:#3b2c1c}
+body{background:var(--walnut);color:var(--ivory);font:500 20px/1.6 'Cormorant Garamond',Georgia,serif}
+a{color:var(--gilt)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gilt);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* Header */
+
+/* Hero */
+.hero-art{display:block;width:100%;height:auto;aspect-ratio:2400/1029;object-fit:cover;background:#2a1d12}
+@media (max-width:700px){.hero-art{aspect-ratio:1000/833}}
+.pitch{text-align:center;padding:34px 20px 0;max-width:820px;margin:0 auto}
+.pitch h1{font:700 clamp(28px,4.4vw,46px)/1.15 'Cinzel',Georgia,serif;color:var(--ivory);margin:0 0 14px}
+.pitch p{font-size:22px;color:var(--soft);margin:0 auto;max-width:660px}
+.pitch .status{margin:20px auto 0;color:var(--gilt);font-style:italic}
+.actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:22px 0 0}
+.btn{display:inline-block;font:600 16px/1 'Cinzel',Georgia,serif;letter-spacing:.03em;text-decoration:none;padding:15px 22px;border-radius:999px;border:1px solid var(--gilt);color:var(--gilt)}
+.btn.primary{background:var(--gilt);color:var(--walnut)}
+.btn:hover{background:#e7c573;border-color:#e7c573;color:var(--walnut)}
+
+/* Where to get it */
+.stores-block{max-width:900px;margin:30px auto 0;padding:0 20px;text-align:center}
+.stores-block .free{margin:0 0 14px;color:var(--gilt);font-style:italic;font-size:21px}
+.platforms{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.platform{background:var(--lacquer);border:1px solid var(--rule);border-radius:16px;padding:20px 18px 22px;display:flex;flex-direction:column;align-items:center;gap:4px}
+.platform.live{border-color:var(--gilt-deep);background:linear-gradient(180deg,#2f2213,var(--lacquer));box-shadow:0 0 0 1px rgba(217,178,92,.25),0 18px 40px rgba(0,0,0,.35)}
+.stores-block .platform h2{font:700 21px/1.2 'Cinzel',Georgia,serif;color:var(--ivory);margin:0;border:0;padding:0}
+.platform .where{margin:0 0 12px;color:var(--soft);font-size:18px}
+.platform .soon{display:inline-block;font:600 15px/1 'Cinzel',Georgia,serif;letter-spacing:.03em;color:var(--soft);border:1px dashed var(--gilt-deep);border-radius:999px;padding:14px 20px}
+.platform .carry{margin:10px 0 0;font-size:16px;line-height:1.35;color:var(--soft)}
+.stores-block .also{margin:16px 0 0;color:var(--soft);font-size:18px}
+@media (max-width:760px){.platforms{grid-template-columns:1fr}.platform{padding:16px}.platform.live{order:-1}}
+
+/* Socials, front and centre */
+.follow{text-align:center;max-width:820px;margin:34px auto 0;padding:0 20px}
+.follow p{margin:0 0 14px;color:var(--soft)}
+.socials{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.socials a{text-decoration:none;font:600 16px/1 'Cinzel',Georgia,serif;letter-spacing:.03em;color:var(--gilt);background:var(--lacquer);border:1px solid var(--rule);border-radius:999px;padding:13px 20px}
+.socials a:hover{border-color:var(--gilt);color:var(--ivory)}
+
+/* Sections */
+main.home{max-width:1120px;padding:0 20px}
+main.home section{padding:76px 0 0}
+main.home h2,.community h2{font:700 clamp(26px,3.4vw,36px)/1.2 'Cinzel',Georgia,serif;color:var(--gilt);margin:0 0 10px;border:0;padding:0}
+.lede{color:var(--soft);font-size:21px;max-width:720px;margin:0 0 26px}
+
+/* Videos */
+.video{position:relative;aspect-ratio:16/9;width:100%;background:#0e0905 center/cover no-repeat;border:1px solid var(--rule);border-radius:16px;overflow:hidden;box-shadow:0 24px 50px rgba(0,0,0,.45)}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video .start{position:absolute;inset:0;display:grid;place-items:center;background:rgba(10,6,3,.25);border:0;cursor:pointer;color:var(--walnut)}
+.video .start span{display:grid;place-items:center;width:84px;height:84px;border-radius:50%;background:var(--gilt);box-shadow:0 8px 24px rgba(0,0,0,.5);font-size:30px;padding-left:6px}
+.video .start:hover span{background:#e7c573}
+.video-note{margin:10px 0 0;font-size:17px;color:var(--soft);font-style:italic}
+
+/* Meet the court: the one bold element */
+.court{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:28px;align-items:center;background:radial-gradient(120% 90% at 30% 0%,#2e2013 0%,var(--lacquer) 55%,#1d140c 100%);border:1px solid var(--rule);border-radius:18px;padding:22px}
+.pedestals{grid-column:1/-1;display:grid;grid-template-columns:repeat(8,1fr);gap:6px}
+.pedestals button{appearance:none;background:none;border:0;border-bottom:2px solid transparent;color:var(--soft);cursor:pointer;padding:6px 2px 8px;font:600 13px/1.2 'Cinzel',Georgia,serif;display:flex;flex-direction:column;align-items:center;gap:6px}
+.pedestals img{height:92px;width:auto;filter:saturate(.7) brightness(.78);transition:filter .2s,transform .2s}
+.pedestals button[aria-selected="true"]{color:var(--gilt);border-bottom-color:var(--gilt)}
+.pedestals button[aria-selected="true"] img,.pedestals button:hover img{filter:none;transform:translateY(-3px)}
+.portrait{display:flex;gap:20px;align-items:center}
+.portrait img{height:330px;width:auto;flex:none;filter:drop-shadow(0 18px 24px rgba(0,0,0,.55))}
+.portrait h3{font:700 32px/1.1 'Cinzel',Georgia,serif;color:var(--ivory);margin:0 0 4px}
+.portrait .worth{color:var(--gilt);font-style:italic;margin:0 0 10px}
+.portrait p{margin:0}
+.board-wrap{display:flex;flex-direction:column;align-items:center;gap:12px}
+.board{display:grid;grid-template-columns:repeat(9,1fr);width:min(100%,430px);aspect-ratio:1;border:6px solid #3a2716;border-radius:6px;box-shadow:0 0 0 1px var(--gilt-deep),0 20px 40px rgba(0,0,0,.45)}
+.sq{position:relative;background:#dccaa6}
+.sq.dk{background:#8a6744}
+.sq::after{content:"";position:absolute;inset:0;margin:auto;border-radius:50%;opacity:0;transform:scale(.3);transition:opacity .3s,transform .3s;transition-delay:var(--d,0s)}
+.sq.move::after{width:32%;height:32%;background:var(--blue);opacity:1;transform:none}
+.sq.cap::after{width:72%;height:72%;box-shadow:inset 0 0 0 3px var(--garnet);opacity:1;transform:none}
+.sq.both::after{width:72%;height:72%;box-shadow:inset 0 0 0 3px var(--blue);background:radial-gradient(circle,var(--blue) 0 22%,transparent 24%);opacity:1;transform:none}
+.sq.shoot::after{width:74%;height:74%;opacity:1;transform:none;background:radial-gradient(circle,var(--garnet) 0 17%,transparent 19% 42%,var(--garnet) 44% 55%,transparent 57%)}
+.sq.jump::after{width:42%;height:42%;background:var(--garnet);border-radius:3px;opacity:1;transform:rotate(45deg)}
+.sq .glyph{position:absolute;inset:8%;display:grid;place-items:center;font:700 clamp(14px,3vw,24px)/1 'Cinzel',Georgia,serif;color:var(--walnut);background:var(--gilt);border-radius:50%;box-shadow:0 2px 6px rgba(0,0,0,.4)}
+.sq .foe{position:absolute;inset:20%;border-radius:50%;background:#24160d;box-shadow:inset 0 0 0 2px #c9b48c}
+.legend{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 16px;font-size:16px;color:var(--soft);margin:0;padding:0;list-style:none}
+.legend li{display:flex;align-items:center;gap:7px;margin:0}
+.legend i{display:inline-block;width:16px;height:16px;border-radius:50%;flex:none}
+.l-move{background:var(--blue);transform:scale(.55)}
+.l-both{box-shadow:inset 0 0 0 2px var(--blue);background:radial-gradient(circle,var(--blue) 0 24%,transparent 26%)}
+.l-cap{box-shadow:inset 0 0 0 2px var(--garnet)}
+.l-shoot{background:radial-gradient(circle,var(--garnet) 0 17%,transparent 19% 42%,var(--garnet) 44% 58%,transparent 60%)}
+.l-jump{background:var(--garnet);transform:rotate(45deg) scale(.7);border-radius:2px!important}
+.l-foe{background:#24160d;box-shadow:inset 0 0 0 2px #c9b48c}
+@media (max-width:860px){.court{grid-template-columns:1fr;padding:16px}.portrait img{height:220px}.pedestals{grid-template-columns:repeat(4,1fr)}.pedestals img{height:72px}}
+@media (max-width:460px){.portrait{flex-direction:column;align-items:flex-start}.portrait img{height:180px}}
+@media (prefers-reduced-motion:reduce){.sq::after,.pedestals img{transition:none}}
+
+/* Pilgrimage */
+.camp{margin:0 0 26px}
+.camp img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--rule);box-shadow:0 18px 40px rgba(0,0,0,.4)}
+.camp figcaption{margin-top:10px;color:var(--soft);font-style:italic;font-size:18px}
+.pilgrim{background:linear-gradient(180deg,#22180f 0%,#1c140c 100%);border:1px solid var(--rule);border-radius:18px;padding:28px 26px 30px}
+.road{list-style:none;margin:6px 0 10px;padding:0;display:grid;grid-template-columns:repeat(16,1fr);align-items:center;position:relative}
+.road::before{content:"";position:absolute;left:3%;right:3%;top:50%;border-top:2px dashed var(--gilt-deep);opacity:.6}
+.road li{position:relative;display:grid;place-items:center;margin:0}
+.road span{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--walnut);border:2px solid var(--gilt-deep);font:600 14px/1 'Cinzel',Georgia,serif;color:var(--soft)}
+.road .relic span{border-color:var(--blue);color:var(--ivory);box-shadow:0 0 0 4px rgba(58,93,176,.25)}
+.road .boss span{width:46px;height:46px;background:var(--garnet);border-color:var(--gilt);color:var(--ivory);font-size:16px}
+.road .boss.relic span{box-shadow:0 0 0 4px rgba(58,93,176,.45)}
+.road .free span{background:#3a2a17;color:var(--ivory)}
+.road .more span{border-style:dashed;font-size:20px;color:var(--gilt)}
+.road-key{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:16px;color:var(--soft);margin:0 0 26px;padding:0;list-style:none}
+.road-key li{display:flex;align-items:center;gap:8px;margin:0}
+.road-key i{width:14px;height:14px;border-radius:50%;border:2px solid var(--gilt-deep);background:var(--walnut)}
+.road-key .k-boss{background:var(--garnet);border-color:var(--gilt)}
+.road-key .k-relic{border-color:var(--blue);box-shadow:0 0 0 3px rgba(58,93,176,.3)}
+.road-key .k-free{background:#3a2a17}
+.loop{list-style:none;margin:0 0 30px;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;counter-reset:step}
+.loop li{counter-increment:step;margin:0}
+.loop h3{font:700 19px/1.3 'Cinzel',Georgia,serif;color:var(--ivory);margin:0 0 6px;display:flex;align-items:center;gap:10px}
+.loop h3::before{content:counter(step);display:grid;place-items:center;width:28px;height:28px;flex:none;border-radius:50%;background:var(--gilt);color:var(--walnut);font-size:15px}
+.loop p{margin:0;color:var(--soft)}
+.pilgrim h3.sub{font:700 20px/1.3 'Cinzel',Georgia,serif;color:var(--gilt);margin:0 0 4px}
+.pilgrim .sub-lede{margin:0 0 14px;color:var(--soft)}
+.relics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:0 0 30px}
+.relics div{background:rgba(0,0,0,.18);border:1px solid var(--rule);border-left:3px solid var(--blue);border-radius:10px;padding:12px 14px}
+.relics b{display:block;font:600 15px/1.3 'Cinzel',Georgia,serif;color:var(--ivory);margin-bottom:4px}
+.relics span{display:block;font-size:17px;line-height:1.35;color:var(--soft)}
+.journey-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.journey-facts h3{font:700 18px/1.3 'Cinzel',Georgia,serif;color:var(--gilt);margin:0 0 4px}
+.journey-facts p{margin:0;color:var(--soft)}
+@media (max-width:860px){
+ .pilgrim{padding:20px 16px 24px}
+ .road{grid-template-columns:repeat(8,1fr);row-gap:14px}
+ .road::before{display:none}
+ .loop,.journey-facts{grid-template-columns:1fr;gap:20px}
+ .relics{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:420px){.road span{width:30px;height:30px;font-size:13px}.road .boss span{width:38px;height:38px}.relics{grid-template-columns:1fr}}
+
+/* Ways to play */
+.modes{display:grid;grid-template-columns:repeat(3,1fr);gap:0 36px}
+.modes .group{border-top:2px solid var(--gilt-deep);padding-top:4px}
+.modes h3{font:700 18px/1.3 'Cinzel',Georgia,serif;color:var(--ivory);margin:20px 0 2px}
+.modes .group > h3:first-child{color:var(--gilt);font-size:15px;letter-spacing:.04em;margin-top:10px}
+.modes p{margin:0;color:var(--soft)}
+@media (max-width:860px){.modes{grid-template-columns:1fr;gap:28px}}
+
+/* Garden */
+.garden-view{position:relative;aspect-ratio:1400/787;border-radius:16px;overflow:hidden;border:1px solid var(--rule);box-shadow:0 24px 50px rgba(0,0,0,.45);background:#2a1d12}
+.garden-view img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s ease}
+.garden-view img.on{opacity:1}
+.seasons{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:12px 0 0;padding:0;list-style:none}
+.seasons li{margin:0}
+.seasons button{appearance:none;width:100%;height:100%;text-align:left;cursor:pointer;padding:14px 16px 16px;border-radius:12px;color:var(--ivory);border:2px solid transparent;opacity:.6;transition:opacity .25s,border-color .25s;font:inherit}
+.seasons button:hover{opacity:.85}
+.seasons button[aria-selected="true"]{opacity:1;border-color:var(--gilt)}
+.seasons b{display:block;font:700 18px/1.3 'Cinzel',Georgia,serif;margin-bottom:4px}
+.seasons span{font-size:18px;line-height:1.4;display:block;opacity:.92}
+.spring button{background:linear-gradient(160deg,#3c4e2c,#26301c)}
+.summer button{background:linear-gradient(160deg,#5c4b1e,#33290f)}
+.autumn button{background:linear-gradient(160deg,#6a2f1a,#3a1a0f)}
+.winter button{background:linear-gradient(160deg,#2e3d52,#1b2431)}
+.garden-note{margin:12px 0 0;color:var(--soft);font-style:italic}
+@media (max-width:760px){.seasons{grid-template-columns:repeat(2,1fr)}.seasons span{font-size:16px}}
+@media (prefers-reduced-motion:reduce){.garden-view img,.seasons button{transition:none}}
+
+/* Piece sets */
+.sets{display:grid;grid-template-columns:1fr;gap:18px}
+.sets figure{margin:0;background:var(--lacquer);border:1px solid var(--rule);border-radius:14px;padding:16px 16px 12px;display:flex;flex-direction:column}
+.sets img{display:block;width:100%;height:auto;aspect-ratio:1600/457;object-fit:contain}
+.sets figcaption{margin-top:10px;display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 12px}
+.sets figcaption b{font:600 17px/1.3 'Cinzel',Georgia,serif;color:var(--gilt)}
+.sets figcaption span{font-size:18px;color:var(--soft)}
+.sets-note{margin:14px 0 0;color:var(--soft);font-style:italic}
+
+/* Save, watch, share */
+.keep{display:grid;grid-template-columns:repeat(3,1fr);gap:0 36px}
+.keep > div{border-top:2px solid var(--gilt-deep);padding-top:12px;margin-bottom:26px}
+.keep h3{font:700 18px/1.3 'Cinzel',Georgia,serif;color:var(--ivory);margin:0 0 4px}
+.keep p{margin:0;color:var(--soft)}
+@media (max-width:860px){.keep{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.keep{grid-template-columns:1fr}}
+
+/* Calm by design */
+.calm{columns:2;column-gap:44px;margin:0;padding-left:1.1em}
+.calm li{break-inside:avoid;margin:0 0 12px}
+.calm b{color:var(--ivory)}
+@media (max-width:700px){.calm{columns:1}}
+
+/* Community */
+.community{margin-top:80px;background:var(--lacquer);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:56px 0 60px}
+.community .creators{margin:-10px 0 22px;color:var(--soft);font-size:19px;max-width:720px}
+.community .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
+.mail{position:relative}
+.mail button.btn{background:none;cursor:pointer}
+.mail button.btn:hover,.mail button.btn[aria-expanded="true"]{background:#e7c573;color:var(--walnut)}
+.mail-menu{position:absolute;left:0;bottom:calc(100% + 10px);z-index:4;min-width:260px;background:#2c2015;border:1px solid var(--gilt-deep);border-radius:14px;padding:14px;box-shadow:0 14px 34px rgba(0,0,0,.5)}
+.mail-menu p{margin:0 0 10px;color:var(--ivory);font-size:19px}
+.mail-menu button,.mail-menu a{display:block;width:100%;text-align:left;font:600 15px/1 'Cinzel',Georgia,serif;letter-spacing:.03em;color:var(--gilt);background:var(--walnut);border:1px solid var(--rule);border-radius:10px;padding:12px 14px;margin-top:8px;cursor:pointer;text-decoration:none}
+.mail-menu button:hover,.mail-menu a:hover{border-color:var(--gilt)}
+@media (max-width:520px){.mail-menu{left:auto;right:0}}
+footer{background:#120c07}
+footer .legal{margin-top:6px}
+
+/* Language menu */
+header.top nav .langs{position:relative}
+header.top nav .langs summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;padding:6px 0;font:600 15px/1 'Cinzel',Georgia,serif;letter-spacing:.03em;color:#b8a894}
+header.top nav .langs summary::-webkit-details-marker{display:none}
+header.top nav .langs summary:hover,header.top nav .langs[open] summary{color:#d9b25c}
+header.top nav .langs ul{position:absolute;right:0;top:calc(100% + 10px);z-index:10;margin:0;padding:8px;list-style:none;min-width:180px;background:#1f160e;border:1px solid #a8823a;border-radius:12px;box-shadow:0 14px 34px rgba(0,0,0,.5)}
+header.top nav .langs li{margin:0}
+header.top nav .langs ul a{display:block;padding:8px 12px;border-radius:8px;font:500 17px/1.2 Georgia,serif;letter-spacing:0;color:#f1e7d3;text-decoration:none}
+header.top nav .langs ul a:hover{background:#2c2015}
+header.top nav .langs ul a[aria-current]{color:#d9b25c}
+@media (max-width:520px){header.top nav .press{display:none}}
+footer .legal-note{margin-top:6px;font-size:13px;opacity:.75}
+.lang-note{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 14px;padding:10px 16px;background:#2c2015;border-bottom:1px solid #3b2c1c;color:#f1e7d3;font-size:17px;text-align:center}
+.lang-note[hidden]{display:none}
+.lang-note a{color:#d9b25c;font-weight:600}
+.lang-note button{appearance:none;background:none;border:0;color:#c9b9a1;font-size:20px;line-height:1;cursor:pointer;padding:2px 6px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"VideoGame","name":"Court of Squares","url":"https://toasgaard.github.io/court-of-squares/de.html","inLanguage":"de","image":"https://toasgaard.github.io/court-of-squares/og-image.jpg","description":"Ein entspanntes Schachspiel mit acht neuen Figuren, selbst zusammengestellten Armeen, einer Roguelite-Pilgerreise, einem Garten voller Tagesrätsel und Online-Partien.","genre":["Chess","Strategy","Puzzle"],"gamePlatform":["iOS","Android","PC"],"playMode":["SinglePlayer","MultiPlayer"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"sameAs":["https://www.youtube.com/@CourtofSquares","https://www.tiktok.com/@courtofsquares","https://www.instagram.com/courtofsquares/","https://x.com/CourtofSquares","https://www.facebook.com/profile.php?id=61595226989676"]}
+</script>
+</head>
+<body>
+<header class="top"><nav><a class="home" href="de.html">Court of Squares</a><a class="sec" href="#pieces">Figuren</a><a class="sec" href="#pilgrimage">Pilgerreise</a><a class="sec" href="#play">Spielmodi</a><a class="sec" href="#garden">Garten</a><a class="press" href="press.html">Pressekit</a><details class="langs"><summary aria-label="Sprache: Deutsch"><svg viewBox="0 0 24 24" aria-hidden="true" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z"/></svg><span>DE</span></summary><ul><li><a href="index.html" hreflang="en" lang="en">English</a></li><li><a href="es.html" hreflang="es" lang="es">Español</a></li><li><a href="pt.html" hreflang="pt-BR" lang="pt-BR">Português</a></li><li><a href="fr.html" hreflang="fr" lang="fr">Français</a></li><li><a href="de.html" hreflang="de" lang="de" aria-current="true">Deutsch</a></li><li><a href="it.html" hreflang="it" lang="it">Italiano</a></li><li><a href="pl.html" hreflang="pl" lang="pl">Polski</a></li><li><a href="tr.html" hreflang="tr" lang="tr">Türkçe</a></li><li><a href="ru.html" hreflang="ru" lang="ru">Русский</a></li><li><a href="ja.html" hreflang="ja" lang="ja">日本語</a></li><li><a href="ko.html" hreflang="ko" lang="ko">한국어</a></li><li><a href="zh.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li></ul></details><a class="beta" href="beta-de.html">Android-Beta</a></nav></header>
+
+<picture>
+<source media="(max-width:700px)" srcset="hero-mobile.webp">
+<source srcset="hero-1400.webp 1400w, hero-2400.webp 2400w" sizes="100vw">
+<img class="hero-art" src="hero-1400.webp" alt="Eine weiße Dame und ein dunkler Springer stehen sich bei Sonnenuntergang auf einem Marmorbrett auf einer Burgterrasse gegenüber" width="2400" height="1029" fetchpriority="high">
+</picture>
+
+<div class="pitch">
+<h1>Entspanntes Schach mit acht neuen Figuren</h1>
+<p>Alle Regeln, die du kennst – auf kunstvollen Tischen, mit sanfter Musik und Figuren, die über das Brett gleiten. Dazu ein Schütze, der schießt, ein Narr, der in Ketten springt, Armeen, die du selbst zusammenstellst, und ein Garten, der mit dem Tagesrätsel wächst.</p>
+</div>
+
+<div class="stores-block" id="get">
+<p class="free">Kostenlos spielbar, ohne Werbung.</p>
+<div class="platforms">
+<div class="platform">
+<h2>iPhone &amp; iPad</h2>
+<p class="where">App Store</p>
+<!-- When it's live, replace the next line with:
+<a class="btn primary" href="https://apps.apple.com/app/idYOUR_APP_ID" rel="noopener">Download on the App Store</a> -->
+<span class="soon">Demnächst</span>
+</div>
+<div class="platform live">
+<h2>Android</h2>
+<p class="where">Google Play</p>
+<!-- When it's live, replace the next line with:
+<a class="btn primary" href="https://play.google.com/store/apps/details?id=com.courtofsquares.game" rel="noopener">Get it on Google Play</a> -->
+<a class="btn primary" href="beta-de.html">Jetzt der Beta beitreten</a>
+<p class="carry">Dein Fortschritt und deine Freischaltungen gehen in die Vollversion über.</p>
+</div>
+<div class="platform">
+<h2>PC</h2>
+<p class="where">Steam</p>
+<!-- When it's live, replace the next line with:
+<a class="btn primary" href="https://store.steampowered.com/app/YOUR_APP_ID" rel="noopener">Get it on Steam</a> -->
+<span class="soon">Demnächst</span>
+</div>
+</div>
+<p class="also"><a href="#trailer">Trailer ansehen</a> · Ein Konto für alle Plattformen – mach einfach dort weiter, wo du aufgehört hast.</p>
+</div>
+
+
+<div class="follow">
+<p>Neue Figuren, Clips, Devlogs und Neuigkeiten zum Start – auf allen unseren Kanälen.</p>
+<div class="socials" role="navigation" aria-label="Court of Squares folgen">
+<a href="https://discord.gg/DWXYmJSMmR" rel="noopener">Discord</a>
+<a href="https://www.youtube.com/@CourtofSquares" rel="noopener">YouTube</a>
+<a href="https://www.tiktok.com/@courtofsquares" rel="noopener">TikTok</a>
+<a href="https://www.instagram.com/courtofsquares/" rel="noopener">Instagram</a>
+<a href="https://x.com/CourtofSquares" rel="noopener">X</a>
+<a href="https://www.facebook.com/profile.php?id=61595226989676" rel="noopener">Facebook</a>
+</div>
+</div>
+
+<main class="home">
+
+<section id="trailer">
+<h2>Trailer ansehen</h2>
+<div class="video" data-yt="0lBtSt2Io14" data-title="Trailer zu Court of Squares"></div>
+<p class="video-note">Startet stumm, sobald es ins Bild kommt. Tippe auf den Lautsprecher, um den Ton einzuschalten.</p>
+</section>
+
+<section id="pieces">
+<h2>Der Hofstaat</h2>
+<p class="lede">Acht Figuren, die es in keinem anderen Schachspiel gibt – jede mit eigenem Zug und eigener kurzer Lektion im Spiel. Wähle eine aus, um zu sehen, wie sie zieht.</p>
+<div class="court">
+<div class="pedestals" role="tablist" aria-label="Die acht neuen Figuren"></div>
+<div class="portrait" id="portrait" role="tabpanel" aria-live="polite">
+<img id="p-img" src="piece-archer.webp" alt="" width="200" height="330">
+<div><h3 id="p-name">Schütze</h3><p class="worth" id="p-worth"></p><p id="p-rule"></p></div>
+</div>
+<div class="board-wrap">
+<div class="board" id="board" role="img" aria-label=""></div>
+<ul class="legend">
+<li><i class="l-both"></i>Zug oder Schlagen</li>
+<li><i class="l-move"></i>nur Zug</li>
+<li><i class="l-cap"></i>nur Schlagen</li>
+<li><i class="l-shoot"></i>schießt, bleibt stehen</li>
+<li><i class="l-foe"></i>Gegner</li>
+<li><i class="l-jump"></i>landet nach einem Sprung</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="pilgrimage">
+<h2>Die Pilgerreise</h2>
+<p class="lede">Eine Roguelite-Reise ohne Ende. Führe eine kleine Schar Pilger von Schlacht zu Schlacht gegen Armeen, die immer größer und klüger werden. Jede verlorene Figur bleibt verloren – jeder Schlag, den du zulässt, zählt für den Rest des Weges.</p>
+<div class="pilgrim">
+<figure class="camp"><img src="pilgrim-camp.webp" alt="Das Lager der Pilgerreise: deine Schar, die nächste Schlacht gegen die Bauernmauer, Reliquien und der Zehntladen an einem Lagerfeuer in der Dämmerung" width="1600" height="900" loading="lazy" decoding="async"><figcaption>Das Lager zwischen den Schlachten: Schar prüfen, den nächsten Gegner einschätzen, Reliquien wählen und Zehnt im Laden ausgeben.</figcaption></figure>
+<ol class="road" aria-label="Der Weg: Etappen 1 bis 15 und weiter, mit einem Boss auf jeder 5. und einer Reliquie auf jeder 3. Etappe">
+<li class="free"><span>1</span></li>
+<li class="free"><span>2</span></li>
+<li class="free relic"><span>3</span></li>
+<li><span>4</span></li>
+<li class="boss"><span>5</span></li>
+<li class="relic"><span>6</span></li>
+<li><span>7</span></li>
+<li><span>8</span></li>
+<li class="relic"><span>9</span></li>
+<li class="boss"><span>10</span></li>
+<li><span>11</span></li>
+<li class="relic"><span>12</span></li>
+<li><span>13</span></li>
+<li><span>14</span></li>
+<li class="boss relic"><span>15</span></li>
+<li class="more"><span aria-hidden="true">&#8734;</span></li>
+</ol>
+<ul class="road-key">
+<li><i class="k-free"></i>die ersten drei Etappen kostenlos</li>
+<li><i class="k-relic"></i>Reliquie wählen</li>
+<li><i class="k-boss"></i>Boss</li>
+<li>und weiter, solange deine Armee durchhält</li>
+</ul>
+
+<ol class="loop">
+<li><h3>Kämpfen</h3><p>Besiege die Armee der Etappe in höchstens 50 Zügen. Remis gibt es nicht: Gehen die Züge aus, gewinnt die Seite mit mehr Punkten auf dem Brett, bei Gleichstand der Gegner.</p></li>
+<li><h3>Lager aufschlagen</h3><p>Siege bringen Zehnt. Gib ihn für Rekruten aus (fünf im Angebot, einer zum halben Preis), bezahle einen Späher, um genau zu sehen, wo der nächste Gegner steht, und stelle deine Armee um, bevor du weiterziehst.</p></li>
+<li><h3>Reliquie wählen</h3><p>Auf jeder dritten Etappe wählst du eine von drei Reliquien. Jede biegt die Regeln für den Rest der Reise zu deinen Gunsten.</p></li>
+</ol>
+
+<h3 class="sub">Acht Reliquien</h3>
+<p class="sub-lede">Wähle mit Bedacht: Ihre Wirkungen addieren sich, und keine zwei Reisen bieten sie in derselben Reihenfolge an.</p>
+<div class="relics">
+<div><b>Stiefel des Langen Marsches</b><span>15 Züge mehr in jeder Schlacht.</span></div>
+<div><b>Beutel des Zehnteintreibers</b><span>50 % mehr Zehnt aus jedem Sieg.</span></div>
+<div><b>Tasche des Feldschers</b><span>Nach jedem Sieg kehrt eine gefallene Figur in deine Armee zurück.</span></div>
+<div><b>Siegel des Quartiermeisters</b><span>Rekruten kosten 25 % weniger.</span></div>
+<div><b>Banner der Dritten Reihe</b><span>Deine Armee darf drei Reihen belegen.</span></div>
+<div><b>Zweiter Atem</b><span>Deine erste verlorene Schlacht wird wiederholt, statt die Reise zu beenden.</span></div>
+<div><b>Standarte des Hügels</b><span>„König des Hügels“ gilt: Ein König in der Brettmitte gewinnt.</span></div>
+<div><b>Gnadenbrief</b><span>Gehen die Züge bei Punktgleichstand aus, gehört die Schlacht dir.</span></div>
+</div>
+
+<div class="journey-facts">
+<div><h3>Wem du begegnest</h3><p>Thematischen Kompanien wie den Bogenschützen des Tals, der Narrentruppe und der Klosterwache. Auf jeder fünften Etappe bringt ein Boss-Hof wie der leere Hof oder die Garde des Aschenkönigs eine größere Armee mit.</p></div>
+<div><h3>Auf deine Art</h3><p>Starte mit König, Läufer, Springer, Turm und vier Bauern. Spiele die Aufgebot-Variante mit allen Figuren des Spiels oder die klassische mit den üblichen sechs – auf Leicht, Normal oder Schwer.</p></div>
+<div><h3>Die Rangliste erklimmen</h3><p>Jede Variante und jeder Schwierigkeitsgrad hat eine eigene Rangliste, sortiert nach geschafften Etappen. Gewertete Reisen prüft der Server Schlacht für Schlacht – jedes Ergebnis ist echt.</p></div>
+</div>
+</div>
+</section>
+
+<section id="play">
+<h2>Spielmodi</h2>
+<p class="lede">Spiele klassisches Schach oder hol die neuen Figuren dazu. Die Uhr ist aus, solange du sie nicht willst, und jede Partie kann Sonderregeln wie „König des Hügels“ bekommen.</p>
+<div class="modes">
+<div class="group"><h3>In deinem Tempo</h3>
+<h3>Klassisch</h3><p>Schach, wie du es kennst – gegen den Computer oder mit jemandem am selben Gerät.</p>
+<h3>Aufgebot</h3><p>Stelle mit einem Punktebudget deine eigene Armee zusammen und führe sie in die Schlacht.</p>
+<h3>Draft</h3><p>Du und dein Gegner wählt abwechselnd Figuren aus einem gemeinsamen Pool.</p>
+<h3>Bauernsturm</h3><p>Ein König und eine Mauer aus Bauern für jede Seite. Kurz, scharf und überraschend tiefgründig.</p>
+</div>
+<div class="group"><h3>Herausforderungen</h3>
+<h3><a href="#pilgrimage" style="color:inherit">Pilgerreise</a></h3><p>Eine endlose Roguelite-Reise, Etappe für Etappe, mit Reliquien und einer Armee, die du in jedem Lager neu aufstellst.</p>
+<h3>Tagesrätsel</h3><p>Jeden Tag ein neues Rätsel. Jede Lösung lässt einen Garten wachsen, den du selbst gestaltest.</p>
+<h3>Wochenherausforderung</h3><p>Alle treten gegen dieselbe Armee an. Gewinne mit den wenigsten Zügen und führe die Wochenrangliste an.</p>
+<h3>Lektionen</h3><p>Kurze Lektionen zu jeder Figur, zu Matt, Remis, Rochade und mehr.</p>
+</div>
+<div class="group"><h3>Online</h3>
+<h3>Gewertet</h3><p>Steige vom Bürger zum Herrscher auf. Jede gewertete Partie prüft der Server, damit die Rangliste fair bleibt.</p>
+<h3>Freunde</h3><p>Spiele gegen Freunde, schicke Emotes und behalte eure direkte Bilanz im Blick.</p>
+<h3>Gärten besuchen</h3><p>Schau dich in den Gärten anderer um und hinterlasse eine Blume.</p>
+<h3>Ein Konto überall</h3><p>Handy, Tablet und PC teilen denselben Fortschritt, sobald du angemeldet bist.</p>
+</div>
+</div>
+</section>
+
+<section id="garden">
+<h2>Ein Garten im Lauf der Jahreszeiten</h2>
+<p class="lede">Jedes gelöste Tagesrätsel lässt deinen Garten wachsen. Lege Wege, Beete und Dekorationen an und sieh zu, wie er sich übers Jahr verändert – mit saisonalen Tischen und Dekorationen, die du unterwegs verdienst.</p>
+<div class="garden-view" aria-live="polite">
+<img src="garden-spring.webp" alt="Derselbe Garten im Frühling, umrahmt von Tulpen, Narzissen und einem Vogelnest" width="1400" height="787" loading="lazy" decoding="async" data-season="spring" class="on">
+<img src="garden-summer.webp" alt="Derselbe Garten im Sommer, umrahmt von Sonnenblumen, Rosen und Lavendel" width="1400" height="787" loading="lazy" decoding="async" data-season="summer">
+<img src="garden-autumn.webp" alt="Derselbe Garten im Herbst, umrahmt von Kürbissen, Ahornblättern und Eicheln" width="1400" height="787" loading="lazy" decoding="async" data-season="autumn">
+<img src="garden-winter.webp" alt="Derselbe Garten im Winter, umrahmt von Schnee, Stechpalme und Tannenzapfen" width="1400" height="787" loading="lazy" decoding="async" data-season="winter">
+</div>
+<ol class="seasons" role="tablist" aria-label="Jahreszeiten">
+<li class="spring"><button type="button" role="tab" aria-selected="true" data-season="spring"><b>Frühling</b><span>Blüten, frische Triebe und zartes Morgenlicht.</span></button></li>
+<li class="summer"><button type="button" role="tab" aria-selected="false" data-season="summer"><b>Sommer</b><span>Volle Beete und lange goldene Abende.</span></button></li>
+<li class="autumn"><button type="button" role="tab" aria-selected="false" data-season="autumn"><b>Herbst</b><span>Fallendes Laub, Laternen und ein Halloween-Event.</span></button></li>
+<li class="winter"><button type="button" role="tab" aria-selected="false" data-season="winter"><b>Winter</b><span>Raureif, stiller Schnee und das Winterfest.</span></button></li>
+</ol>
+<p class="garden-note">Der Garten eines Spielers im Lauf eines Jahres. Beete, Statuen und Trophäen bleiben, wo du sie hingestellt hast, während sich die Jahreszeit um sie herum ändert.</p>
+</section>
+
+<section id="sets">
+<h2>Ganz nach deinem Geschmack</h2>
+<p class="lede">Wähle Tisch, Hintergrund, Musik und Figurenset. Verdiene Wappen, Banner und saisonale Tische und vergolde deine Lieblingsfiguren von Bronze bis Platin, während du sie meisterst.</p>
+<div class="sets">
+<figure><img src="set-basic.webp" alt="Das Basis-Figurenset: klassischer König, Dame, Läufer, Springer, Turm und Bauer in Elfenbein und Gold" loading="lazy" decoding="async" width="1600" height="457"><figcaption><b>Basis</b><span>Die vertrauten Formen für klassisches Spiel.</span></figcaption></figure>
+<figure><img src="set-court.webp" alt="Das Hof-Figurenset in Blau und Gold" loading="lazy" decoding="async" width="1600" height="457"><figcaption><b>Hof</b><span>Eines von vielen Sets mit eigenem Charakter.</span></figcaption></figure>
+<figure><img src="set-cute.webp" alt="Die acht neuen Figuren im Set „Niedlich“ in Rosa und Gold: Narr, Pilger, Herold, Äbtissin, Schütze, Nachtreiter, Lanzenreiter und Falkner" loading="lazy" decoding="async" width="1600" height="457"><figcaption><b>Niedlich</b><span>Jedes Set hat seine eigene Version aller acht neuen Figuren.</span></figcaption></figure>
+<figure><img src="set-halloween.webp" alt="Das Halloween-Figurenset" loading="lazy" decoding="async" width="1600" height="457"><figcaption><b>Halloween</b><span>Saisonale Sets kommen mit den Events des Jahres.</span></figcaption></figure>
+</div>
+<p class="sets-note">Nur ein paar Beispiele aus der Sammlung. Im Spiel warten weitere Sets, Tische und Hintergründe.</p>
+</section>
+
+<section id="keep">
+<h2>Speichern, ansehen, teilen</h2>
+<p class="lede">Die kleinen Dinge, die ein Spiel zu deinem machen.</p>
+<div class="keep">
+<div><h3>Deine Armeen</h3><p>Stelle Armeen fürs Aufgebot zusammen und speichere deine Favoriten. Teile eine als Code, den ein Freund direkt einfügen kann.</p></div>
+<div><h3>Replays</h3><p>Sieh dir deine letzten Partien noch einmal an. Behalte die letzten 5, 10 oder 25.</p></div>
+<div><h3>Später weiterspielen</h3><p>Speichere eine Partie gegen den Computer oder am selben Gerät und mach jederzeit weiter. Online kannst du anbieten, eine Partie zu speichern – dann habt ihr beide 30 Tage, um sie zu beenden.</p></div>
+<div><h3>Den Moment teilen</h3><p>Teile nach einer Partie ein Bild vom Ergebnis oder auf dem Handy einen kurzen Videoclip der Partie.</p></div>
+<div><h3>Zuschauermodus</h3><p>Lass zwei Computer gegeneinander spielen, Partie um Partie, mit Musik. Gute Gesellschaft für einen ruhigen Abend.</p></div>
+</div>
+</section>
+
+<section id="calm">
+<h2>Durch und durch entspannt</h2>
+<ul class="calm">
+<li><b>Niemals Werbung.</b> Das Spiel ist kostenlos. Der optionale Court Pass ist ein einmaliger Kauf, der die ganze Pilgerreise, das Dekorieren des Gartens und alle verdienten kosmetischen Objekte freischaltet.</li>
+<li><b>Keine Uhr, solange du keine willst,</b> oder alles von 1-Minuten-Bullet bis 30-Minuten-Klassisch.</li>
+<li><b>Halte eine Figur gedrückt,</b> um genau zu sehen, wie sie zieht.</li>
+<li><b>Nah- oder Draufsicht aufs Brett,</b> mit Koordinaten, Zughinweisen und Zugspuren nach Wunsch.</li>
+<li><b>Angenehm auf jedem Gerät:</b> einstellbare Textgröße, Zoomen mit zwei Fingern und schlankere Effekte für ältere Handys und längere Akkulaufzeit.</li>
+<li><b>Zwölf Sprachen, auch Deutsch:</b> Englisch, Spanisch, Portugiesisch, Französisch, Italienisch, Polnisch, Türkisch, Russisch, Japanisch, Koreanisch und Chinesisch.</li>
+</ul>
+</section>
+</main>
+
+<div class="community" id="community">
+<div class="wrap">
+<h2>Werde Teil des Hofes</h2>
+<p class="lede">Verfolge neue Figuren, saisonale Events und Neuigkeiten zum Start – oder hilf beim Testen, bevor das Spiel erscheint. Alles, was du in der Beta verdienst, geht in die Vollversion über.</p>
+<p class="creators">Du machst Videos über Court of Squares? Schick sie uns – vielleicht stellen wir sie vor. Logos, Artwork und Screenshots findest du im <a href="press.html">Pressekit</a> (auf Englisch).</p>
+<div class="row">
+<a class="btn primary" href="beta-de.html">Der Android-Beta beitreten</a>
+<a class="btn" href="https://discord.gg/DWXYmJSMmR" rel="noopener">Zum Discord</a>
+<div class="mail">
+<button class="btn" type="button" id="mail-btn" aria-expanded="false" aria-controls="mail-menu">Schreib uns</button>
+<div class="mail-menu" id="mail-menu" hidden>
+<p>courtofsquares@gmail.com</p>
+<button type="button" id="mail-copy">Adresse kopieren</button>
+<a href="mailto:courtofsquares@gmail.com">Mail-App öffnen</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<footer><div class="social"><a href="https://discord.gg/DWXYmJSMmR" rel="noopener">Discord</a> · <a href="https://www.youtube.com/@CourtofSquares" rel="noopener">YouTube</a> · <a href="https://www.tiktok.com/@courtofsquares" rel="noopener">TikTok</a> · <a href="https://www.instagram.com/courtofsquares/" rel="noopener">Instagram</a> · <a href="https://x.com/CourtofSquares" rel="noopener">X</a> · <a href="https://www.facebook.com/profile.php?id=61595226989676" rel="noopener">Facebook</a></div><div>Court of Squares · <a href="mailto:courtofsquares@gmail.com">courtofsquares@gmail.com</a></div><div class="legal"><a href="press.html">Pressekit</a> · <a href="beta-de.html">Android-Beta</a> · <a href="privacy.html">Datenschutz</a> · <a href="terms.html">Nutzungsbedingungen</a> · <a href="delete-account.html">Konto löschen</a> · <a href="licenses.html">Lizenzen</a></div><div class="legal-note">Rechtstexte und Pressematerial gibt es auf Englisch.</div></footer>
+
+<script>
+// The eight new pieces and how they move. 9 x 9 board, the piece in the middle, forward is up.
+const C = 4;
+const P = [
+  {id:'archer', name:'Schütze', worth:3, rule:"Zieht ein Feld in jede Richtung, schlägt aber nie durch Ziehen. Er schießt auf einen Gegner genau zwei Felder entfernt in gerader Linie, wenn das Feld dazwischen frei ist, und bleibt dabei stehen."},
+  {id:'jester', name:'Narr', worth:1, rule:"Zieht ein Feld diagonal. Er schlägt, indem er diagonal über einen benachbarten Gegner auf das freie Feld dahinter springt, und kann im selben Zug weiterspringen – mit jedem Sprung fällt eine Figur."},
+  {id:'nightrider', name:'Nachtreiter', worth:4, rule:"Springt im L wie ein Springer und kann in dieselbe Richtung weiterspringen, solange jedes Landefeld frei ist."},
+  {id:'lancer', name:'Lanzenreiter', worth:3, rule:"Stürmt beliebig weit geradeaus nach vorn oder zieht ein Feld zur Seite oder zurück. Er schlägt außerdem ein Feld diagonal nach vorn."},
+  {id:'herald', name:'Herold', worth:3, rule:"Springt drei Felder in eine Richtung und eins zur Seite – ein langes L. Er überspringt Figuren und bleibt immer auf Feldern einer Farbe."},
+  {id:'falconer', name:'Falkner', worth:3, rule:"Springt drei Felder in eine Richtung und zwei zur Seite und überspringt dabei Figuren. Er kann auch ein Feld in jede Richtung ziehen."},
+  {id:'abbess', name:'Äbtissin', worth:4, rule:"Zieht bis zu zwei Felder gerade nach oben, unten, links oder rechts (sie kann nicht springen) oder ein Feld diagonal."},
+  {id:'pilgrim', name:'Pilger', worth:1, rule:"Zieht ein Feld diagonal nach vorn. Er schlägt ein Feld geradeaus oder zur Seite und wird auf der letzten Reihe umgewandelt."}
+];
+const ALL8 = [[1,0],[-1,0],[0,1],[0,-1],[1,1],[1,-1],[-1,1],[-1,-1]];
+const DIAG = [[1,1],[1,-1],[-1,1],[-1,-1]];
+const ORTH = [[1,0],[-1,0],[0,1],[0,-1]];
+function leaps(a,b){ const s=new Set(); for (const [x,y] of [[a,b],[b,a]]) for (const sx of [1,-1]) for (const sy of [1,-1]) s.add((x*sx)+','+(y*sy)); return [...s].map(t=>t.split(',').map(Number)); }
+const inB = (f,r) => f>=0 && f<9 && r>=0 && r<9;
+
+// Each mark: square plus kind (move | cap | both | shoot | jump | foe). Later marks on a square win.
+function marks(id){
+  const m = new Map(); const add = (dx,dy,kind) => { const f=C+dx, r=C+dy; if (inB(f,r)) m.set(r*9+f,kind); };
+  switch (id){
+    case 'archer': ALL8.forEach(([x,y])=>{ add(x,y,'move'); add(2*x,2*y,'shoot'); }); break;
+    case 'jester': DIAG.forEach(([x,y])=>add(x,y,'move')); add(1,1,'foe'); add(2,2,'jump'); add(3,3,'foe'); add(4,4,'jump'); break;
+    case 'nightrider': leaps(1,2).forEach(([x,y])=>{ for (let k=1;k<9;k++) add(x*k,y*k,'both'); }); break;
+    case 'lancer': for (let k=1;k<9;k++) add(0,k,'both'); [[1,0],[-1,0],[0,-1]].forEach(([x,y])=>add(x,y,'both')); add(1,1,'cap'); add(-1,1,'cap'); break;
+    case 'herald': leaps(3,1).forEach(([x,y])=>add(x,y,'both')); break;
+    case 'falconer': leaps(3,2).forEach(([x,y])=>add(x,y,'both')); ALL8.forEach(([x,y])=>add(x,y,'both')); break;
+    case 'abbess': ORTH.forEach(([x,y])=>{ add(x,y,'both'); add(2*x,2*y,'both'); }); DIAG.forEach(([x,y])=>add(x,y,'both')); break;
+    case 'pilgrim': add(1,1,'move'); add(-1,1,'move'); add(0,1,'cap'); add(1,0,'cap'); add(-1,0,'cap'); break;
+  }
+  return m;
+}
+
+const board = document.getElementById('board');
+const squares = [];
+for (let r=8; r>=0; r--) for (let f=0; f<9; f++){
+  const d = document.createElement('div');
+  d.className = 'sq' + ((f+r)%2===0 ? ' dk' : '');
+  board.appendChild(d); squares[r*9+f] = d;
+}
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const row = document.querySelector('.pedestals');
+
+function show(i){
+  const p = P[i];
+  [...row.children].forEach((b,j)=>{ b.setAttribute('aria-selected', String(j===i)); b.tabIndex = j===i ? 0 : -1; });
+  const img = document.getElementById('p-img');
+  img.src = `piece-${p.id}.webp`; img.alt = `The ${p.name}`;
+  document.getElementById('p-name').textContent = p.name;
+  document.getElementById('p-worth').textContent = (p.worth===1 ? `Wert beim Armeebau: ${p.worth} Punkt` : `Wert beim Armeebau: ${p.worth} Punkte`);
+  document.getElementById('p-rule').textContent = p.rule;
+  squares.forEach(s=>{ s.classList.remove('move','cap','both','shoot','jump'); s.innerHTML=''; s.style.removeProperty('--d'); });
+  squares[C*9+C].innerHTML = `<span class="glyph" aria-hidden="true">${p.name[0]}</span>`;
+  const list = marks(p.id);
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    for (const [idx,kind] of list){
+      const s = squares[idx];
+      if (kind==='foe'){ s.innerHTML = '<span class="foe"></span>'; continue; }
+      if (!reduce){ const f=idx%9, r=(idx-f)/9; s.style.setProperty('--d', (Math.hypot(f-C,r-C)*0.05).toFixed(2)+'s'); }
+      s.classList.add(kind);
+    }
+  }));
+  board.setAttribute('aria-label', `${p.name} – Zugregel: ${p.rule}`);
+}
+
+P.forEach((p,i)=>{
+  const b = document.createElement('button');
+  b.type = 'button'; b.setAttribute('role','tab'); b.setAttribute('aria-controls','portrait');
+  b.innerHTML = `<img src="piece-${p.id}.webp" alt="" height="92"><span>${p.name}</span>`;
+  b.addEventListener('click', ()=>show(i));
+  b.addEventListener('keydown', e=>{
+    const n = e.key==='ArrowRight' ? (i+1)%P.length : e.key==='ArrowLeft' ? (i+P.length-1)%P.length : -1;
+    if (n>=0){ e.preventDefault(); show(n); row.children[n].focus(); }
+  });
+  row.appendChild(b);
+});
+show(0);
+
+// Email us: copy the address or open the mail app.
+(() => {
+  const btn = document.getElementById('mail-btn'), menu = document.getElementById('mail-menu'), copy = document.getElementById('mail-copy');
+  const address = 'courtofsquares@gmail.com';
+  const close = () => { menu.hidden = true; btn.setAttribute('aria-expanded','false'); };
+  btn.addEventListener('click', e => { e.stopPropagation(); const open = menu.hidden; menu.hidden = !open; btn.setAttribute('aria-expanded', String(open)); if (open) copy.focus(); });
+  document.addEventListener('click', e => { if (!menu.contains(e.target)) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !menu.hidden){ close(); btn.focus(); } });
+  copy.addEventListener('click', async () => {
+    let ok = false;
+    try { await navigator.clipboard.writeText(address); ok = true; }
+    catch (_) {
+      const t = document.createElement('textarea'); t.value = address; t.setAttribute('readonly',''); t.style.position='fixed'; t.style.opacity='0';
+      document.body.appendChild(t); t.select(); try { ok = document.execCommand('copy'); } catch (_) {} t.remove();
+    }
+    copy.textContent = ok ? "Kopiert" : "Markiere die Adresse oben, um sie zu kopieren";
+    setTimeout(() => { copy.textContent = "Adresse kopieren"; }, 2200);
+  });
+})();
+
+// Videos: each <div class="video" data-yt="VIDEO_ID"> loads when it nears the screen, plays muted while at least
+// half of it is in view and pauses when scrolled away. With reduced motion set, it waits for a tap instead.
+(() => {
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const send = (frame, func) => { try { frame.contentWindow.postMessage(JSON.stringify({event:'command', func, args:[]}), '*'); } catch (_) {} };
+  const load = (box, play) => {
+    if (box.querySelector('iframe')) return box.querySelector('iframe');
+    const id = box.dataset.yt;
+    const f = document.createElement('iframe');
+    f.src = `https://www.youtube.com/embed/${id}?enablejsapi=1&mute=1&playsinline=1&rel=0&modestbranding=1${play ? '&autoplay=1' : ''}&origin=${encodeURIComponent(location.origin)}`;
+    f.title = box.dataset.title || "Video";
+    f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    f.referrerPolicy = 'strict-origin-when-cross-origin';
+    f.allowFullscreen = true;
+    f.addEventListener('load', () => {
+      f.dataset.ready = '1';
+      send(f, 'mute');
+      // The player takes a moment to start listening, so ask a few times while it's in view.
+      [300, 1000, 2000].forEach(ms => setTimeout(() => { if (box.dataset.visible === '1' && !reduce) send(f, 'playVideo'); }, ms));
+    });
+    box.querySelector('.start')?.remove();
+    box.appendChild(f);
+    return f;
+  };
+  document.querySelectorAll('.video[data-yt]').forEach(box => {
+    box.style.backgroundImage = `url(https://i.ytimg.com/vi/${box.dataset.yt}/hqdefault.jpg)`;
+    const start = document.createElement('button');
+    start.type = 'button'; start.className = 'start'; start.setAttribute('aria-label', "Abspielen: " + (box.dataset.title || "Video"));
+    start.innerHTML = '<span aria-hidden="true">&#9654;</span>';
+    start.addEventListener('click', () => { const f = load(box, true); if (f.dataset.ready) send(f, 'playVideo'); });
+    box.appendChild(start);
+    if (reduce || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(entries => entries.forEach(e => {
+      const visible = e.intersectionRatio >= 0.5;
+      box.dataset.visible = visible ? '1' : '0';
+      if (e.isIntersecting && !box.querySelector('iframe')) load(box, false);   // preload as it nears
+      const f = box.querySelector('iframe');
+      if (f && f.dataset.ready) send(f, visible ? 'playVideo' : 'pauseVideo');
+    }), { threshold: [0, 0.5], rootMargin: '200px 0px' }).observe(box);
+  });
+})();
+
+// Garden seasons: tap a season, or let it turn on its own while in view (stops once you choose one).
+(() => {
+  const view = document.querySelector('.garden-view'); if (!view) return;
+  const imgs = [...view.querySelectorAll('img')], tabs = [...document.querySelectorAll('.seasons button')];
+  const order = tabs.map(t => t.dataset.season);
+  let current = 0, timer = null, chosen = false;
+  const show = i => {
+    current = i;
+    imgs.forEach(im => im.classList.toggle('on', im.dataset.season === order[i]));
+    tabs.forEach((t, j) => { t.setAttribute('aria-selected', String(j === i)); t.tabIndex = j === i ? 0 : -1; });
+  };
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => { chosen = true; clearInterval(timer); show(i); });
+    t.addEventListener('keydown', e => {
+      const n = e.key === 'ArrowRight' ? (i + 1) % tabs.length : e.key === 'ArrowLeft' ? (i + tabs.length - 1) % tabs.length : -1;
+      if (n >= 0) { e.preventDefault(); chosen = true; clearInterval(timer); show(n); tabs[n].focus(); }
+    });
+  });
+  imgs.forEach(im => { im.loading = 'eager'; });   // so the next season is ready to fade in
+  show(0);
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(([e]) => {
+    clearInterval(timer);
+    if (e.isIntersecting && !chosen) timer = setInterval(() => show((current + 1) % order.length), 3500);
+  }, { threshold: 0.6 }).observe(view);
+})();
+</script>
+
+<script>
+// Language menu: close when clicking elsewhere or pressing Escape.
+(() => {
+  const d = document.querySelector('header .langs'); if (!d) return;
+  document.addEventListener('click', e => { if (d.open && !d.contains(e.target)) d.open = false; });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && d.open) { d.open = false; d.querySelector('summary').focus(); } });
+})();
+</script>
+</body>
+</html>

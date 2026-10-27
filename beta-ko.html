@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Android 베타 · Court of Squares</title>
+<meta name="description" content="Court of Squares Android 베타에 참여하세요. 특별한 기물 8종과 함께하는 편안한 체스. 세 단계면 Google Play에서 테스트를 시작할 수 있습니다.">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="Court of Squares · Android 베타">
+<meta property="og:description" content="특별한 기물 8종과 함께하는 편안한 체스. Google Play에서 Android 베타에 참여하세요.">
+<meta property="og:image" content="https://toasgaard.github.io/court-of-squares/og-image.jpg">
+<link rel="alternate" hreflang="en" href="https://toasgaard.github.io/court-of-squares/beta.html">
+<link rel="alternate" hreflang="es" href="https://toasgaard.github.io/court-of-squares/beta-es.html">
+<link rel="alternate" hreflang="pt-BR" href="https://toasgaard.github.io/court-of-squares/beta-pt.html">
+<link rel="alternate" hreflang="fr" href="https://toasgaard.github.io/court-of-squares/beta-fr.html">
+<link rel="alternate" hreflang="de" href="https://toasgaard.github.io/court-of-squares/beta-de.html">
+<link rel="alternate" hreflang="it" href="https://toasgaard.github.io/court-of-squares/beta-it.html">
+<link rel="alternate" hreflang="pl" href="https://toasgaard.github.io/court-of-squares/beta-pl.html">
+<link rel="alternate" hreflang="tr" href="https://toasgaard.github.io/court-of-squares/beta-tr.html">
+<link rel="alternate" hreflang="ru" href="https://toasgaard.github.io/court-of-squares/beta-ru.html">
+<link rel="alternate" hreflang="ja" href="https://toasgaard.github.io/court-of-squares/beta-ja.html">
+<link rel="alternate" hreflang="ko" href="https://toasgaard.github.io/court-of-squares/beta-ko.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://toasgaard.github.io/court-of-squares/beta-zh.html">
+<link rel="alternate" hreflang="x-default" href="https://toasgaard.github.io/court-of-squares/beta.html">
+<link rel="icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif+KR:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.steps{counter-reset:step;list-style:none;padding:0;margin:20px 0}
+.steps>li{counter-increment:step;position:relative;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 20px 18px 64px;margin:14px 0}
+.steps>li::before{content:counter(step);position:absolute;left:18px;top:16px;width:32px;height:32px;border-radius:50%;background:var(--gold);color:#1a1209;font:700 17px/32px 'Cinzel','Noto Serif KR',Georgia,serif;text-align:center}
+.steps h2{border:0;margin:0 0 4px;padding:0;font-size:19px}
+.steps p{margin:4px 0 12px;color:var(--muted)}
+.steps .button{margin-top:2px}
+.note{color:var(--muted);font-size:15px}
+
+/* Language menu */
+header.top nav .langs{position:relative}
+header.top nav .langs summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;padding:6px 0;font:600 15px/1 'Cinzel',Georgia,serif;letter-spacing:.03em;color:#b8a894}
+header.top nav .langs summary::-webkit-details-marker{display:none}
+header.top nav .langs summary:hover,header.top nav .langs[open] summary{color:#d9b25c}
+header.top nav .langs ul{position:absolute;right:0;top:calc(100% + 10px);z-index:10;margin:0;padding:8px;list-style:none;min-width:180px;background:#1f160e;border:1px solid #a8823a;border-radius:12px;box-shadow:0 14px 34px rgba(0,0,0,.5)}
+header.top nav .langs li{margin:0}
+header.top nav .langs ul a{display:block;padding:8px 12px;border-radius:8px;font:500 17px/1.2 Georgia,serif;letter-spacing:0;color:#f1e7d3;text-decoration:none}
+header.top nav .langs ul a:hover{background:#2c2015}
+header.top nav .langs ul a[aria-current]{color:#d9b25c}
+@media (max-width:520px){header.top nav .press{display:none}}
+footer .legal-note{margin-top:6px;font-size:13px;opacity:.75}
+.lang-note{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 14px;padding:10px 16px;background:#2c2015;border-bottom:1px solid #3b2c1c;color:#f1e7d3;font-size:17px;text-align:center}
+.lang-note[hidden]{display:none}
+.lang-note a{color:#d9b25c;font-weight:600}
+.lang-note button{appearance:none;background:none;border:0;color:#c9b9a1;font-size:20px;line-height:1;cursor:pointer;padding:2px 6px}
+header.top nav a,h1,h2,h3,.button,.btn{font-family:'Cinzel','Noto Serif KR',Georgia,serif}
+body{font-family:Georgia,'Noto Serif KR',serif}
+body{line-height:1.75}
+h1,h2,h3{word-break:keep-all;overflow-wrap:anywhere}
+</style>
+</head>
+<body>
+<header class="top"><nav><a class="home" href="ko.html">Court of Squares</a><a class="sec" href="ko.html#pieces">기물</a><a class="sec" href="ko.html#pilgrimage">순례</a><a class="sec" href="ko.html#play">플레이 방식</a><a class="sec" href="ko.html#garden">정원</a><a class="press" href="press.html">프레스 키트</a><details class="langs"><summary aria-label="언어: 한국어"><svg viewBox="0 0 24 24" aria-hidden="true" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z"/></svg><span>KO</span></summary><ul><li><a href="beta.html" hreflang="en" lang="en">English</a></li><li><a href="beta-es.html" hreflang="es" lang="es">Español</a></li><li><a href="beta-pt.html" hreflang="pt-BR" lang="pt-BR">Português</a></li><li><a href="beta-fr.html" hreflang="fr" lang="fr">Français</a></li><li><a href="beta-de.html" hreflang="de" lang="de">Deutsch</a></li><li><a href="beta-it.html" hreflang="it" lang="it">Italiano</a></li><li><a href="beta-pl.html" hreflang="pl" lang="pl">Polski</a></li><li><a href="beta-tr.html" hreflang="tr" lang="tr">Türkçe</a></li><li><a href="beta-ru.html" hreflang="ru" lang="ru">Русский</a></li><li><a href="beta-ja.html" hreflang="ja" lang="ja">日本語</a></li><li><a href="beta-ko.html" hreflang="ko" lang="ko" aria-current="true">한국어</a></li><li><a href="beta-zh.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li></ul></details><a class="beta" href="beta-ko.html" aria-current="page">Android 베타</a></nav></header>
+<main>
+<div class="hero">
+<img src="logo.png" alt="Court of Squares" width="520">
+<p>특별한 기물 8종과 함께하는 편안한 체스. 출시 전 Android 테스트를 도와주세요.</p>
+</div>
+
+<h1>Android 베타에 참여하세요</h1>
+<p>무료이고 1분 정도면 됩니다. 세 단계 모두에서 Android 휴대폰의 Play 스토어와 <b>같은 Google 계정</b>을 사용하세요.</p>
+
+<ol class="steps">
+<li>
+<h2>테스터 그룹에 가입하세요</h2>
+<p>Google 계정으로 로그인하고 <b>그룹 가입</b>(Join group)을 클릭하세요. 그룹에서 이메일이 오지는 않습니다.</p>
+<!-- The tester group: cos-android-testers@googlegroups.com -->
+<a class="button" href="https://groups.google.com/g/cos-android-testers" rel="noopener">테스터 그룹 가입하기</a>
+</li>
+<li>
+<h2>테스터가 되세요</h2>
+<p>이 링크를 열고 <b>테스터 되기</b>(Become a tester)를 누르세요. 앱을 아직 사용할 수 없다고 나오면 1단계 후 몇 분 기다렸다가 다시 열어 주세요.</p>
+<a class="button" href="https://play.google.com/apps/testing/com.courtofsquares.game" rel="noopener">테스터 되기</a>
+</li>
+<li>
+<h2>Google Play에서 다운로드하세요</h2>
+<p>Android 휴대폰이나 태블릿에서 Google Play로 Court of Squares를 설치하세요.</p>
+<a class="button" href="https://play.google.com/store/apps/details?id=com.courtofsquares.game" rel="noopener">Google Play에서 열기</a>
+</li>
+</ol>
+
+<h2>이렇게 도와주세요</h2>
+<ul>
+<li><b>최소 2주 동안 베타에 남아 주세요.</b> Google은 테스터가 14일 동안 베타에 참여해야 새 게임 출시를 허용합니다. 남아 주시는 것이 정말 큰 도움이 됩니다.</li>
+<li><b>몇 번 플레이해 보세요:</b> 컴퓨터와의 대국, 데일리 퍼즐과 정원, 가능하다면 온라인 대국도요.</li>
+<li><b>헷갈리거나 느리거나 고장 난 부분을 알려 주세요.</b> Google Play 게임 페이지에 비공개 의견을 남기거나, <a href="https://discord.gg/DWXYmJSMmR" rel="noopener">Discord</a>에 글을 올리거나, <a href="mailto:courtofsquares@gmail.com?subject=Android%20beta%20feedback">courtofsquares@gmail.com</a>으로 이메일을 보내 주세요. 한국어로 쓰셔도 됩니다.</li>
+</ul>
+
+<h2>알아 두면 좋은 점</h2>
+<ul>
+<li><b>진행 상황과 해금한 보상은 정식 버전으로 이어집니다.</b> 베타는 Google Play의 같은 게임이라 출시 때는 업데이트만 받으면 됩니다. 휴대폰을 바꿀 때를 대비해 설정 › 계정에서 계정을 연결해 두세요.</li>
+<li>게임은 무료이며 광고가 없습니다. 선택 사항인 Court Pass는 베타에서도 실제 일회성 구매이며, 출시 후에도 계속 유지됩니다.</li>
+<li>베타는 ‘테스터 되기’ 페이지에서 언제든 나갈 수 있습니다.</li>
+</ul>
+<p class="note">가입이 안 되나요? 이 페이지와 Play 스토어에서 같은 Google 계정으로 로그인했는지 확인하세요. 그래도 Play 스토어에 게임이 보이지 않으면 이메일을 보내 주세요. 해결해 드릴게요.</p>
+</main>
+<footer><div class="social"><a href="https://discord.gg/DWXYmJSMmR" rel="noopener">Discord</a> · <a href="https://www.youtube.com/@CourtofSquares" rel="noopener">YouTube</a> · <a href="https://www.tiktok.com/@courtofsquares" rel="noopener">TikTok</a> · <a href="https://www.instagram.com/courtofsquares/" rel="noopener">Instagram</a> · <a href="https://x.com/CourtofSquares" rel="noopener">X</a> · <a href="https://www.facebook.com/profile.php?id=61595226989676" rel="noopener">Facebook</a></div><div>Court of Squares · <a href="mailto:courtofsquares@gmail.com">courtofsquares@gmail.com</a></div><div class="legal"><a href="press.html">프레스 키트</a> · <a href="beta-ko.html">Android 베타</a> · <a href="privacy.html">개인정보 처리방침</a> · <a href="terms.html">이용약관</a> · <a href="delete-account.html">계정 삭제</a> · <a href="licenses.html">라이선스</a></div><div class="legal-note">법률 문서와 프레스 키트는 영어로 제공됩니다.</div></footer>
+
+<script>
+// Language menu: close when clicking elsewhere or pressing Escape.
+(() => {
+  const d = document.querySelector('header .langs'); if (!d) return;
+  document.addEventListener('click', e => { if (d.open && !d.contains(e.target)) d.open = false; });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && d.open) { d.open = false; d.querySelector('summary').focus(); } });
+})();
+</script>
+</body>
+</html>

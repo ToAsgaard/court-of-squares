@@ -1,0 +1,682 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Court of Squares · Спокойные шахматы с восемью новыми фигурами</title>
+<meta name="description" content="Court of Squares — спокойные живописные шахматы с восемью новыми фигурами, армиями, которые вы собираете сами, бесконечным Паломничеством в духе рогаликов, садом ежедневных задач и игрой онлайн. Скоро на iPhone, iPad, Android и Steam.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Court of Squares · Спокойные шахматы с восемью новыми фигурами">
+<meta property="og:description" content="Все знакомые правила, а ещё Лучник, который стреляет, Шут, который берёт цепочкой прыжков, и ещё шесть новых фигур. Скоро на iPhone, iPad, Android и Steam.">
+<meta property="og:image" content="https://toasgaard.github.io/court-of-squares/og-image.jpg">
+<meta property="og:url" content="https://toasgaard.github.io/court-of-squares/ru.html">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1a120b">
+<link rel="alternate" hreflang="en" href="https://toasgaard.github.io/court-of-squares/index.html">
+<link rel="alternate" hreflang="es" href="https://toasgaard.github.io/court-of-squares/es.html">
+<link rel="alternate" hreflang="pt-BR" href="https://toasgaard.github.io/court-of-squares/pt.html">
+<link rel="alternate" hreflang="fr" href="https://toasgaard.github.io/court-of-squares/fr.html">
+<link rel="alternate" hreflang="de" href="https://toasgaard.github.io/court-of-squares/de.html">
+<link rel="alternate" hreflang="it" href="https://toasgaard.github.io/court-of-squares/it.html">
+<link rel="alternate" hreflang="pl" href="https://toasgaard.github.io/court-of-squares/pl.html">
+<link rel="alternate" hreflang="tr" href="https://toasgaard.github.io/court-of-squares/tr.html">
+<link rel="alternate" hreflang="ru" href="https://toasgaard.github.io/court-of-squares/ru.html">
+<link rel="alternate" hreflang="ja" href="https://toasgaard.github.io/court-of-squares/ja.html">
+<link rel="alternate" hreflang="ko" href="https://toasgaard.github.io/court-of-squares/ko.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://toasgaard.github.io/court-of-squares/zh.html">
+<link rel="alternate" hreflang="x-default" href="https://toasgaard.github.io/court-of-squares/">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Forum&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+:root{--walnut:#1a120b;--lacquer:#241910;--ivory:#f1e7d3;--soft:#c9b9a1;--gilt:#d9b25c;--gilt-deep:#a8823a;--blue:#3a5db0;--garnet:#a8262c;--rule:#3b2c1c}
+body{background:var(--walnut);color:var(--ivory);font:500 20px/1.6 'Cormorant Garamond','Forum',Georgia,serif}
+a{color:var(--gilt)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gilt);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* Header */
+
+/* Hero */
+.hero-art{display:block;width:100%;height:auto;aspect-ratio:2400/1029;object-fit:cover;background:#2a1d12}
+@media (max-width:700px){.hero-art{aspect-ratio:1000/833}}
+.pitch{text-align:center;padding:34px 20px 0;max-width:820px;margin:0 auto}
+.pitch h1{font:700 clamp(28px,4.4vw,46px)/1.15 'Cinzel','Forum',Georgia,serif;color:var(--ivory);margin:0 0 14px}
+.pitch p{font-size:22px;color:var(--soft);margin:0 auto;max-width:660px}
+.pitch .status{margin:20px auto 0;color:var(--gilt);font-style:italic}
+.actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:22px 0 0}
+.btn{display:inline-block;font:600 16px/1 'Cinzel','Forum',Georgia,serif;letter-spacing:.03em;text-decoration:none;padding:15px 22px;border-radius:999px;border:1px solid var(--gilt);color:var(--gilt)}
+.btn.primary{background:var(--gilt);color:var(--walnut)}
+.btn:hover{background:#e7c573;border-color:#e7c573;color:var(--walnut)}
+
+/* Where to get it */
+.stores-block{max-width:900px;margin:30px auto 0;padding:0 20px;text-align:center}
+.stores-block .free{margin:0 0 14px;color:var(--gilt);font-style:italic;font-size:21px}
+.platforms{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.platform{background:var(--lacquer);border:1px solid var(--rule);border-radius:16px;padding:20px 18px 22px;display:flex;flex-direction:column;align-items:center;gap:4px}
+.platform.live{border-color:var(--gilt-deep);background:linear-gradient(180deg,#2f2213,var(--lacquer));box-shadow:0 0 0 1px rgba(217,178,92,.25),0 18px 40px rgba(0,0,0,.35)}
+.stores-block .platform h2{font:700 21px/1.2 'Cinzel','Forum',Georgia,serif;color:var(--ivory);margin:0;border:0;padding:0}
+.platform .where{margin:0 0 12px;color:var(--soft);font-size:18px}
+.platform .soon{display:inline-block;font:600 15px/1 'Cinzel','Forum',Georgia,serif;letter-spacing:.03em;color:var(--soft);border:1px dashed var(--gilt-deep);border-radius:999px;padding:14px 20px}
+.platform .carry{margin:10px 0 0;font-size:16px;line-height:1.35;color:var(--soft)}
+.stores-block .also{margin:16px 0 0;color:var(--soft);font-size:18px}
+@media (max-width:760px){.platforms{grid-template-columns:1fr}.platform{padding:16px}.platform.live{order:-1}}
+
+/* Socials, front and centre */
+.follow{text-align:center;max-width:820px;margin:34px auto 0;padding:0 20px}
+.follow p{margin:0 0 14px;color:var(--soft)}
+.socials{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.socials a{text-decoration:none;font:600 16px/1 'Cinzel','Forum',Georgia,serif;letter-spacing:.03em;color:var(--gilt);background:var(--lacquer);border:1px solid var(--rule);border-radius:999px;padding:13px 20px}
+.socials a:hover{border-color:var(--gilt);color:var(--ivory)}
+
+/* Sections */
+main.home{max-width:1120px;padding:0 20px}
+main.home section{padding:76px 0 0}
+main.home h2,.community h2{font:700 clamp(26px,3.4vw,36px)/1.2 'Cinzel','Forum',Georgia,serif;color:var(--gilt);margin:0 0 10px;border:0;padding:0}
+.lede{color:var(--soft);font-size:21px;max-width:720px;margin:0 0 26px}
+
+/* Videos */
+.video{position:relative;aspect-ratio:16/9;width:100%;background:#0e0905 center/cover no-repeat;border:1px solid var(--rule);border-radius:16px;overflow:hidden;box-shadow:0 24px 50px rgba(0,0,0,.45)}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video .start{position:absolute;inset:0;display:grid;place-items:center;background:rgba(10,6,3,.25);border:0;cursor:pointer;color:var(--walnut)}
+.video .start span{display:grid;place-items:center;width:84px;height:84px;border-radius:50%;background:var(--gilt);box-shadow:0 8px 24px rgba(0,0,0,.5);font-size:30px;padding-left:6px}
+.video .start:hover span{background:#e7c573}
+.video-note{margin:10px 0 0;font-size:17px;color:var(--soft);font-style:italic}
+
+/* Meet the court: the one bold element */
+.court{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:28px;align-items:center;background:radial-gradient(120% 90% at 30% 0%,#2e2013 0%,var(--lacquer) 55%,#1d140c 100%);border:1px solid var(--rule);border-radius:18px;padding:22px}
+.pedestals{grid-column:1/-1;display:grid;grid-template-columns:repeat(8,1fr);gap:6px}
+.pedestals button{appearance:none;background:none;border:0;border-bottom:2px solid transparent;color:var(--soft);cursor:pointer;padding:6px 2px 8px;font:600 13px/1.2 'Cinzel','Forum',Georgia,serif;display:flex;flex-direction:column;align-items:center;gap:6px}
+.pedestals img{height:92px;width:auto;filter:saturate(.7) brightness(.78);transition:filter .2s,transform .2s}
+.pedestals button[aria-selected="true"]{color:var(--gilt);border-bottom-color:var(--gilt)}
+.pedestals button[aria-selected="true"] img,.pedestals button:hover img{filter:none;transform:translateY(-3px)}
+.portrait{display:flex;gap:20px;align-items:center}
+.portrait img{height:330px;width:auto;flex:none;filter:drop-shadow(0 18px 24px rgba(0,0,0,.55))}
+.portrait h3{font:700 32px/1.1 'Cinzel','Forum',Georgia,serif;color:var(--ivory);margin:0 0 4px}
+.portrait .worth{color:var(--gilt);font-style:italic;margin:0 0 10px}
+.portrait p{margin:0}
+.board-wrap{display:flex;flex-direction:column;align-items:center;gap:12px}
+.board{display:grid;grid-template-columns:repeat(9,1fr);width:min(100%,430px);aspect-ratio:1;border:6px solid #3a2716;border-radius:6px;box-shadow:0 0 0 1px var(--gilt-deep),0 20px 40px rgba(0,0,0,.45)}
+.sq{position:relative;background:#dccaa6}
+.sq.dk{background:#8a6744}
+.sq::after{content:"";position:absolute;inset:0;margin:auto;border-radius:50%;opacity:0;transform:scale(.3);transition:opacity .3s,transform .3s;transition-delay:var(--d,0s)}
+.sq.move::after{width:32%;height:32%;background:var(--blue);opacity:1;transform:none}
+.sq.cap::after{width:72%;height:72%;box-shadow:inset 0 0 0 3px var(--garnet);opacity:1;transform:none}
+.sq.both::after{width:72%;height:72%;box-shadow:inset 0 0 0 3px var(--blue);background:radial-gradient(circle,var(--blue) 0 22%,transparent 24%);opacity:1;transform:none}
+.sq.shoot::after{width:74%;height:74%;opacity:1;transform:none;background:radial-gradient(circle,var(--garnet) 0 17%,transparent 19% 42%,var(--garnet) 44% 55%,transparent 57%)}
+.sq.jump::after{width:42%;height:42%;background:var(--garnet);border-radius:3px;opacity:1;transform:rotate(45deg)}
+.sq .glyph{position:absolute;inset:8%;display:grid;place-items:center;font:700 clamp(14px,3vw,24px)/1 'Cinzel','Forum',Georgia,serif;color:var(--walnut);background:var(--gilt);border-radius:50%;box-shadow:0 2px 6px rgba(0,0,0,.4)}
+.sq .foe{position:absolute;inset:20%;border-radius:50%;background:#24160d;box-shadow:inset 0 0 0 2px #c9b48c}
+.legend{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 16px;font-size:16px;color:var(--soft);margin:0;padding:0;list-style:none}
+.legend li{display:flex;align-items:center;gap:7px;margin:0}
+.legend i{display:inline-block;width:16px;height:16px;border-radius:50%;flex:none}
+.l-move{background:var(--blue);transform:scale(.55)}
+.l-both{box-shadow:inset 0 0 0 2px var(--blue);background:radial-gradient(circle,var(--blue) 0 24%,transparent 26%)}
+.l-cap{box-shadow:inset 0 0 0 2px var(--garnet)}
+.l-shoot{background:radial-gradient(circle,var(--garnet) 0 17%,transparent 19% 42%,var(--garnet) 44% 58%,transparent 60%)}
+.l-jump{background:var(--garnet);transform:rotate(45deg) scale(.7);border-radius:2px!important}
+.l-foe{background:#24160d;box-shadow:inset 0 0 0 2px #c9b48c}
+@media (max-width:860px){.court{grid-template-columns:1fr;padding:16px}.portrait img{height:220px}.pedestals{grid-template-columns:repeat(4,1fr)}.pedestals img{height:72px}}
+@media (max-width:460px){.portrait{flex-direction:column;align-items:flex-start}.portrait img{height:180px}}
+@media (prefers-reduced-motion:reduce){.sq::after,.pedestals img{transition:none}}
+
+/* Pilgrimage */
+.camp{margin:0 0 26px}
+.camp img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--rule);box-shadow:0 18px 40px rgba(0,0,0,.4)}
+.camp figcaption{margin-top:10px;color:var(--soft);font-style:italic;font-size:18px}
+.pilgrim{background:linear-gradient(180deg,#22180f 0%,#1c140c 100%);border:1px solid var(--rule);border-radius:18px;padding:28px 26px 30px}
+.road{list-style:none;margin:6px 0 10px;padding:0;display:grid;grid-template-columns:repeat(16,1fr);align-items:center;position:relative}
+.road::before{content:"";position:absolute;left:3%;right:3%;top:50%;border-top:2px dashed var(--gilt-deep);opacity:.6}
+.road li{position:relative;display:grid;place-items:center;margin:0}
+.road span{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--walnut);border:2px solid var(--gilt-deep);font:600 14px/1 'Cinzel','Forum',Georgia,serif;color:var(--soft)}
+.road .relic span{border-color:var(--blue);color:var(--ivory);box-shadow:0 0 0 4px rgba(58,93,176,.25)}
+.road .boss span{width:46px;height:46px;background:var(--garnet);border-color:var(--gilt);color:var(--ivory);font-size:16px}
+.road .boss.relic span{box-shadow:0 0 0 4px rgba(58,93,176,.45)}
+.road .free span{background:#3a2a17;color:var(--ivory)}
+.road .more span{border-style:dashed;font-size:20px;color:var(--gilt)}
+.road-key{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:16px;color:var(--soft);margin:0 0 26px;padding:0;list-style:none}
+.road-key li{display:flex;align-items:center;gap:8px;margin:0}
+.road-key i{width:14px;height:14px;border-radius:50%;border:2px solid var(--gilt-deep);background:var(--walnut)}
+.road-key .k-boss{background:var(--garnet);border-color:var(--gilt)}
+.road-key .k-relic{border-color:var(--blue);box-shadow:0 0 0 3px rgba(58,93,176,.3)}
+.road-key .k-free{background:#3a2a17}
+.loop{list-style:none;margin:0 0 30px;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;counter-reset:step}
+.loop li{counter-increment:step;margin:0}
+.loop h3{font:700 19px/1.3 'Cinzel','Forum',Georgia,serif;color:var(--ivory);margin:0 0 6px;display:flex;align-items:center;gap:10px}
+.loop h3::before{content:counter(step);display:grid;place-items:center;width:28px;height:28px;flex:none;border-radius:50%;background:var(--gilt);color:var(--walnut);font-size:15px}
+.loop p{margin:0;color:var(--soft)}
+.pilgrim h3.sub{font:700 20px/1.3 'Cinzel','Forum',Georgia,serif;color:var(--gilt);margin:0 0 4px}
+.pilgrim .sub-lede{margin:0 0 14px;color:var(--soft)}
+.relics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:0 0 30px}
+.relics div{background:rgba(0,0,0,.18);border:1px solid var(--rule);border-left:3px solid var(--blue);border-radius:10px;padding:12px 14px}
+.relics b{display:block;font:600 15px/1.3 'Cinzel','Forum',Georgia,serif;color:var(--ivory);margin-bottom:4px}
+.relics span{display:block;font-size:17px;line-height:1.35;color:var(--soft)}
+.journey-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.journey-facts h3{font:700 18px/1.3 'Cinzel','Forum',Georgia,serif;color:var(--gilt);margin:0 0 4px}
+.journey-facts p{margin:0;color:var(--soft)}
+@media (max-width:860px){
+ .pilgrim{padding:20px 16px 24px}
+ .road{grid-template-columns:repeat(8,1fr);row-gap:14px}
+ .road::before{display:none}
+ .loop,.journey-facts{grid-template-columns:1fr;gap:20px}
+ .relics{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:420px){.road span{width:30px;height:30px;font-size:13px}.road .boss span{width:38px;height:38px}.relics{grid-template-columns:1fr}}
+
+/* Ways to play */
+.modes{display:grid;grid-template-columns:repeat(3,1fr);gap:0 36px}
+.modes .group{border-top:2px solid var(--gilt-deep);padding-top:4px}
+.modes h3{font:700 18px/1.3 'Cinzel','Forum',Georgia,serif;color:var(--ivory);margin:20px 0 2px}
+.modes .group > h3:first-child{color:var(--gilt);font-size:15px;letter-spacing:.04em;margin-top:10px}
+.modes p{margin:0;color:var(--soft)}
+@media (max-width:860px){.modes{grid-template-columns:1fr;gap:28px}}
+
+/* Garden */
+.garden-view{position:relative;aspect-ratio:1400/787;border-radius:16px;overflow:hidden;border:1px solid var(--rule);box-shadow:0 24px 50px rgba(0,0,0,.45);background:#2a1d12}
+.garden-view img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s ease}
+.garden-view img.on{opacity:1}
+.seasons{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:12px 0 0;padding:0;list-style:none}
+.seasons li{margin:0}
+.seasons button{appearance:none;width:100%;height:100%;text-align:left;cursor:pointer;padding:14px 16px 16px;border-radius:12px;color:var(--ivory);border:2px solid transparent;opacity:.6;transition:opacity .25s,border-color .25s;font:inherit}
+.seasons button:hover{opacity:.85}
+.seasons button[aria-selected="true"]{opacity:1;border-color:var(--gilt)}
+.seasons b{display:block;font:700 18px/1.3 'Cinzel','Forum',Georgia,serif;margin-bottom:4px}
+.seasons span{font-size:18px;line-height:1.4;display:block;opacity:.92}
+.spring button{background:linear-gradient(160deg,#3c4e2c,#26301c)}
+.summer button{background:linear-gradient(160deg,#5c4b1e,#33290f)}
+.autumn button{background:linear-gradient(160deg,#6a2f1a,#3a1a0f)}
+.winter button{background:linear-gradient(160deg,#2e3d52,#1b2431)}
+.garden-note{margin:12px 0 0;color:var(--soft);font-style:italic}
+@media (max-width:760px){.seasons{grid-template-columns:repeat(2,1fr)}.seasons span{font-size:16px}}
+@media (prefers-reduced-motion:reduce){.garden-view img,.seasons button{transition:none}}
+
+/* Piece sets */
+.sets{display:grid;grid-template-columns:1fr;gap:18px}
+.sets figure{margin:0;background:var(--lacquer);border:1px solid var(--rule);border-radius:14px;padding:16px 16px 12px;display:flex;flex-direction:column}
+.sets img{display:block;width:100%;height:auto;aspect-ratio:1600/457;object-fit:contain}
+.sets figcaption{margin-top:10px;display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 12px}
+.sets figcaption b{font:600 17px/1.3 'Cinzel','Forum',Georgia,serif;color:var(--gilt)}
+.sets figcaption span{font-size:18px;color:var(--soft)}
+.sets-note{margin:14px 0 0;color:var(--soft);font-style:italic}
+
+/* Save, watch, share */
+.keep{display:grid;grid-template-columns:repeat(3,1fr);gap:0 36px}
+.keep > div{border-top:2px solid var(--gilt-deep);padding-top:12px;margin-bottom:26px}
+.keep h3{font:700 18px/1.3 'Cinzel','Forum',Georgia,serif;color:var(--ivory);margin:0 0 4px}
+.keep p{margin:0;color:var(--soft)}
+@media (max-width:860px){.keep{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.keep{grid-template-columns:1fr}}
+
+/* Calm by design */
+.calm{columns:2;column-gap:44px;margin:0;padding-left:1.1em}
+.calm li{break-inside:avoid;margin:0 0 12px}
+.calm b{color:var(--ivory)}
+@media (max-width:700px){.calm{columns:1}}
+
+/* Community */
+.community{margin-top:80px;background:var(--lacquer);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:56px 0 60px}
+.community .creators{margin:-10px 0 22px;color:var(--soft);font-size:19px;max-width:720px}
+.community .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
+.mail{position:relative}
+.mail button.btn{background:none;cursor:pointer}
+.mail button.btn:hover,.mail button.btn[aria-expanded="true"]{background:#e7c573;color:var(--walnut)}
+.mail-menu{position:absolute;left:0;bottom:calc(100% + 10px);z-index:4;min-width:260px;background:#2c2015;border:1px solid var(--gilt-deep);border-radius:14px;padding:14px;box-shadow:0 14px 34px rgba(0,0,0,.5)}
+.mail-menu p{margin:0 0 10px;color:var(--ivory);font-size:19px}
+.mail-menu button,.mail-menu a{display:block;width:100%;text-align:left;font:600 15px/1 'Cinzel','Forum',Georgia,serif;letter-spacing:.03em;color:var(--gilt);background:var(--walnut);border:1px solid var(--rule);border-radius:10px;padding:12px 14px;margin-top:8px;cursor:pointer;text-decoration:none}
+.mail-menu button:hover,.mail-menu a:hover{border-color:var(--gilt)}
+@media (max-width:520px){.mail-menu{left:auto;right:0}}
+footer{background:#120c07}
+footer .legal{margin-top:6px}
+
+/* Language menu */
+header.top nav .langs{position:relative}
+header.top nav .langs summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;padding:6px 0;font:600 15px/1 'Cinzel',Georgia,serif;letter-spacing:.03em;color:#b8a894}
+header.top nav .langs summary::-webkit-details-marker{display:none}
+header.top nav .langs summary:hover,header.top nav .langs[open] summary{color:#d9b25c}
+header.top nav .langs ul{position:absolute;right:0;top:calc(100% + 10px);z-index:10;margin:0;padding:8px;list-style:none;min-width:180px;background:#1f160e;border:1px solid #a8823a;border-radius:12px;box-shadow:0 14px 34px rgba(0,0,0,.5)}
+header.top nav .langs li{margin:0}
+header.top nav .langs ul a{display:block;padding:8px 12px;border-radius:8px;font:500 17px/1.2 Georgia,serif;letter-spacing:0;color:#f1e7d3;text-decoration:none}
+header.top nav .langs ul a:hover{background:#2c2015}
+header.top nav .langs ul a[aria-current]{color:#d9b25c}
+@media (max-width:520px){header.top nav .press{display:none}}
+footer .legal-note{margin-top:6px;font-size:13px;opacity:.75}
+.lang-note{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 14px;padding:10px 16px;background:#2c2015;border-bottom:1px solid #3b2c1c;color:#f1e7d3;font-size:17px;text-align:center}
+.lang-note[hidden]{display:none}
+.lang-note a{color:#d9b25c;font-weight:600}
+.lang-note button{appearance:none;background:none;border:0;color:#c9b9a1;font-size:20px;line-height:1;cursor:pointer;padding:2px 6px}
+header.top nav a,h1,h2,h3,.button,.btn{font-family:'Cinzel','Forum',Georgia,serif}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"VideoGame","name":"Court of Squares","url":"https://toasgaard.github.io/court-of-squares/ru.html","inLanguage":"ru","image":"https://toasgaard.github.io/court-of-squares/og-image.jpg","description":"Спокойные шахматы с восемью новыми фигурами, армиями, которые вы собираете сами, Паломничеством в духе рогаликов, садом ежедневных задач и игрой онлайн.","genre":["Chess","Strategy","Puzzle"],"gamePlatform":["iOS","Android","PC"],"playMode":["SinglePlayer","MultiPlayer"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"sameAs":["https://www.youtube.com/@CourtofSquares","https://www.tiktok.com/@courtofsquares","https://www.instagram.com/courtofsquares/","https://x.com/CourtofSquares","https://www.facebook.com/profile.php?id=61595226989676"]}
+</script>
+</head>
+<body>
+<header class="top"><nav><a class="home" href="ru.html">Court of Squares</a><a class="sec" href="#pieces">Фигуры</a><a class="sec" href="#pilgrimage">Паломничество</a><a class="sec" href="#play">Режимы</a><a class="sec" href="#garden">Сад</a><a class="press" href="press.html">Для прессы</a><details class="langs"><summary aria-label="Язык: Русский"><svg viewBox="0 0 24 24" aria-hidden="true" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z"/></svg><span>RU</span></summary><ul><li><a href="index.html" hreflang="en" lang="en">English</a></li><li><a href="es.html" hreflang="es" lang="es">Español</a></li><li><a href="pt.html" hreflang="pt-BR" lang="pt-BR">Português</a></li><li><a href="fr.html" hreflang="fr" lang="fr">Français</a></li><li><a href="de.html" hreflang="de" lang="de">Deutsch</a></li><li><a href="it.html" hreflang="it" lang="it">Italiano</a></li><li><a href="pl.html" hreflang="pl" lang="pl">Polski</a></li><li><a href="tr.html" hreflang="tr" lang="tr">Türkçe</a></li><li><a href="ru.html" hreflang="ru" lang="ru" aria-current="true">Русский</a></li><li><a href="ja.html" hreflang="ja" lang="ja">日本語</a></li><li><a href="ko.html" hreflang="ko" lang="ko">한국어</a></li><li><a href="zh.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li></ul></details><a class="beta" href="beta-ru.html">Android-бета</a></nav></header>
+
+<picture>
+<source media="(max-width:700px)" srcset="hero-mobile.webp">
+<source srcset="hero-1400.webp 1400w, hero-2400.webp 2400w" sizes="100vw">
+<img class="hero-art" src="hero-1400.webp" alt="Белый ферзь и тёмный конь друг напротив друга на мраморной доске на террасе замка на закате" width="2400" height="1029" fetchpriority="high">
+</picture>
+
+<div class="pitch">
+<h1>Спокойные шахматы с восемью новыми фигурами</h1>
+<p>Все знакомые правила — на резных столах, под тихую музыку, с плавно скользящими фигурами. А ещё Лучник, который стреляет, Шут, который берёт цепочкой прыжков, армии, которые вы собираете сами, и сад, растущий вместе с задачей дня.</p>
+</div>
+
+<div class="stores-block" id="get">
+<p class="free">Бесплатно и без рекламы.</p>
+<div class="platforms">
+<div class="platform">
+<h2>iPhone &amp; iPad</h2>
+<p class="where">App Store</p>
+<!-- When it's live, replace the next line with:
+<a class="btn primary" href="https://apps.apple.com/app/idYOUR_APP_ID" rel="noopener">Download on the App Store</a> -->
+<span class="soon">Скоро</span>
+</div>
+<div class="platform live">
+<h2>Android</h2>
+<p class="where">Google Play</p>
+<!-- When it's live, replace the next line with:
+<a class="btn primary" href="https://play.google.com/store/apps/details?id=com.courtofsquares.game" rel="noopener">Get it on Google Play</a> -->
+<a class="btn primary" href="beta-ru.html">Вступить в бету</a>
+<p class="carry">Прогресс и открытые награды перейдут в полную версию.</p>
+</div>
+<div class="platform">
+<h2>PC</h2>
+<p class="where">Steam</p>
+<!-- When it's live, replace the next line with:
+<a class="btn primary" href="https://store.steampowered.com/app/YOUR_APP_ID" rel="noopener">Get it on Steam</a> -->
+<span class="soon">Скоро</span>
+</div>
+</div>
+<p class="also"><a href="#trailer">Смотреть трейлер</a> · Один аккаунт на всех платформах: продолжайте с того места, где остановились.</p>
+</div>
+
+
+<div class="follow">
+<p>Новые фигуры, клипы, девлоги и новости о запуске — во всех наших соцсетях.</p>
+<div class="socials" role="navigation" aria-label="Court of Squares в соцсетях">
+<a href="https://discord.gg/DWXYmJSMmR" rel="noopener">Discord</a>
+<a href="https://www.youtube.com/@CourtofSquares" rel="noopener">YouTube</a>
+<a href="https://www.tiktok.com/@courtofsquares" rel="noopener">TikTok</a>
+<a href="https://www.instagram.com/courtofsquares/" rel="noopener">Instagram</a>
+<a href="https://x.com/CourtofSquares" rel="noopener">X</a>
+<a href="https://www.facebook.com/profile.php?id=61595226989676" rel="noopener">Facebook</a>
+</div>
+</div>
+
+<main class="home">
+
+<section id="trailer">
+<h2>Трейлер</h2>
+<div class="video" data-yt="0lBtSt2Io14" data-title="Трейлер Court of Squares"></div>
+<p class="video-note">Видео включается без звука, когда появляется на экране. Нажмите на значок динамика, чтобы включить звук.</p>
+</section>
+
+<section id="pieces">
+<h2>Знакомьтесь: двор</h2>
+<p class="lede">Восемь фигур, которых нет ни в одном другом шахматном наборе. У каждой свой ход и свой короткий урок в игре. Выберите фигуру, чтобы увидеть, как она ходит.</p>
+<div class="court">
+<div class="pedestals" role="tablist" aria-label="Восемь новых фигур"></div>
+<div class="portrait" id="portrait" role="tabpanel" aria-live="polite">
+<img id="p-img" src="piece-archer.webp" alt="" width="200" height="330">
+<div><h3 id="p-name">Лучник</h3><p class="worth" id="p-worth"></p><p id="p-rule"></p></div>
+</div>
+<div class="board-wrap">
+<div class="board" id="board" role="img" aria-label=""></div>
+<ul class="legend">
+<li><i class="l-both"></i>ход или взятие</li>
+<li><i class="l-move"></i>только ход</li>
+<li><i class="l-cap"></i>только взятие</li>
+<li><i class="l-shoot"></i>выстрел, фигура стоит на месте</li>
+<li><i class="l-foe"></i>враг</li>
+<li><i class="l-jump"></i>приземление после прыжка</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="pilgrimage">
+<h2>Паломничество</h2>
+<p class="lede">Бесконечный путь в духе рогаликов. Ведите небольшой отряд паломников от битвы к битве против армий, которые всё растут и становятся всё умнее. Потерянная фигура потеряна навсегда, так что каждое допущенное взятие сказывается на всём оставшемся пути.</p>
+<div class="pilgrim">
+<figure class="camp"><img src="pilgrim-camp.webp" alt="Лагерь Паломничества: ваш отряд, следующая битва против Пешечной стены, реликвии и лавка десятины у костра в сумерках" width="1600" height="900" loading="lazy" decoding="async"><figcaption>Лагерь между битвами: осмотрите отряд, оцените следующего врага, выберите реликвии и потратьте десятину в лавке.</figcaption></figure>
+<ol class="road" aria-label="Путь: этапы с 1 по 15 и дальше, босс на каждом 5-м этапе и реликвия на каждом 3-м">
+<li class="free"><span>1</span></li>
+<li class="free"><span>2</span></li>
+<li class="free relic"><span>3</span></li>
+<li><span>4</span></li>
+<li class="boss"><span>5</span></li>
+<li class="relic"><span>6</span></li>
+<li><span>7</span></li>
+<li><span>8</span></li>
+<li class="relic"><span>9</span></li>
+<li class="boss"><span>10</span></li>
+<li><span>11</span></li>
+<li class="relic"><span>12</span></li>
+<li><span>13</span></li>
+<li><span>14</span></li>
+<li class="boss relic"><span>15</span></li>
+<li class="more"><span aria-hidden="true">&#8734;</span></li>
+</ol>
+<ul class="road-key">
+<li><i class="k-free"></i>первые три этапа бесплатно</li>
+<li><i class="k-relic"></i>выбор реликвии</li>
+<li><i class="k-boss"></i>босс</li>
+<li>и дальше, пока держится ваша армия</li>
+</ul>
+
+<ol class="loop">
+<li><h3>Битва</h3><p>Победите армию этапа за 50 ходов. Ничьих нет: если ходы закончились, побеждает сторона, у которой на доске больше очков, а при равенстве — враг.</p></li>
+<li><h3>Привал</h3><p>Победы приносят десятину. Тратьте её на новобранцев (пять на выбор, один за полцены), платите разведчику, чтобы точно увидеть расстановку следующего врага, и перестраивайте армию перед походом.</p></li>
+<li><h3>Выбор реликвии</h3><p>На каждом третьем этапе выберите одну реликвию из трёх. Каждая меняет правила в вашу пользу до конца пути.</p></li>
+</ol>
+
+<h3 class="sub">Восемь реликвий</h3>
+<p class="sub-lede">Выбирайте с умом: их действие складывается, а в каждом пути они выпадают в своём порядке.</p>
+<div class="relics">
+<div><b>Сапоги долгого похода</b><span>+15 ходов в каждой битве.</span></div>
+<div><b>Кошель сборщика десятины</b><span>На 50% больше десятины за каждую победу.</span></div>
+<div><b>Сумка полевого лекаря</b><span>После каждой победы одна павшая фигура возвращается в армию.</span></div>
+<div><b>Печать интенданта</b><span>Новобранцы на 25% дешевле.</span></div>
+<div><b>Знамя третьего ряда</b><span>Армия может занимать три ряда.</span></div>
+<div><b>Второе дыхание</b><span>Первая проигранная битва переигрывается, а не завершает путь.</span></div>
+<div><b>Знамя холма</b><span>Действует «Царь горы»: побеждает король, дошедший до центра.</span></div>
+<div><b>Грамота милосердия</b><span>Если ходы закончились при равенстве очков, битва за вами.</span></div>
+</div>
+
+<div class="journey-facts">
+<div><h3>Кого вы встретите</h3><p>Тематические отряды: Лучники долины, Труппа шутов, Монастырская стража и другие. На каждом пятом этапе вас ждёт двор-босс, например Пустой двор или Стража пепельного короля, с армией побольше.</p></div>
+<div><h3>По-своему</h3><p>Начните с короля, слона, коня, ладьи и четырёх пешек. Играйте в версии «Сбор» со всеми фигурами игры или в «Классике» с шестью обычными — на лёгком, обычном или сложном уровне.</p></div>
+<div><h3>Таблица лидеров</h3><p>У каждой версии и сложности своя таблица, где важно, сколько этапов пройдено. Рейтинговые пути сервер проверяет битву за битвой, так что каждый результат честный.</p></div>
+</div>
+</div>
+</section>
+
+<section id="play">
+<h2>Режимы игры</h2>
+<p class="lede">Играйте в классические шахматы или добавьте новые фигуры. Часы выключены, пока вы сами их не включите, а в любую партию можно добавить особые правила, например «Царь горы».</p>
+<div class="modes">
+<div class="group"><h3>В своём темпе</h3>
+<h3>Классика</h3><p>Привычные шахматы против компьютера или друга на одном устройстве.</p>
+<h3>Сбор</h3><p>Соберите собственную армию в пределах бюджета очков и ведите её в бой.</p>
+<h3>Отбор</h3><p>Вы и соперник по очереди выбираете фигуры из общего пула.</p>
+<h3>Пешечный шторм</h3><p>У каждого король и стена пешек. Коротко, остро и неожиданно глубоко.</p>
+</div>
+<div class="group"><h3>Испытания</h3>
+<h3><a href="#pilgrimage" style="color:inherit">Паломничество</a></h3><p>Бесконечный путь в духе рогаликов, этап за этапом, с реликвиями и армией, которую вы пересобираете на каждом привале.</p>
+<h3>Задача дня</h3><p>Новая задача каждый день. Решая её, вы растите сад, который обустраиваете сами.</p>
+<h3>Испытание недели</h3><p>Все сражаются с одной и той же армией. Победите за наименьшее число ходов, чтобы возглавить таблицу недели.</p>
+<h3>Уроки</h3><p>Короткие уроки о каждой фигуре, мате, ничьих, рокировке и многом другом.</p>
+</div>
+<div class="group"><h3>Онлайн</h3>
+<h3>Рейтинговые партии</h3><p>Пройдите путь от Простолюдина до Государя. Каждую рейтинговую партию проверяет сервер, поэтому рейтинг остаётся честным.</p>
+<h3>Друзья</h3><p>Играйте с друзьями, отправляйте эмоции и следите за счётом личных встреч.</p>
+<h3>Чужие сады</h3><p>Гуляйте по садам других игроков и оставляйте им цветок.</p>
+<h3>Один аккаунт везде</h3><p>Телефон, планшет и PC делят общий прогресс, когда вы входите в аккаунт.</p>
+</div>
+</div>
+</section>
+
+<section id="garden">
+<h2>Сад в любое время года</h2>
+<p class="lede">Каждая решённая задача дня растит ваш сад. Прокладывайте дорожки, разбивайте клумбы, расставляйте украшения и смотрите, как сад меняется в течение года, а по пути зарабатывайте сезонные столы и украшения.</p>
+<div class="garden-view" aria-live="polite">
+<img src="garden-spring.webp" alt="Тот же сад весной, в рамке из тюльпанов, нарциссов и птичьего гнезда" width="1400" height="787" loading="lazy" decoding="async" data-season="spring" class="on">
+<img src="garden-summer.webp" alt="Тот же сад летом, в рамке из подсолнухов, роз и лаванды" width="1400" height="787" loading="lazy" decoding="async" data-season="summer">
+<img src="garden-autumn.webp" alt="Тот же сад осенью, в рамке из тыкв, кленовых листьев и желудей" width="1400" height="787" loading="lazy" decoding="async" data-season="autumn">
+<img src="garden-winter.webp" alt="Тот же сад зимой, в рамке из снега, остролиста и шишек" width="1400" height="787" loading="lazy" decoding="async" data-season="winter">
+</div>
+<ol class="seasons" role="tablist" aria-label="Времена года">
+<li class="spring"><button type="button" role="tab" aria-selected="true" data-season="spring"><b>Весна</b><span>Цветение, свежие ростки и бледный утренний свет.</span></button></li>
+<li class="summer"><button type="button" role="tab" aria-selected="false" data-season="summer"><b>Лето</b><span>Пышные клумбы и долгие золотые вечера.</span></button></li>
+<li class="autumn"><button type="button" role="tab" aria-selected="false" data-season="autumn"><b>Осень</b><span>Листопад, фонари и событие на Хеллоуин.</span></button></li>
+<li class="winter"><button type="button" role="tab" aria-selected="false" data-season="winter"><b>Зима</b><span>Иней, тихий снег и Зимний фестиваль.</span></button></li>
+</ol>
+<p class="garden-note">Сад одного игрока в течение года. Клумбы, статуи и трофеи остаются на своих местах, а времена года сменяются вокруг них.</p>
+</section>
+
+<section id="sets">
+<h2>На свой вкус</h2>
+<p class="lede">Выбирайте стол, фон, музыку и набор фигур. Зарабатывайте гербы, знамёна и сезонные столы, а любимые фигуры золотите — от бронзы до платины — по мере того, как осваиваете их.</p>
+<div class="sets">
+<figure><img src="set-basic.webp" alt="Набор «Простой»: классические король, ферзь, слон, конь, ладья и пешка цвета слоновой кости с золотом" loading="lazy" decoding="async" width="1600" height="457"><figcaption><b>Простой</b><span>Привычные формы для классической игры.</span></figcaption></figure>
+<figure><img src="set-court.webp" alt="Набор «Придворный» в синем и золотом" loading="lazy" decoding="async" width="1600" height="457"><figcaption><b>Придворный</b><span>Один из многих наборов со своим характером.</span></figcaption></figure>
+<figure><img src="set-cute.webp" alt="Восемь новых фигур в наборе «Милый», розовом с золотом: Шут, Паломник, Глашатай, Аббатиса, Лучник, Ночной всадник, Улан и Сокольник" loading="lazy" decoding="async" width="1600" height="457"><figcaption><b>Милый</b><span>В каждом наборе — своё воплощение всех восьми новых фигур.</span></figcaption></figure>
+<figure><img src="set-halloween.webp" alt="Набор «Хеллоуин»" loading="lazy" decoding="async" width="1600" height="457"><figcaption><b>Хеллоуин</b><span>Сезонные наборы появляются вместе с событиями года.</span></figcaption></figure>
+</div>
+<p class="sets-note">Лишь несколько примеров из коллекции. В игре вас ждут и другие наборы, столы и фоны.</p>
+</section>
+
+<section id="keep">
+<h2>Сохраняйте, смотрите, делитесь</h2>
+<p class="lede">Мелочи, благодаря которым игра становится по-настоящему вашей.</p>
+<div class="keep">
+<div><h3>Ваши армии</h3><p>Собирайте армии для «Сбора» и сохраняйте любимые. Делитесь армией в виде кода, который друг просто вставит в игру.</p></div>
+<div><h3>Повторы</h3><p>Пересматривайте недавние партии. Храните последние 5, 10 или 25.</p></div>
+<div><h3>Доиграть позже</h3><p>Сохраните партию против компьютера или друга на одном устройстве и вернитесь к ней в любое время. Онлайн можно предложить сохранить партию — у обоих будет 30 дней, чтобы её доиграть.</p></div>
+<div><h3>Поделитесь моментом</h3><p>После партии поделитесь картинкой с результатом, а на телефоне — ещё и коротким видеоклипом партии.</p></div>
+<div><h3>Режим наблюдения</h3><p>Пусть два компьютера играют друг с другом партию за партией под музыку. Отличная компания для тихого вечера.</p></div>
+</div>
+</section>
+
+<section id="calm">
+<h2>Спокойствие во всём</h2>
+<ul class="calm">
+<li><b>Никакой рекламы.</b> Игра бесплатная. Необязательный Court Pass — одна покупка, которая открывает всё Паломничество, украшение сада и все заработанные косметические предметы.</li>
+<li><b>Без часов, пока вы сами их не включите,</b> или любой контроль — от минутной пули до получасовой классики.</li>
+<li><b>Нажмите и удерживайте любую фигуру,</b> чтобы увидеть, как именно она ходит.</li>
+<li><b>Доска крупным планом или сверху,</b> с координатами, подсказками ходов и следами ходов — по желанию.</li>
+<li><b>Удобно на любом устройстве:</b> настраиваемый размер текста, масштабирование жестом и облегчённые эффекты для старых телефонов и экономии батареи.</li>
+<li><b>Двенадцать языков, включая русский:</b> английский, испанский, португальский, французский, немецкий, итальянский, польский, турецкий, японский, корейский и китайский.</li>
+</ul>
+</section>
+</main>
+
+<div class="community" id="community">
+<div class="wrap">
+<h2>Присоединяйтесь ко двору</h2>
+<p class="lede">Следите за новыми фигурами, сезонными событиями и новостями о запуске или помогите протестировать игру до выхода. Всё, что вы заработаете в бете, перейдёт в полную версию.</p>
+<p class="creators">Снимаете видео о Court of Squares? Присылайте нам — возможно, мы его покажем. Логотипы, арт и скриншоты есть в <a href="press.html">материалах для прессы</a> (на английском).</p>
+<div class="row">
+<a class="btn primary" href="beta-ru.html">Вступить в Android-бету</a>
+<a class="btn" href="https://discord.gg/DWXYmJSMmR" rel="noopener">Наш Discord</a>
+<div class="mail">
+<button class="btn" type="button" id="mail-btn" aria-expanded="false" aria-controls="mail-menu">Написать нам</button>
+<div class="mail-menu" id="mail-menu" hidden>
+<p>courtofsquares@gmail.com</p>
+<button type="button" id="mail-copy">Скопировать адрес</button>
+<a href="mailto:courtofsquares@gmail.com">Открыть почту</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<footer><div class="social"><a href="https://discord.gg/DWXYmJSMmR" rel="noopener">Discord</a> · <a href="https://www.youtube.com/@CourtofSquares" rel="noopener">YouTube</a> · <a href="https://www.tiktok.com/@courtofsquares" rel="noopener">TikTok</a> · <a href="https://www.instagram.com/courtofsquares/" rel="noopener">Instagram</a> · <a href="https://x.com/CourtofSquares" rel="noopener">X</a> · <a href="https://www.facebook.com/profile.php?id=61595226989676" rel="noopener">Facebook</a></div><div>Court of Squares · <a href="mailto:courtofsquares@gmail.com">courtofsquares@gmail.com</a></div><div class="legal"><a href="press.html">Для прессы</a> · <a href="beta-ru.html">Android-бета</a> · <a href="privacy.html">Конфиденциальность</a> · <a href="terms.html">Условия</a> · <a href="delete-account.html">Удаление аккаунта</a> · <a href="licenses.html">Лицензии</a></div><div class="legal-note">Правовые документы и материалы для прессы доступны на английском языке.</div></footer>
+
+<script>
+// The eight new pieces and how they move. 9 x 9 board, the piece in the middle, forward is up.
+const C = 4;
+const P = [
+  {id:'archer', name:'Лучник', worth:3, rule:"Ходит на одно поле в любом направлении, но никогда не берёт ходом. Стреляет во врага ровно в двух полях по прямой, если поле между ними пустое, и остаётся на месте."},
+  {id:'jester', name:'Шут', worth:1, rule:"Ходит на одно поле по диагонали. Берёт, перепрыгивая по диагонали через соседнего врага на пустое поле за ним, и может прыгать дальше в том же ходу, забирая фигуру с каждым прыжком."},
+  {id:'nightrider', name:'Ночной всадник', worth:4, rule:"Прыгает буквой Г, как конь, и может продолжать прыжки в том же направлении по прямой, пока каждое поле приземления пустое."},
+  {id:'lancer', name:'Улан', worth:3, rule:"Мчится прямо вперёд на любое расстояние или ходит на одно поле вбок или назад. Также берёт на одно поле по диагонали вперёд."},
+  {id:'herald', name:'Глашатай', worth:3, rule:"Прыгает на три поля в одну сторону и на одно вбок — длинной буквой Г. Перепрыгивает через фигуры и всегда остаётся на полях одного цвета."},
+  {id:'falconer', name:'Сокольник', worth:3, rule:"Прыгает на три поля в одну сторону и на два вбок, перепрыгивая через фигуры. Также может пойти на одно поле в любом направлении."},
+  {id:'abbess', name:'Аббатиса', worth:4, rule:"Ходит на одно или два поля по прямой вверх, вниз, влево или вправо (перепрыгивать не может) или на одно поле по диагонали."},
+  {id:'pilgrim', name:'Паломник', worth:1, rule:"Ходит на одно поле по диагонали вперёд. Берёт на одно поле прямо вперёд или в сторону и превращается на последней горизонтали."}
+];
+const ALL8 = [[1,0],[-1,0],[0,1],[0,-1],[1,1],[1,-1],[-1,1],[-1,-1]];
+const DIAG = [[1,1],[1,-1],[-1,1],[-1,-1]];
+const ORTH = [[1,0],[-1,0],[0,1],[0,-1]];
+function leaps(a,b){ const s=new Set(); for (const [x,y] of [[a,b],[b,a]]) for (const sx of [1,-1]) for (const sy of [1,-1]) s.add((x*sx)+','+(y*sy)); return [...s].map(t=>t.split(',').map(Number)); }
+const inB = (f,r) => f>=0 && f<9 && r>=0 && r<9;
+
+// Each mark: square plus kind (move | cap | both | shoot | jump | foe). Later marks on a square win.
+function marks(id){
+  const m = new Map(); const add = (dx,dy,kind) => { const f=C+dx, r=C+dy; if (inB(f,r)) m.set(r*9+f,kind); };
+  switch (id){
+    case 'archer': ALL8.forEach(([x,y])=>{ add(x,y,'move'); add(2*x,2*y,'shoot'); }); break;
+    case 'jester': DIAG.forEach(([x,y])=>add(x,y,'move')); add(1,1,'foe'); add(2,2,'jump'); add(3,3,'foe'); add(4,4,'jump'); break;
+    case 'nightrider': leaps(1,2).forEach(([x,y])=>{ for (let k=1;k<9;k++) add(x*k,y*k,'both'); }); break;
+    case 'lancer': for (let k=1;k<9;k++) add(0,k,'both'); [[1,0],[-1,0],[0,-1]].forEach(([x,y])=>add(x,y,'both')); add(1,1,'cap'); add(-1,1,'cap'); break;
+    case 'herald': leaps(3,1).forEach(([x,y])=>add(x,y,'both')); break;
+    case 'falconer': leaps(3,2).forEach(([x,y])=>add(x,y,'both')); ALL8.forEach(([x,y])=>add(x,y,'both')); break;
+    case 'abbess': ORTH.forEach(([x,y])=>{ add(x,y,'both'); add(2*x,2*y,'both'); }); DIAG.forEach(([x,y])=>add(x,y,'both')); break;
+    case 'pilgrim': add(1,1,'move'); add(-1,1,'move'); add(0,1,'cap'); add(1,0,'cap'); add(-1,0,'cap'); break;
+  }
+  return m;
+}
+
+const board = document.getElementById('board');
+const squares = [];
+for (let r=8; r>=0; r--) for (let f=0; f<9; f++){
+  const d = document.createElement('div');
+  d.className = 'sq' + ((f+r)%2===0 ? ' dk' : '');
+  board.appendChild(d); squares[r*9+f] = d;
+}
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const row = document.querySelector('.pedestals');
+
+function show(i){
+  const p = P[i];
+  [...row.children].forEach((b,j)=>{ b.setAttribute('aria-selected', String(j===i)); b.tabIndex = j===i ? 0 : -1; });
+  const img = document.getElementById('p-img');
+  img.src = `piece-${p.id}.webp`; img.alt = `The ${p.name}`;
+  document.getElementById('p-name').textContent = p.name;
+  document.getElementById('p-worth').textContent = (p.worth===1 ? `Стоимость при сборе армии: ${p.worth} очко` : `Стоимость при сборе армии: ${p.worth} очка`);
+  document.getElementById('p-rule').textContent = p.rule;
+  squares.forEach(s=>{ s.classList.remove('move','cap','both','shoot','jump'); s.innerHTML=''; s.style.removeProperty('--d'); });
+  squares[C*9+C].innerHTML = `<span class="glyph" aria-hidden="true">${p.name[0]}</span>`;
+  const list = marks(p.id);
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    for (const [idx,kind] of list){
+      const s = squares[idx];
+      if (kind==='foe'){ s.innerHTML = '<span class="foe"></span>'; continue; }
+      if (!reduce){ const f=idx%9, r=(idx-f)/9; s.style.setProperty('--d', (Math.hypot(f-C,r-C)*0.05).toFixed(2)+'s'); }
+      s.classList.add(kind);
+    }
+  }));
+  board.setAttribute('aria-label', `Как ходит ${p.name}: ${p.rule}`);
+}
+
+P.forEach((p,i)=>{
+  const b = document.createElement('button');
+  b.type = 'button'; b.setAttribute('role','tab'); b.setAttribute('aria-controls','portrait');
+  b.innerHTML = `<img src="piece-${p.id}.webp" alt="" height="92"><span>${p.name}</span>`;
+  b.addEventListener('click', ()=>show(i));
+  b.addEventListener('keydown', e=>{
+    const n = e.key==='ArrowRight' ? (i+1)%P.length : e.key==='ArrowLeft' ? (i+P.length-1)%P.length : -1;
+    if (n>=0){ e.preventDefault(); show(n); row.children[n].focus(); }
+  });
+  row.appendChild(b);
+});
+show(0);
+
+// Email us: copy the address or open the mail app.
+(() => {
+  const btn = document.getElementById('mail-btn'), menu = document.getElementById('mail-menu'), copy = document.getElementById('mail-copy');
+  const address = 'courtofsquares@gmail.com';
+  const close = () => { menu.hidden = true; btn.setAttribute('aria-expanded','false'); };
+  btn.addEventListener('click', e => { e.stopPropagation(); const open = menu.hidden; menu.hidden = !open; btn.setAttribute('aria-expanded', String(open)); if (open) copy.focus(); });
+  document.addEventListener('click', e => { if (!menu.contains(e.target)) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !menu.hidden){ close(); btn.focus(); } });
+  copy.addEventListener('click', async () => {
+    let ok = false;
+    try { await navigator.clipboard.writeText(address); ok = true; }
+    catch (_) {
+      const t = document.createElement('textarea'); t.value = address; t.setAttribute('readonly',''); t.style.position='fixed'; t.style.opacity='0';
+      document.body.appendChild(t); t.select(); try { ok = document.execCommand('copy'); } catch (_) {} t.remove();
+    }
+    copy.textContent = ok ? "Скопировано" : "Выделите адрес выше, чтобы скопировать";
+    setTimeout(() => { copy.textContent = "Скопировать адрес"; }, 2200);
+  });
+})();
+
+// Videos: each <div class="video" data-yt="VIDEO_ID"> loads when it nears the screen, plays muted while at least
+// half of it is in view and pauses when scrolled away. With reduced motion set, it waits for a tap instead.
+(() => {
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const send = (frame, func) => { try { frame.contentWindow.postMessage(JSON.stringify({event:'command', func, args:[]}), '*'); } catch (_) {} };
+  const load = (box, play) => {
+    if (box.querySelector('iframe')) return box.querySelector('iframe');
+    const id = box.dataset.yt;
+    const f = document.createElement('iframe');
+    f.src = `https://www.youtube.com/embed/${id}?enablejsapi=1&mute=1&playsinline=1&rel=0&modestbranding=1${play ? '&autoplay=1' : ''}&origin=${encodeURIComponent(location.origin)}`;
+    f.title = box.dataset.title || "Видео";
+    f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    f.referrerPolicy = 'strict-origin-when-cross-origin';
+    f.allowFullscreen = true;
+    f.addEventListener('load', () => {
+      f.dataset.ready = '1';
+      send(f, 'mute');
+      // The player takes a moment to start listening, so ask a few times while it's in view.
+      [300, 1000, 2000].forEach(ms => setTimeout(() => { if (box.dataset.visible === '1' && !reduce) send(f, 'playVideo'); }, ms));
+    });
+    box.querySelector('.start')?.remove();
+    box.appendChild(f);
+    return f;
+  };
+  document.querySelectorAll('.video[data-yt]').forEach(box => {
+    box.style.backgroundImage = `url(https://i.ytimg.com/vi/${box.dataset.yt}/hqdefault.jpg)`;
+    const start = document.createElement('button');
+    start.type = 'button'; start.className = 'start'; start.setAttribute('aria-label', "Смотреть: " + (box.dataset.title || "Видео"));
+    start.innerHTML = '<span aria-hidden="true">&#9654;</span>';
+    start.addEventListener('click', () => { const f = load(box, true); if (f.dataset.ready) send(f, 'playVideo'); });
+    box.appendChild(start);
+    if (reduce || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(entries => entries.forEach(e => {
+      const visible = e.intersectionRatio >= 0.5;
+      box.dataset.visible = visible ? '1' : '0';
+      if (e.isIntersecting && !box.querySelector('iframe')) load(box, false);   // preload as it nears
+      const f = box.querySelector('iframe');
+      if (f && f.dataset.ready) send(f, visible ? 'playVideo' : 'pauseVideo');
+    }), { threshold: [0, 0.5], rootMargin: '200px 0px' }).observe(box);
+  });
+})();
+
+// Garden seasons: tap a season, or let it turn on its own while in view (stops once you choose one).
+(() => {
+  const view = document.querySelector('.garden-view'); if (!view) return;
+  const imgs = [...view.querySelectorAll('img')], tabs = [...document.querySelectorAll('.seasons button')];
+  const order = tabs.map(t => t.dataset.season);
+  let current = 0, timer = null, chosen = false;
+  const show = i => {
+    current = i;
+    imgs.forEach(im => im.classList.toggle('on', im.dataset.season === order[i]));
+    tabs.forEach((t, j) => { t.setAttribute('aria-selected', String(j === i)); t.tabIndex = j === i ? 0 : -1; });
+  };
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => { chosen = true; clearInterval(timer); show(i); });
+    t.addEventListener('keydown', e => {
+      const n = e.key === 'ArrowRight' ? (i + 1) % tabs.length : e.key === 'ArrowLeft' ? (i + tabs.length - 1) % tabs.length : -1;
+      if (n >= 0) { e.preventDefault(); chosen = true; clearInterval(timer); show(n); tabs[n].focus(); }
+    });
+  });
+  imgs.forEach(im => { im.loading = 'eager'; });   // so the next season is ready to fade in
+  show(0);
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(([e]) => {
+    clearInterval(timer);
+    if (e.isIntersecting && !chosen) timer = setInterval(() => show((current + 1) % order.length), 3500);
+  }, { threshold: 0.6 }).observe(view);
+})();
+</script>
+
+<script>
+// Language menu: close when clicking elsewhere or pressing Escape.
+(() => {
+  const d = document.querySelector('header .langs'); if (!d) return;
+  document.addEventListener('click', e => { if (d.open && !d.contains(e.target)) d.open = false; });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && d.open) { d.open = false; d.querySelector('summary').focus(); } });
+})();
+</script>
+</body>
+</html>

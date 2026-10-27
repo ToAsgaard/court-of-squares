@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Court of Squares · Xadrez tranquilo com oito peças novas</title>
+<meta name="description" content="Court of Squares é um xadrez tranquilo e pictórico com oito peças novas, exércitos montados por você, uma Peregrinação roguelite, um jardim de quebra-cabeças diários e partidas online. Em breve para iPhone, iPad, Android e Steam.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Court of Squares · Xadrez tranquilo com oito peças novas">
+<meta property="og:description" content="Todas as regras que você conhece, mais um Arqueiro que atira, um Bobo que captura em saltos encadeados e outras seis peças novas. Em breve para iPhone, iPad, Android e Steam.">
+<meta property="og:image" content="https://toasgaard.github.io/court-of-squares/og-image.jpg">
+<meta property="og:url" content="https://toasgaard.github.io/court-of-squares/pt.html">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1a120b">
+<link rel="alternate" hreflang="en" href="https://toasgaard.github.io/court-of-squares/index.html">
+<link rel="alternate" hreflang="es" href="https://toasgaard.github.io/court-of-squares/es.html">
+<link rel="alternate" hreflang="pt-BR" href="https://toasgaard.github.io/court-of-squares/pt.html">
+<link rel="alternate" hreflang="fr" href="https://toasgaard.github.io/court-of-squares/fr.html">
+<link rel="alternate" hreflang="de" href="https://toasgaard.github.io/court-of-squares/de.html">
+<link rel="alternate" hreflang="it" href="https://toasgaard.github.io/court-of-squares/it.html">
+<link rel="alternate" hreflang="pl" href="https://toasgaard.github.io/court-of-squares/pl.html">
+<link rel="alternate" hreflang="tr" href="https://toasgaard.github.io/court-of-squares/tr.html">
+<link rel="alternate" hreflang="ru" href="https://toasgaard.github.io/court-of-squares/ru.html">
+<link rel="alternate" hreflang="ja" href="https://toasgaard.github.io/court-of-squares/ja.html">
+<link rel="alternate" hreflang="ko" href="https://toasgaard.github.io/court-of-squares/ko.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://toasgaard.github.io/court-of-squares/zh.html">
+<link rel="alternate" hreflang="x-default" href="https://toasgaard.github.io/court-of-squares/">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+:root{--walnut:#1a120b;--lacquer:#241910;--ivory:#f1e7d3;--soft:#c9b9a1;--gilt:#d9b25c;--gilt-deep:#a8823a;--blue:#3a5db0;--garnet:#a8262c;--rule:#3b2c1c}
+body{background:var(--walnut);color:var(--ivory);font:500 20px/1.6 'Cormorant Garamond',Georgia,serif}
+a{color:var(--gilt)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gilt);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* Header */
+
+/* Hero */
+.hero-art{display:block;width:100%;height:auto;aspect-ratio:2400/1029;object-fit:cover;background:#2a1d12}
+@media (max-width:700px){.hero-art{aspect-ratio:1000/833}}
+.pitch{text-align:center;padding:34px 20px 0;max-width:820px;margin:0 auto}
+.pitch h1{font:700 clamp(28px,4.4vw,46px)/1.15 'Cinzel',Georgia,serif;color:var(--ivory);margin:0 0 14px}
+.pitch p{font-size:22px;color:var(--soft);margin:0 auto;max-width:660px}
+.pitch .status{margin:20px auto 0;color:var(--gilt);font-style:italic}
+.actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:22px 0 0}
+.btn{display:inline-block;font:600 16px/1 'Cinzel',Georgia,serif;letter-spacing:.03em;text-decoration:none;padding:15px 22px;border-radius:999px;border:1px solid var(--gilt);color:var(--gilt)}
+.btn.primary{background:var(--gilt);color:var(--walnut)}
+.btn:hover{background:#e7c573;border-color:#e7c573;color:var(--walnut)}
+
+/* Where to get it */
+.stores-block{max-width:900px;margin:30px auto 0;padding:0 20px;text-align:center}
+.stores-block .free{margin:0 0 14px;color:var(--gilt);font-style:italic;font-size:21px}
+.platforms{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.platform{background:var(--lacquer);border:1px solid var(--rule);border-radius:16px;padding:20px 18px 22px;display:flex;flex-direction:column;align-items:center;gap:4px}
+.platform.live{border-color:var(--gilt-deep);background:linear-gradient(180deg,#2f2213,var(--lacquer));box-shadow:0 0 0 1px rgba(217,178,92,.25),0 18px 40px rgba(0,0,0,.35)}
+.stores-block .platform h2{font:700 21px/1.2 'Cinzel',Georgia,serif;color:var(--ivory);margin:0;border:0;padding:0}
+.platform .where{margin:0 0 12px;color:var(--soft);font-size:18px}
+.platform .soon{display:inline-block;font:600 15px/1 'Cinzel',Georgia,serif;letter-spacing:.03em;color:var(--soft);border:1px dashed var(--gilt-deep);border-radius:999px;padding:14px 20px}
+.platform .carry{margin:10px 0 0;font-size:16px;line-height:1.35;color:var(--soft)}
+.stores-block .also{margin:16px 0 0;color:var(--soft);font-size:18px}
+@media (max-width:760px){.platforms{grid-template-columns:1fr}.platform{padding:16px}.platform.live{order:-1}}
+
+/* Socials, front and centre */
+.follow{text-align:center;max-width:820px;margin:34px auto 0;padding:0 20px}
+.follow p{margin:0 0 14px;color:var(--soft)}
+.socials{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.socials a{text-decoration:none;font:600 16px/1 'Cinzel',Georgia,serif;letter-spacing:.03em;color:var(--gilt);background:var(--lacquer);border:1px solid var(--rule);border-radius:999px;padding:13px 20px}
+.socials a:hover{border-color:var(--gilt);color:var(--ivory)}
+
+/* Sections */
+main.home{max-width:1120px;padding:0 20px}
+main.home section{padding:76px 0 0}
+main.home h2,.community h2{font:700 clamp(26px,3.4vw,36px)/1.2 'Cinzel',Georgia,serif;color:var(--gilt);margin:0 0 10px;border:0;padding:0}
+.lede{color:var(--soft);font-size:21px;max-width:720px;margin:0 0 26px}
+
+/* Videos */
+.video{position:relative;aspect-ratio:16/9;width:100%;background:#0e0905 center/cover no-repeat;border:1px solid var(--rule);border-radius:16px;overflow:hidden;box-shadow:0 24px 50px rgba(0,0,0,.45)}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video .start{position:absolute;inset:0;display:grid;place-items:center;background:rgba(10,6,3,.25);border:0;cursor:pointer;color:var(--walnut)}
+.video .start span{display:grid;place-items:center;width:84px;height:84px;border-radius:50%;background:var(--gilt);box-shadow:0 8px 24px rgba(0,0,0,.5);font-size:30px;padding-left:6px}
+.video .start:hover span{background:#e7c573}
+.video-note{margin:10px 0 0;font-size:17px;color:var(--soft);font-style:italic}
+
+/* Meet the court: the one bold element */
+.court{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:28px;align-items:center;background:radial-gradient(120% 90% at 30% 0%,#2e2013 0%,var(--lacquer) 55%,#1d140c 100%);border:1px solid var(--rule);border-radius:18px;padding:22px}
+.pedestals{grid-column:1/-1;display:grid;grid-template-columns:repeat(8,1fr);gap:6px}
+.pedestals button{appearance:none;background:none;border:0;border-bottom:2px solid transparent;color:var(--soft);cursor:pointer;padding:6px 2px 8px;font:600 13px/1.2 'Cinzel',Georgia,serif;display:flex;flex-direction:column;align-items:center;gap:6px}
+.pedestals img{height:92px;width:auto;filter:saturate(.7) brightness(.78);transition:filter .2s,transform .2s}
+.pedestals button[aria-selected="true"]{color:var(--gilt);border-bottom-color:var(--gilt)}
+.pedestals button[aria-selected="true"] img,.pedestals button:hover img{filter:none;transform:translateY(-3px)}
+.portrait{display:flex;gap:20px;align-items:center}
+.portrait img{height:330px;width:auto;flex:none;filter:drop-shadow(0 18px 24px rgba(0,0,0,.55))}
+.portrait h3{font:700 32px/1.1 'Cinzel',Georgia,serif;color:var(--ivory);margin:0 0 4px}
+.portrait .worth{color:var(--gilt);font-style:italic;margin:0 0 10px}
+.portrait p{margin:0}
+.board-wrap{display:flex;flex-direction:column;align-items:center;gap:12px}
+.board{display:grid;grid-template-columns:repeat(9,1fr);width:min(100%,430px);aspect-ratio:1;border:6px solid #3a2716;border-radius:6px;box-shadow:0 0 0 1px var(--gilt-deep),0 20px 40px rgba(0,0,0,.45)}
+.sq{position:relative;background:#dccaa6}
+.sq.dk{background:#8a6744}
+.sq::after{content:"";position:absolute;inset:0;margin:auto;border-radius:50%;opacity:0;transform:scale(.3);transition:opacity .3s,transform .3s;transition-delay:var(--d,0s)}
+.sq.move::after{width:32%;height:32%;background:var(--blue);opacity:1;transform:none}
+.sq.cap::after{width:72%;height:72%;box-shadow:inset 0 0 0 3px var(--garnet);opacity:1;transform:none}
+.sq.both::after{width:72%;height:72%;box-shadow:inset 0 0 0 3px var(--blue);background:radial-gradient(circle,var(--blue) 0 22%,transparent 24%);opacity:1;transform:none}
+.sq.shoot::after{width:74%;height:74%;opacity:1;transform:none;background:radial-gradient(circle,var(--garnet) 0 17%,transparent 19% 42%,var(--garnet) 44% 55%,transparent 57%)}
+.sq.jump::after{width:42%;height:42%;background:var(--garnet);border-radius:3px;opacity:1;transform:rotate(45deg)}
+.sq .glyph{position:absolute;inset:8%;display:grid;place-items:center;font:700 clamp(14px,3vw,24px)/1 'Cinzel',Georgia,serif;color:var(--walnut);background:var(--gilt);border-radius:50%;box-shadow:0 2px 6px rgba(0,0,0,.4)}
+.sq .foe{position:absolute;inset:20%;border-radius:50%;background:#24160d;box-shadow:inset 0 0 0 2px #c9b48c}
+.legend{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 16px;font-size:16px;color:var(--soft);margin:0;padding:0;list-style:none}
+.legend li{display:flex;align-items:center;gap:7px;margin:0}
+.legend i{display:inline-block;width:16px;height:16px;border-radius:50%;flex:none}
+.l-move{background:var(--blue);transform:scale(.55)}
+.l-both{box-shadow:inset 0 0 0 2px var(--blue);background:radial-gradient(circle,var(--blue) 0 24%,transparent 26%)}
+.l-cap{box-shadow:inset 0 0 0 2px var(--garnet)}
+.l-shoot{background:radial-gradient(circle,var(--garnet) 0 17%,transparent 19% 42%,var(--garnet) 44% 58%,transparent 60%)}
+.l-jump{background:var(--garnet);transform:rotate(45deg) scale(.7);border-radius:2px!important}
+.l-foe{background:#24160d;box-shadow:inset 0 0 0 2px #c9b48c}
+@media (max-width:860px){.court{grid-template-columns:1fr;padding:16px}.portrait img{height:220px}.pedestals{grid-template-columns:repeat(4,1fr)}.pedestals img{height:72px}}
+@media (max-width:460px){.portrait{flex-direction:column;align-items:flex-start}.portrait img{height:180px}}
+@media (prefers-reduced-motion:reduce){.sq::after,.pedestals img{transition:none}}
+
+/* Pilgrimage */
+.camp{margin:0 0 26px}
+.camp img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--rule);box-shadow:0 18px 40px rgba(0,0,0,.4)}
+.camp figcaption{margin-top:10px;color:var(--soft);font-style:italic;font-size:18px}
+.pilgrim{background:linear-gradient(180deg,#22180f 0%,#1c140c 100%);border:1px solid var(--rule);border-radius:18px;padding:28px 26px 30px}
+.road{list-style:none;margin:6px 0 10px;padding:0;display:grid;grid-template-columns:repeat(16,1fr);align-items:center;position:relative}
+.road::before{content:"";position:absolute;left:3%;right:3%;top:50%;border-top:2px dashed var(--gilt-deep);opacity:.6}
+.road li{position:relative;display:grid;place-items:center;margin:0}
+.road span{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--walnut);border:2px solid var(--gilt-deep);font:600 14px/1 'Cinzel',Georgia,serif;color:var(--soft)}
+.road .relic span{border-color:var(--blue);color:var(--ivory);box-shadow:0 0 0 4px rgba(58,93,176,.25)}
+.road .boss span{width:46px;height:46px;background:var(--garnet);border-color:var(--gilt);color:var(--ivory);font-size:16px}
+.road .boss.relic span{box-shadow:0 0 0 4px rgba(58,93,176,.45)}
+.road .free span{background:#3a2a17;color:var(--ivory)}
+.road .more span{border-style:dashed;font-size:20px;color:var(--gilt)}
+.road-key{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:16px;color:var(--soft);margin:0 0 26px;padding:0;list-style:none}
+.road-key li{display:flex;align-items:center;gap:8px;margin:0}
+.road-key i{width:14px;height:14px;border-radius:50%;border:2px solid var(--gilt-deep);background:var(--walnut)}
+.road-key .k-boss{background:var(--garnet);border-color:var(--gilt)}
+.road-key .k-relic{border-color:var(--blue);box-shadow:0 0 0 3px rgba(58,93,176,.3)}
+.road-key .k-free{background:#3a2a17}
+.loop{list-style:none;margin:0 0 30px;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;counter-reset:step}
+.loop li{counter-increment:step;margin:0}
+.loop h3{font:700 19px/1.3 'Cinzel',Georgia,serif;color:var(--ivory);margin:0 0 6px;display:flex;align-items:center;gap:10px}
+.loop h3::before{content:counter(step);display:grid;place-items:center;width:28px;height:28px;flex:none;border-radius:50%;background:var(--gilt);color:var(--walnut);font-size:15px}
+.loop p{margin:0;color:var(--soft)}
+.pilgrim h3.sub{font:700 20px/1.3 'Cinzel',Georgia,serif;color:var(--gilt);margin:0 0 4px}
+.pilgrim .sub-lede{margin:0 0 14px;color:var(--soft)}
+.relics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:0 0 30px}
+.relics div{background:rgba(0,0,0,.18);border:1px solid var(--rule);border-left:3px solid var(--blue);border-radius:10px;padding:12px 14px}
+.relics b{display:block;font:600 15px/1.3 'Cinzel',Georgia,serif;color:var(--ivory);margin-bottom:4px}
+.relics span{display:block;font-size:17px;line-height:1.35;color:var(--soft)}
+.journey-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.journey-facts h3{font:700 18px/1.3 'Cinzel',Georgia,serif;color:var(--gilt);margin:0 0 4px}
+.journey-facts p{margin:0;color:var(--soft)}
+@media (max-width:860px){
+ .pilgrim{padding:20px 16px 24px}
+ .road{grid-template-columns:repeat(8,1fr);row-gap:14px}
+ .road::before{display:none}
+ .loop,.journey-facts{grid-template-columns:1fr;gap:20px}
+ .relics{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:420px){.road span{width:30px;height:30px;font-size:13px}.road .boss span{width:38px;height:38px}.relics{grid-template-columns:1fr}}
+
+/* Ways to play */
+.modes{display:grid;grid-template-columns:repeat(3,1fr);gap:0 36px}
+.modes .group{border-top:2px solid var(--gilt-deep);padding-top:4px}
+.modes h3{font:700 18px/1.3 'Cinzel',Georgia,serif;color:var(--ivory);margin:20px 0 2px}
+.modes .group > h3:first-child{color:var(--gilt);font-size:15px;letter-spacing:.04em;margin-top:10px}
+.modes p{margin:0;color:var(--soft)}
+@media (max-width:860px){.modes{grid-template-columns:1fr;gap:28px}}
+
+/* Garden */
+.garden-view{position:relative;aspect-ratio:1400/787;border-radius:16px;overflow:hidden;border:1px solid var(--rule);box-shadow:0 24px 50px rgba(0,0,0,.45);background:#2a1d12}
+.garden-view img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s ease}
+.garden-view img.on{opacity:1}
+.seasons{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:12px 0 0;padding:0;list-style:none}
+.seasons li{margin:0}
+.seasons button{appearance:none;width:100%;height:100%;text-align:left;cursor:pointer;padding:14px 16px 16px;border-radius:12px;color:var(--ivory);border:2px solid transparent;opacity:.6;transition:opacity .25s,border-color .25s;font:inherit}
+.seasons button:hover{opacity:.85}
+.seasons button[aria-selected="true"]{opacity:1;border-color:var(--gilt)}
+.seasons b{display:block;font:700 18px/1.3 'Cinzel',Georgia,serif;margin-bottom:4px}
+.seasons span{font-size:18px;line-height:1.4;display:block;opacity:.92}
+.spring button{background:linear-gradient(160deg,#3c4e2c,#26301c)}
+.summer button{background:linear-gradient(160deg,#5c4b1e,#33290f)}
+.autumn button{background:linear-gradient(160deg,#6a2f1a,#3a1a0f)}
+.winter button{background:linear-gradient(160deg,#2e3d52,#1b2431)}
+.garden-note{margin:12px 0 0;color:var(--soft);font-style:italic}
+@media (max-width:760px){.seasons{grid-template-columns:repeat(2,1fr)}.seasons span{font-size:16px}}
+@media (prefers-reduced-motion:reduce){.garden-view img,.seasons button{transition:none}}
+
+/* Piece sets */
+.sets{display:grid;grid-template-columns:1fr;gap:18px}
+.sets figure{margin:0;background:var(--lacquer);border:1px solid var(--rule);border-radius:14px;padding:16px 16px 12px;display:flex;flex-direction:column}
+.sets img{display:block;width:100%;height:auto;aspect-ratio:1600/457;object-fit:contain}
+.sets figcaption{margin-top:10px;display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 12px}
+.sets figcaption b{font:600 17px/1.3 'Cinzel',Georgia,serif;color:var(--gilt)}
+.sets figcaption span{font-size:18px;color:var(--soft)}
+.sets-note{margin:14px 0 0;color:var(--soft);font-style:italic}
+
+/* Save, watch, share */
+.keep{display:grid;grid-template-columns:repeat(3,1fr);gap:0 36px}
+.keep > div{border-top:2px solid var(--gilt-deep);padding-top:12px;margin-bottom:26px}
+.keep h3{font:700 18px/1.3 'Cinzel',Georgia,serif;color:var(--ivory);margin:0 0 4px}
+.keep p{margin:0;color:var(--soft)}
+@media (max-width:860px){.keep{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.keep{grid-template-columns:1fr}}
+
+/* Calm by design */
+.calm{columns:2;column-gap:44px;margin:0;padding-left:1.1em}
+.calm li{break-inside:avoid;margin:0 0 12px}
+.calm b{color:var(--ivory)}
+@media (max-width:700px){.calm{columns:1}}
+
+/* Community */
+.community{margin-top:80px;background:var(--lacquer);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:56px 0 60px}
+.community .creators{margin:-10px 0 22px;color:var(--soft);font-size:19px;max-width:720px}
+.community .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
+.mail{position:relative}
+.mail button.btn{background:none;cursor:pointer}
+.mail button.btn:hover,.mail button.btn[aria-expanded="true"]{background:#e7c573;color:var(--walnut)}
+.mail-menu{position:absolute;left:0;bottom:calc(100% + 10px);z-index:4;min-width:260px;background:#2c2015;border:1px solid var(--gilt-deep);border-radius:14px;padding:14px;box-shadow:0 14px 34px rgba(0,0,0,.5)}
+.mail-menu p{margin:0 0 10px;color:var(--ivory);font-size:19px}
+.mail-menu button,.mail-menu a{display:block;width:100%;text-align:left;font:600 15px/1 'Cinzel',Georgia,serif;letter-spacing:.03em;color:var(--gilt);background:var(--walnut);border:1px solid var(--rule);border-radius:10px;padding:12px 14px;margin-top:8px;cursor:pointer;text-decoration:none}
+.mail-menu button:hover,.mail-menu a:hover{border-color:var(--gilt)}
+@media (max-width:520px){.mail-menu{left:auto;right:0}}
+footer{background:#120c07}
+footer .legal{margin-top:6px}
+
+/* Language menu */
+header.top nav .langs{position:relative}
+header.top nav .langs summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;padding:6px 0;font:600 15px/1 'Cinzel',Georgia,serif;letter-spacing:.03em;color:#b8a894}
+header.top nav .langs summary::-webkit-details-marker{display:none}
+header.top nav .langs summary:hover,header.top nav .langs[open] summary{color:#d9b25c}
+header.top nav .langs ul{position:absolute;right:0;top:calc(100% + 10px);z-index:10;margin:0;padding:8px;list-style:none;min-width:180px;background:#1f160e;border:1px solid #a8823a;border-radius:12px;box-shadow:0 14px 34px rgba(0,0,0,.5)}
+header.top nav .langs li{margin:0}
+header.top nav .langs ul a{display:block;padding:8px 12px;border-radius:8px;font:500 17px/1.2 Georgia,serif;letter-spacing:0;color:#f1e7d3;text-decoration:none}
+header.top nav .langs ul a:hover{background:#2c2015}
+header.top nav .langs ul a[aria-current]{color:#d9b25c}
+@media (max-width:520px){header.top nav .press{display:none}}
+footer .legal-note{margin-top:6px;font-size:13px;opacity:.75}
+.lang-note{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 14px;padding:10px 16px;background:#2c2015;border-bottom:1px solid #3b2c1c;color:#f1e7d3;font-size:17px;text-align:center}
+.lang-note[hidden]{display:none}
+.lang-note a{color:#d9b25c;font-weight:600}
+.lang-note button{appearance:none;background:none;border:0;color:#c9b9a1;font-size:20px;line-height:1;cursor:pointer;padding:2px 6px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"VideoGame","name":"Court of Squares","url":"https://toasgaard.github.io/court-of-squares/pt.html","inLanguage":"pt-BR","image":"https://toasgaard.github.io/court-of-squares/og-image.jpg","description":"Um xadrez tranquilo com oito peças novas, exércitos montados por você, uma Peregrinação roguelite, um jardim de quebra-cabeças diários e partidas online.","genre":["Chess","Strategy","Puzzle"],"gamePlatform":["iOS","Android","PC"],"playMode":["SinglePlayer","MultiPlayer"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"sameAs":["https://www.youtube.com/@CourtofSquares","https://www.tiktok.com/@courtofsquares","https://www.instagram.com/courtofsquares/","https://x.com/CourtofSquares","https://www.facebook.com/profile.php?id=61595226989676"]}
+</script>
+</head>
+<body>
+<header class="top"><nav><a class="home" href="pt.html">Court of Squares</a><a class="sec" href="#pieces">Peças</a><a class="sec" href="#pilgrimage">Peregrinação</a><a class="sec" href="#play">Modos de jogo</a><a class="sec" href="#garden">Jardim</a><a class="press" href="press.html">Kit de imprensa</a><details class="langs"><summary aria-label="Idioma: Português"><svg viewBox="0 0 24 24" aria-hidden="true" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z"/></svg><span>PT</span></summary><ul><li><a href="index.html" hreflang="en" lang="en">English</a></li><li><a href="es.html" hreflang="es" lang="es">Español</a></li><li><a href="pt.html" hreflang="pt-BR" lang="pt-BR" aria-current="true">Português</a></li><li><a href="fr.html" hreflang="fr" lang="fr">Français</a></li><li><a href="de.html" hreflang="de" lang="de">Deutsch</a></li><li><a href="it.html" hreflang="it" lang="it">Italiano</a></li><li><a href="pl.html" hreflang="pl" lang="pl">Polski</a></li><li><a href="tr.html" hreflang="tr" lang="tr">Türkçe</a></li><li><a href="ru.html" hreflang="ru" lang="ru">Русский</a></li><li><a href="ja.html" hreflang="ja" lang="ja">日本語</a></li><li><a href="ko.html" hreflang="ko" lang="ko">한국어</a></li><li><a href="zh.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li></ul></details><a class="beta" href="beta-pt.html">Beta do Android</a></nav></header>
+
+<picture>
+<source media="(max-width:700px)" srcset="hero-mobile.webp">
+<source srcset="hero-1400.webp 1400w, hero-2400.webp 2400w" sizes="100vw">
+<img class="hero-art" src="hero-1400.webp" alt="Uma dama branca e um cavalo escuro frente a frente sobre um tabuleiro de mármore no terraço de um castelo ao pôr do sol" width="2400" height="1029" fetchpriority="high">
+</picture>
+
+<div class="pitch">
+<h1>Xadrez tranquilo, com oito peças novas</h1>
+<p>Todas as regras que você conhece, em mesas ornamentadas, com música suave e peças que deslizam. E ainda um Arqueiro que atira, um Bobo que captura em saltos encadeados, exércitos montados por você e um jardim que cresce com o quebra-cabeça diário.</p>
+</div>
+
+<div class="stores-block" id="get">
+<p class="free">Grátis e sem anúncios.</p>
+<div class="platforms">
+<div class="platform">
+<h2>iPhone &amp; iPad</h2>
+<p class="where">App Store</p>
+<!-- When it's live, replace the next line with:
+<a class="btn primary" href="https://apps.apple.com/app/idYOUR_APP_ID" rel="noopener">Download on the App Store</a> -->
+<span class="soon">Em breve</span>
+</div>
+<div class="platform live">
+<h2>Android</h2>
+<p class="where">Google Play</p>
+<!-- When it's live, replace the next line with:
+<a class="btn primary" href="https://play.google.com/store/apps/details?id=com.courtofsquares.game" rel="noopener">Get it on Google Play</a> -->
+<a class="btn primary" href="beta-pt.html">Entre na beta hoje</a>
+<p class="carry">Seu progresso e seus desbloqueios vão para a versão completa.</p>
+</div>
+<div class="platform">
+<h2>PC</h2>
+<p class="where">Steam</p>
+<!-- When it's live, replace the next line with:
+<a class="btn primary" href="https://store.steampowered.com/app/YOUR_APP_ID" rel="noopener">Get it on Steam</a> -->
+<span class="soon">Em breve</span>
+</div>
+</div>
+<p class="also"><a href="#trailer">Ver o trailer</a> · Uma conta só em todas as plataformas: continue de onde parou.</p>
+</div>
+
+
+<div class="follow">
+<p>Peças novas, clipes, diários de desenvolvimento e notícias do lançamento, em todas as nossas redes.</p>
+<div class="socials" role="navigation" aria-label="Siga Court of Squares">
+<a href="https://discord.gg/DWXYmJSMmR" rel="noopener">Discord</a>
+<a href="https://www.youtube.com/@CourtofSquares" rel="noopener">YouTube</a>
+<a href="https://www.tiktok.com/@courtofsquares" rel="noopener">TikTok</a>
+<a href="https://www.instagram.com/courtofsquares/" rel="noopener">Instagram</a>
+<a href="https://x.com/CourtofSquares" rel="noopener">X</a>
+<a href="https://www.facebook.com/profile.php?id=61595226989676" rel="noopener">Facebook</a>
+</div>
+</div>
+
+<main class="home">
+
+<section id="trailer">
+<h2>Veja o trailer</h2>
+<div class="video" data-yt="0lBtSt2Io14" data-title="Trailer de Court of Squares"></div>
+<p class="video-note">Começa sem som quando aparece na tela. Toque no alto-falante para ligar o som.</p>
+</section>
+
+<section id="pieces">
+<h2>Conheça a corte</h2>
+<p class="lede">Oito peças que você não encontra em nenhum outro jogo de xadrez, cada uma com seu próprio movimento e sua lição curtinha no jogo. Escolha uma para ver como ela se move.</p>
+<div class="court">
+<div class="pedestals" role="tablist" aria-label="As oito peças novas"></div>
+<div class="portrait" id="portrait" role="tabpanel" aria-live="polite">
+<img id="p-img" src="piece-archer.webp" alt="" width="200" height="330">
+<div><h3 id="p-name">Arqueiro</h3><p class="worth" id="p-worth"></p><p id="p-rule"></p></div>
+</div>
+<div class="board-wrap">
+<div class="board" id="board" role="img" aria-label=""></div>
+<ul class="legend">
+<li><i class="l-both"></i>move ou captura</li>
+<li><i class="l-move"></i>só move</li>
+<li><i class="l-cap"></i>só captura</li>
+<li><i class="l-shoot"></i>atira e fica parado</li>
+<li><i class="l-foe"></i>inimigo</li>
+<li><i class="l-jump"></i>cai depois de um salto</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="pilgrimage">
+<h2>A Peregrinação</h2>
+<p class="lede">Uma jornada roguelite sem fim. Conduza um pequeno bando de peregrinos de batalha em batalha contra exércitos que não param de crescer e ficar mais espertos. Peça perdida é peça perdida para sempre, então cada captura que você permite pesa no resto do caminho.</p>
+<div class="pilgrim">
+<figure class="camp"><img src="pilgrim-camp.webp" alt="O acampamento da Peregrinação: seu bando, a próxima batalha contra A Muralha de Peões, as relíquias e a loja de dízimos em volta de uma fogueira ao entardecer" width="1600" height="900" loading="lazy" decoding="async"><figcaption>O acampamento entre batalhas: confira seu bando, avalie o próximo inimigo, escolha relíquias e gaste dízimos na loja.</figcaption></figure>
+<ol class="road" aria-label="O caminho: etapas de 1 a 15 e além, com um chefe a cada 5 etapas e uma relíquia a cada 3">
+<li class="free"><span>1</span></li>
+<li class="free"><span>2</span></li>
+<li class="free relic"><span>3</span></li>
+<li><span>4</span></li>
+<li class="boss"><span>5</span></li>
+<li class="relic"><span>6</span></li>
+<li><span>7</span></li>
+<li><span>8</span></li>
+<li class="relic"><span>9</span></li>
+<li class="boss"><span>10</span></li>
+<li><span>11</span></li>
+<li class="relic"><span>12</span></li>
+<li><span>13</span></li>
+<li><span>14</span></li>
+<li class="boss relic"><span>15</span></li>
+<li class="more"><span aria-hidden="true">&#8734;</span></li>
+</ol>
+<ul class="road-key">
+<li><i class="k-free"></i>três primeiras etapas grátis</li>
+<li><i class="k-relic"></i>escolha uma relíquia</li>
+<li><i class="k-boss"></i>chefe</li>
+<li>e assim por diante, enquanto seu exército aguentar</li>
+</ul>
+
+<ol class="loop">
+<li><h3>Lute</h3><p>Vença o exército da etapa em até 50 lances. Não existe empate: se os lances acabarem, vence o lado com mais pontos no tabuleiro, e a igualdade fica com o inimigo.</p></li>
+<li><h3>Acampe</h3><p>As vitórias rendem dízimos. Gaste-os com recrutas (cinco à venda, um pela metade do preço), pague um batedor para ver exatamente onde o próximo inimigo está e reorganize seu exército antes de seguir viagem.</p></li>
+<li><h3>Escolha uma relíquia</h3><p>A cada três etapas, escolha uma entre três relíquias. Cada uma muda as regras a seu favor pelo resto da jornada.</p></li>
+</ol>
+
+<h3 class="sub">Oito relíquias</h3>
+<p class="sub-lede">Escolha bem: os efeitos se acumulam, e nenhuma jornada as oferece na mesma ordem.</p>
+<div class="relics">
+<div><b>Botas da Longa Marcha</b><span>15 lances a mais em cada batalha.</span></div>
+<div><b>Bolsa do Coletor de Dízimos</b><span>50% mais dízimos em cada vitória.</span></div>
+<div><b>Bolsa do Socorrista</b><span>Depois de cada vitória, uma peça caída volta ao seu exército.</span></div>
+<div><b>Selo do Intendente</b><span>Recrutas custam 25% menos.</span></div>
+<div><b>Estandarte da Terceira Fileira</b><span>Seu exército pode ocupar três fileiras.</span></div>
+<div><b>Segundo Fôlego</b><span>Sua primeira batalha perdida é jogada de novo em vez de encerrar a jornada.</span></div>
+<div><b>Estandarte da Colina</b><span>Vale o «Rei da Colina»: vence o rei que chegar ao centro.</span></div>
+<div><b>Carta de Clemência</b><span>Se os lances acabarem com pontos empatados, a batalha é sua.</span></div>
+</div>
+
+<div class="journey-facts">
+<div><h3>Quem você vai enfrentar</h3><p>Companhias temáticas como Os Arqueiros do Vale, A Trupe dos Bobos e A Guarda do Claustro. A cada cinco etapas, uma corte-chefe como A Corte Vazia ou A Guarda do Rei Cinzento traz um exército maior.</p></div>
+<div><h3>Do seu jeito</h3><p>Comece com um rei, um bispo, um cavalo, uma torre e quatro peões. Jogue a versão Convocação com todas as peças do jogo ou a Clássica com as seis de sempre, no Fácil, Normal ou Difícil.</p></div>
+<div><h3>Suba na classificação</h3><p>Cada versão e dificuldade tem sua própria classificação, ordenada pelas etapas vencidas. O servidor confere as jornadas ranqueadas batalha por batalha, então todo resultado é de verdade.</p></div>
+</div>
+</div>
+</section>
+
+<section id="play">
+<h2>Modos de jogo</h2>
+<p class="lede">Jogue o xadrez clássico ou traga as peças novas. O relógio fica desligado se você não quiser, e qualquer partida pode ganhar regras especiais como o «Rei da Colina».</p>
+<div class="modes">
+<div class="group"><h3>No seu ritmo</h3>
+<h3>Clássico</h3><p>O xadrez que você conhece, contra o computador ou com alguém no mesmo aparelho.</p>
+<h3>Convocação</h3><p>Monte seu próprio exército com um orçamento de pontos e leve-o para a batalha.</p>
+<h3>Partilha</h3><p>Você e seu adversário escolhem peças em turnos de uma reserva comum.</p>
+<h3>Tempestade de Peões</h3><p>Um rei e uma muralha de peões para cada lado. Curto, afiado e surpreendentemente profundo.</p>
+</div>
+<div class="group"><h3>Desafios</h3>
+<h3><a href="#pilgrimage" style="color:inherit">Peregrinação</a></h3><p>Uma jornada roguelite sem fim, etapa por etapa, com relíquias e um exército que você remonta a cada acampamento.</p>
+<h3>Quebra-cabeça diário</h3><p>Um quebra-cabeça novo todo dia. Resolver faz crescer um jardim que você mesmo planeja.</p>
+<h3>Desafio Semanal</h3><p>Todo mundo enfrenta o mesmo exército. Vença com o menor número de lances para liderar a classificação da semana.</p>
+<h3>Lições</h3><p>Lições curtas sobre cada peça, xeque-mate, empates, roque e muito mais.</p>
+</div>
+<div class="group"><h3>Online</h3>
+<h3>Ranqueadas</h3><p>Suba de Plebeu a Soberano. O servidor confere cada partida ranqueada, para o ranking continuar justo.</p>
+<h3>Amigos</h3><p>Jogue com amigos, mande emotes e acompanhe o retrospecto entre vocês.</p>
+<h3>Visite jardins</h3><p>Passeie pelos jardins de outros jogadores e deixe uma flor para eles.</p>
+<h3>Uma conta em todo lugar</h3><p>Celular, tablet e PC compartilham o mesmo progresso quando você entra na conta.</p>
+</div>
+</div>
+</section>
+
+<section id="garden">
+<h2>Um jardim ao longo das estações</h2>
+<p class="lede">Cada quebra-cabeça diário resolvido faz seu jardim crescer. Monte caminhos, canteiros e decorações e veja tudo mudar ao longo do ano, com mesas e decorações sazonais para conquistar pelo caminho.</p>
+<div class="garden-view" aria-live="polite">
+<img src="garden-spring.webp" alt="O mesmo jardim na primavera, emoldurado por tulipas, narcisos e um ninho" width="1400" height="787" loading="lazy" decoding="async" data-season="spring" class="on">
+<img src="garden-summer.webp" alt="O mesmo jardim no verão, emoldurado por girassóis, rosas e lavanda" width="1400" height="787" loading="lazy" decoding="async" data-season="summer">
+<img src="garden-autumn.webp" alt="O mesmo jardim no outono, emoldurado por abóboras, folhas de bordo e bolotas" width="1400" height="787" loading="lazy" decoding="async" data-season="autumn">
+<img src="garden-winter.webp" alt="O mesmo jardim no inverno, emoldurado por neve, azevinho e pinhas" width="1400" height="787" loading="lazy" decoding="async" data-season="winter">
+</div>
+<ol class="seasons" role="tablist" aria-label="Estações">
+<li class="spring"><button type="button" role="tab" aria-selected="true" data-season="spring"><b>Primavera</b><span>Flores, brotos novos e uma luz suave de manhã.</span></button></li>
+<li class="summer"><button type="button" role="tab" aria-selected="false" data-season="summer"><b>Verão</b><span>Canteiros cheios e longos fins de tarde dourados.</span></button></li>
+<li class="autumn"><button type="button" role="tab" aria-selected="false" data-season="autumn"><b>Outono</b><span>Folhas caindo, lanternas e um evento de Halloween.</span></button></li>
+<li class="winter"><button type="button" role="tab" aria-selected="false" data-season="winter"><b>Inverno</b><span>Geada, neve silenciosa e o Festival de Inverno.</span></button></li>
+</ol>
+<p class="garden-note">O jardim de um jogador ao longo do ano. Canteiros, estátuas e troféus ficam onde você os colocou enquanto as estações mudam ao redor.</p>
+</section>
+
+<section id="sets">
+<h2>Com a sua cara</h2>
+<p class="lede">Escolha a mesa, o fundo, a música e o conjunto de peças. Conquiste brasões, estandartes e mesas sazonais, e doure suas peças favoritas, do bronze à platina, conforme você as domina.</p>
+<div class="sets">
+<figure><img src="set-basic.webp" alt="O conjunto de peças Básico: rei, dama, bispo, cavalo, torre e peão clássicos em marfim e dourado" loading="lazy" decoding="async" width="1600" height="457"><figcaption><b>Básico</b><span>As formas de sempre, para o xadrez clássico.</span></figcaption></figure>
+<figure><img src="set-court.webp" alt="O conjunto de peças Corte, em azul e dourado" loading="lazy" decoding="async" width="1600" height="457"><figcaption><b>Corte</b><span>Um dos muitos conjuntos com personalidade própria.</span></figcaption></figure>
+<figure><img src="set-cute.webp" alt="As oito peças novas no conjunto Fofo, rosa e dourado: Bobo, Peregrino, Arauto, Abadessa, Arqueiro, Corcel Noturno, Lanceiro e Falcoeiro" loading="lazy" decoding="async" width="1600" height="457"><figcaption><b>Fofo</b><span>Cada conjunto tem sua própria versão das oito peças novas.</span></figcaption></figure>
+<figure><img src="set-halloween.webp" alt="O conjunto de peças de Halloween" loading="lazy" decoding="async" width="1600" height="457"><figcaption><b>Halloween</b><span>Os conjuntos sazonais chegam com os eventos do ano.</span></figcaption></figure>
+</div>
+<p class="sets-note">Só alguns exemplos da coleção. No jogo há outros conjuntos, mesas e fundos esperando por você.</p>
+</section>
+
+<section id="keep">
+<h2>Salve, assista, compartilhe</h2>
+<p class="lede">Os pequenos detalhes que deixam cada partida com a sua cara.</p>
+<div class="keep">
+<div><h3>Seus exércitos</h3><p>Monte exércitos para a Convocação e salve os favoritos. Compartilhe um como código que um amigo pode colar direto no jogo.</p></div>
+<div><h3>Replays</h3><p>Assista de novo às suas partidas recentes. Guarde as últimas 5, 10 ou 25.</p></div>
+<div><h3>Termine depois</h3><p>Salve uma partida contra o computador ou no mesmo aparelho e retome quando quiser. Online, ofereça salvar a partida e vocês dois terão 30 dias para terminá-la.</p></div>
+<div><h3>Compartilhe o momento</h3><p>Depois de uma partida, compartilhe uma imagem do resultado ou, no celular, um clipe curto em vídeo da partida.</p></div>
+<div><h3>Modo espectador</h3><p>Coloque dois computadores para jogar entre si, partida após partida, com música. Ótima companhia para uma noite tranquila.</p></div>
+</div>
+</section>
+
+<section id="calm">
+<h2>Tranquilo de propósito</h2>
+<ul class="calm">
+<li><b>Nunca terá anúncios.</b> O jogo é grátis. O Court Pass opcional é uma compra única que libera toda a Peregrinação, a decoração do jardim e todos os cosméticos que você conquistar.</li>
+<li><b>Sem relógio, a não ser que você queira,</b> ou qualquer ritmo, do bullet de 1 minuto ao clássico de 30.</li>
+<li><b>Toque e segure qualquer peça</b> para ver exatamente como ela se move.</li>
+<li><b>Tabuleiro de perto ou visto de cima,</b> com coordenadas, lances possíveis e rastro dos lances como preferir.</li>
+<li><b>Confortável em qualquer aparelho:</b> tamanho de texto ajustável, zoom com os dedos e efeitos mais leves para celulares mais antigos e mais bateria.</li>
+<li><b>Doze idiomas, incluindo português:</b> inglês, espanhol, francês, alemão, italiano, polonês, turco, russo, japonês, coreano e chinês.</li>
+</ul>
+</section>
+</main>
+
+<div class="community" id="community">
+<div class="wrap">
+<h2>Junte-se à corte</h2>
+<p class="lede">Acompanhe as peças novas, os eventos sazonais e as notícias do lançamento, ou ajude a testar o jogo antes de ele sair. Tudo o que você conquistar na beta vai para a versão final.</p>
+<p class="creators">Faz vídeos sobre Court of Squares? Mande para a gente: podemos dar destaque a eles. Logos, artes e capturas de tela estão no <a href="press.html">kit de imprensa</a> (em inglês).</p>
+<div class="row">
+<a class="btn primary" href="beta-pt.html">Entre na beta do Android</a>
+<a class="btn" href="https://discord.gg/DWXYmJSMmR" rel="noopener">Entre no Discord</a>
+<div class="mail">
+<button class="btn" type="button" id="mail-btn" aria-expanded="false" aria-controls="mail-menu">Fale com a gente</button>
+<div class="mail-menu" id="mail-menu" hidden>
+<p>courtofsquares@gmail.com</p>
+<button type="button" id="mail-copy">Copiar endereço</button>
+<a href="mailto:courtofsquares@gmail.com">Abrir o app de e-mail</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<footer><div class="social"><a href="https://discord.gg/DWXYmJSMmR" rel="noopener">Discord</a> · <a href="https://www.youtube.com/@CourtofSquares" rel="noopener">YouTube</a> · <a href="https://www.tiktok.com/@courtofsquares" rel="noopener">TikTok</a> · <a href="https://www.instagram.com/courtofsquares/" rel="noopener">Instagram</a> · <a href="https://x.com/CourtofSquares" rel="noopener">X</a> · <a href="https://www.facebook.com/profile.php?id=61595226989676" rel="noopener">Facebook</a></div><div>Court of Squares · <a href="mailto:courtofsquares@gmail.com">courtofsquares@gmail.com</a></div><div class="legal"><a href="press.html">Kit de imprensa</a> · <a href="beta-pt.html">Beta do Android</a> · <a href="privacy.html">Privacidade</a> · <a href="terms.html">Termos</a> · <a href="delete-account.html">Excluir sua conta</a> · <a href="licenses.html">Licenças</a></div><div class="legal-note">Os textos legais e o kit de imprensa estão em inglês.</div></footer>
+
+<script>
+// The eight new pieces and how they move. 9 x 9 board, the piece in the middle, forward is up.
+const C = 4;
+const P = [
+  {id:'archer', name:'Arqueiro', worth:3, rule:"Anda uma casa em qualquer direção, mas nunca captura ao se mover. Atira em um inimigo a exatamente duas casas em linha reta, se a casa do meio estiver vazia, e fica onde está."},
+  {id:'jester', name:'Bobo', worth:1, rule:"Anda uma casa na diagonal. Captura saltando na diagonal por cima de um inimigo vizinho até a casa vazia logo atrás, e pode continuar saltando no mesmo lance, capturando uma peça a cada salto."},
+  {id:'nightrider', name:'Corcel Noturno', worth:4, rule:"Salta em L como o cavalo e pode continuar saltando na mesma direção em linha reta enquanto cada casa de chegada estiver vazia."},
+  {id:'lancer', name:'Lanceiro', worth:3, rule:"Avança reto para a frente quantas casas quiser, ou anda uma casa para o lado ou para trás. Também captura uma casa na diagonal para a frente."},
+  {id:'herald', name:'Arauto', worth:3, rule:"Salta três casas em uma direção e uma para o lado, um L comprido. Pula por cima das peças e sempre fica em casas da mesma cor."},
+  {id:'falconer', name:'Falcoeiro', worth:3, rule:"Salta três casas em uma direção e duas para o lado, pulando por cima das peças. Também pode andar uma casa em qualquer direção."},
+  {id:'abbess', name:'Abadessa', worth:4, rule:"Anda até duas casas em linha reta para cima, para baixo, para a esquerda ou para a direita (não pode pular), ou uma casa na diagonal."},
+  {id:'pilgrim', name:'Peregrino', worth:1, rule:"Anda uma casa na diagonal para a frente. Captura uma casa reto à frente ou para qualquer um dos lados, e é promovido na última fileira."}
+];
+const ALL8 = [[1,0],[-1,0],[0,1],[0,-1],[1,1],[1,-1],[-1,1],[-1,-1]];
+const DIAG = [[1,1],[1,-1],[-1,1],[-1,-1]];
+const ORTH = [[1,0],[-1,0],[0,1],[0,-1]];
+function leaps(a,b){ const s=new Set(); for (const [x,y] of [[a,b],[b,a]]) for (const sx of [1,-1]) for (const sy of [1,-1]) s.add((x*sx)+','+(y*sy)); return [...s].map(t=>t.split(',').map(Number)); }
+const inB = (f,r) => f>=0 && f<9 && r>=0 && r<9;
+
+// Each mark: square plus kind (move | cap | both | shoot | jump | foe). Later marks on a square win.
+function marks(id){
+  const m = new Map(); const add = (dx,dy,kind) => { const f=C+dx, r=C+dy; if (inB(f,r)) m.set(r*9+f,kind); };
+  switch (id){
+    case 'archer': ALL8.forEach(([x,y])=>{ add(x,y,'move'); add(2*x,2*y,'shoot'); }); break;
+    case 'jester': DIAG.forEach(([x,y])=>add(x,y,'move')); add(1,1,'foe'); add(2,2,'jump'); add(3,3,'foe'); add(4,4,'jump'); break;
+    case 'nightrider': leaps(1,2).forEach(([x,y])=>{ for (let k=1;k<9;k++) add(x*k,y*k,'both'); }); break;
+    case 'lancer': for (let k=1;k<9;k++) add(0,k,'both'); [[1,0],[-1,0],[0,-1]].forEach(([x,y])=>add(x,y,'both')); add(1,1,'cap'); add(-1,1,'cap'); break;
+    case 'herald': leaps(3,1).forEach(([x,y])=>add(x,y,'both')); break;
+    case 'falconer': leaps(3,2).forEach(([x,y])=>add(x,y,'both')); ALL8.forEach(([x,y])=>add(x,y,'both')); break;
+    case 'abbess': ORTH.forEach(([x,y])=>{ add(x,y,'both'); add(2*x,2*y,'both'); }); DIAG.forEach(([x,y])=>add(x,y,'both')); break;
+    case 'pilgrim': add(1,1,'move'); add(-1,1,'move'); add(0,1,'cap'); add(1,0,'cap'); add(-1,0,'cap'); break;
+  }
+  return m;
+}
+
+const board = document.getElementById('board');
+const squares = [];
+for (let r=8; r>=0; r--) for (let f=0; f<9; f++){
+  const d = document.createElement('div');
+  d.className = 'sq' + ((f+r)%2===0 ? ' dk' : '');
+  board.appendChild(d); squares[r*9+f] = d;
+}
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const row = document.querySelector('.pedestals');
+
+function show(i){
+  const p = P[i];
+  [...row.children].forEach((b,j)=>{ b.setAttribute('aria-selected', String(j===i)); b.tabIndex = j===i ? 0 : -1; });
+  const img = document.getElementById('p-img');
+  img.src = `piece-${p.id}.webp`; img.alt = `The ${p.name}`;
+  document.getElementById('p-name').textContent = p.name;
+  document.getElementById('p-worth').textContent = (p.worth===1 ? `Vale ${p.worth} ponto ao montar um exército` : `Vale ${p.worth} pontos ao montar um exército`);
+  document.getElementById('p-rule').textContent = p.rule;
+  squares.forEach(s=>{ s.classList.remove('move','cap','both','shoot','jump'); s.innerHTML=''; s.style.removeProperty('--d'); });
+  squares[C*9+C].innerHTML = `<span class="glyph" aria-hidden="true">${p.name[0]}</span>`;
+  const list = marks(p.id);
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    for (const [idx,kind] of list){
+      const s = squares[idx];
+      if (kind==='foe'){ s.innerHTML = '<span class="foe"></span>'; continue; }
+      if (!reduce){ const f=idx%9, r=(idx-f)/9; s.style.setProperty('--d', (Math.hypot(f-C,r-C)*0.05).toFixed(2)+'s'); }
+      s.classList.add(kind);
+    }
+  }));
+  board.setAttribute('aria-label', `Movimento – ${p.name}: ${p.rule}`);
+}
+
+P.forEach((p,i)=>{
+  const b = document.createElement('button');
+  b.type = 'button'; b.setAttribute('role','tab'); b.setAttribute('aria-controls','portrait');
+  b.innerHTML = `<img src="piece-${p.id}.webp" alt="" height="92"><span>${p.name}</span>`;
+  b.addEventListener('click', ()=>show(i));
+  b.addEventListener('keydown', e=>{
+    const n = e.key==='ArrowRight' ? (i+1)%P.length : e.key==='ArrowLeft' ? (i+P.length-1)%P.length : -1;
+    if (n>=0){ e.preventDefault(); show(n); row.children[n].focus(); }
+  });
+  row.appendChild(b);
+});
+show(0);
+
+// Email us: copy the address or open the mail app.
+(() => {
+  const btn = document.getElementById('mail-btn'), menu = document.getElementById('mail-menu'), copy = document.getElementById('mail-copy');
+  const address = 'courtofsquares@gmail.com';
+  const close = () => { menu.hidden = true; btn.setAttribute('aria-expanded','false'); };
+  btn.addEventListener('click', e => { e.stopPropagation(); const open = menu.hidden; menu.hidden = !open; btn.setAttribute('aria-expanded', String(open)); if (open) copy.focus(); });
+  document.addEventListener('click', e => { if (!menu.contains(e.target)) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !menu.hidden){ close(); btn.focus(); } });
+  copy.addEventListener('click', async () => {
+    let ok = false;
+    try { await navigator.clipboard.writeText(address); ok = true; }
+    catch (_) {
+      const t = document.createElement('textarea'); t.value = address; t.setAttribute('readonly',''); t.style.position='fixed'; t.style.opacity='0';
+      document.body.appendChild(t); t.select(); try { ok = document.execCommand('copy'); } catch (_) {} t.remove();
+    }
+    copy.textContent = ok ? "Copiado" : "Selecione o endereço acima para copiar";
+    setTimeout(() => { copy.textContent = "Copiar endereço"; }, 2200);
+  });
+})();
+
+// Videos: each <div class="video" data-yt="VIDEO_ID"> loads when it nears the screen, plays muted while at least
+// half of it is in view and pauses when scrolled away. With reduced motion set, it waits for a tap instead.
+(() => {
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const send = (frame, func) => { try { frame.contentWindow.postMessage(JSON.stringify({event:'command', func, args:[]}), '*'); } catch (_) {} };
+  const load = (box, play) => {
+    if (box.querySelector('iframe')) return box.querySelector('iframe');
+    const id = box.dataset.yt;
+    const f = document.createElement('iframe');
+    f.src = `https://www.youtube.com/embed/${id}?enablejsapi=1&mute=1&playsinline=1&rel=0&modestbranding=1${play ? '&autoplay=1' : ''}&origin=${encodeURIComponent(location.origin)}`;
+    f.title = box.dataset.title || "Vídeo";
+    f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    f.referrerPolicy = 'strict-origin-when-cross-origin';
+    f.allowFullscreen = true;
+    f.addEventListener('load', () => {
+      f.dataset.ready = '1';
+      send(f, 'mute');
+      // The player takes a moment to start listening, so ask a few times while it's in view.
+      [300, 1000, 2000].forEach(ms => setTimeout(() => { if (box.dataset.visible === '1' && !reduce) send(f, 'playVideo'); }, ms));
+    });
+    box.querySelector('.start')?.remove();
+    box.appendChild(f);
+    return f;
+  };
+  document.querySelectorAll('.video[data-yt]').forEach(box => {
+    box.style.backgroundImage = `url(https://i.ytimg.com/vi/${box.dataset.yt}/hqdefault.jpg)`;
+    const start = document.createElement('button');
+    start.type = 'button'; start.className = 'start'; start.setAttribute('aria-label', "Assistir: " + (box.dataset.title || "Vídeo"));
+    start.innerHTML = '<span aria-hidden="true">&#9654;</span>';
+    start.addEventListener('click', () => { const f = load(box, true); if (f.dataset.ready) send(f, 'playVideo'); });
+    box.appendChild(start);
+    if (reduce || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(entries => entries.forEach(e => {
+      const visible = e.intersectionRatio >= 0.5;
+      box.dataset.visible = visible ? '1' : '0';
+      if (e.isIntersecting && !box.querySelector('iframe')) load(box, false);   // preload as it nears
+      const f = box.querySelector('iframe');
+      if (f && f.dataset.ready) send(f, visible ? 'playVideo' : 'pauseVideo');
+    }), { threshold: [0, 0.5], rootMargin: '200px 0px' }).observe(box);
+  });
+})();
+
+// Garden seasons: tap a season, or let it turn on its own while in view (stops once you choose one).
+(() => {
+  const view = document.querySelector('.garden-view'); if (!view) return;
+  const imgs = [...view.querySelectorAll('img')], tabs = [...document.querySelectorAll('.seasons button')];
+  const order = tabs.map(t => t.dataset.season);
+  let current = 0, timer = null, chosen = false;
+  const show = i => {
+    current = i;
+    imgs.forEach(im => im.classList.toggle('on', im.dataset.season === order[i]));
+    tabs.forEach((t, j) => { t.setAttribute('aria-selected', String(j === i)); t.tabIndex = j === i ? 0 : -1; });
+  };
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => { chosen = true; clearInterval(timer); show(i); });
+    t.addEventListener('keydown', e => {
+      const n = e.key === 'ArrowRight' ? (i + 1) % tabs.length : e.key === 'ArrowLeft' ? (i + tabs.length - 1) % tabs.length : -1;
+      if (n >= 0) { e.preventDefault(); chosen = true; clearInterval(timer); show(n); tabs[n].focus(); }
+    });
+  });
+  imgs.forEach(im => { im.loading = 'eager'; });   // so the next season is ready to fade in
+  show(0);
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(([e]) => {
+    clearInterval(timer);
+    if (e.isIntersecting && !chosen) timer = setInterval(() => show((current + 1) % order.length), 3500);
+  }, { threshold: 0.6 }).observe(view);
+})();
+</script>
+
+<script>
+// Language menu: close when clicking elsewhere or pressing Escape.
+(() => {
+  const d = document.querySelector('header .langs'); if (!d) return;
+  document.addEventListener('click', e => { if (d.open && !d.contains(e.target)) d.open = false; });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && d.open) { d.open = false; d.querySelector('summary').focus(); } });
+})();
+</script>
+</body>
+</html>

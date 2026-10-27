@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Beta na Androida · Court of Squares</title>
+<meta name="description" content="Dołącz do bety Court of Squares na Androida: spokojne szachy z ośmioma wyjątkowymi figurami. Trzy kroki, by zacząć testować w Google Play.">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:title" content="Court of Squares · Beta na Androida">
+<meta property="og:description" content="Spokojne szachy z ośmioma wyjątkowymi figurami. Dołącz do bety na Androida w Google Play.">
+<meta property="og:image" content="https://toasgaard.github.io/court-of-squares/og-image.jpg">
+<link rel="alternate" hreflang="en" href="https://toasgaard.github.io/court-of-squares/beta.html">
+<link rel="alternate" hreflang="es" href="https://toasgaard.github.io/court-of-squares/beta-es.html">
+<link rel="alternate" hreflang="pt-BR" href="https://toasgaard.github.io/court-of-squares/beta-pt.html">
+<link rel="alternate" hreflang="fr" href="https://toasgaard.github.io/court-of-squares/beta-fr.html">
+<link rel="alternate" hreflang="de" href="https://toasgaard.github.io/court-of-squares/beta-de.html">
+<link rel="alternate" hreflang="it" href="https://toasgaard.github.io/court-of-squares/beta-it.html">
+<link rel="alternate" hreflang="pl" href="https://toasgaard.github.io/court-of-squares/beta-pl.html">
+<link rel="alternate" hreflang="tr" href="https://toasgaard.github.io/court-of-squares/beta-tr.html">
+<link rel="alternate" hreflang="ru" href="https://toasgaard.github.io/court-of-squares/beta-ru.html">
+<link rel="alternate" hreflang="ja" href="https://toasgaard.github.io/court-of-squares/beta-ja.html">
+<link rel="alternate" hreflang="ko" href="https://toasgaard.github.io/court-of-squares/beta-ko.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://toasgaard.github.io/court-of-squares/beta-zh.html">
+<link rel="alternate" hreflang="x-default" href="https://toasgaard.github.io/court-of-squares/beta.html">
+<link rel="icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.steps{counter-reset:step;list-style:none;padding:0;margin:20px 0}
+.steps>li{counter-increment:step;position:relative;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 20px 18px 64px;margin:14px 0}
+.steps>li::before{content:counter(step);position:absolute;left:18px;top:16px;width:32px;height:32px;border-radius:50%;background:var(--gold);color:#1a1209;font:700 17px/32px 'Cinzel',Georgia,serif;text-align:center}
+.steps h2{border:0;margin:0 0 4px;padding:0;font-size:19px}
+.steps p{margin:4px 0 12px;color:var(--muted)}
+.steps .button{margin-top:2px}
+.note{color:var(--muted);font-size:15px}
+
+/* Language menu */
+header.top nav .langs{position:relative}
+header.top nav .langs summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;padding:6px 0;font:600 15px/1 'Cinzel',Georgia,serif;letter-spacing:.03em;color:#b8a894}
+header.top nav .langs summary::-webkit-details-marker{display:none}
+header.top nav .langs summary:hover,header.top nav .langs[open] summary{color:#d9b25c}
+header.top nav .langs ul{position:absolute;right:0;top:calc(100% + 10px);z-index:10;margin:0;padding:8px;list-style:none;min-width:180px;background:#1f160e;border:1px solid #a8823a;border-radius:12px;box-shadow:0 14px 34px rgba(0,0,0,.5)}
+header.top nav .langs li{margin:0}
+header.top nav .langs ul a{display:block;padding:8px 12px;border-radius:8px;font:500 17px/1.2 Georgia,serif;letter-spacing:0;color:#f1e7d3;text-decoration:none}
+header.top nav .langs ul a:hover{background:#2c2015}
+header.top nav .langs ul a[aria-current]{color:#d9b25c}
+@media (max-width:520px){header.top nav .press{display:none}}
+footer .legal-note{margin-top:6px;font-size:13px;opacity:.75}
+.lang-note{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 14px;padding:10px 16px;background:#2c2015;border-bottom:1px solid #3b2c1c;color:#f1e7d3;font-size:17px;text-align:center}
+.lang-note[hidden]{display:none}
+.lang-note a{color:#d9b25c;font-weight:600}
+.lang-note button{appearance:none;background:none;border:0;color:#c9b9a1;font-size:20px;line-height:1;cursor:pointer;padding:2px 6px}
+</style>
+</head>
+<body>
+<header class="top"><nav><a class="home" href="pl.html">Court of Squares</a><a class="sec" href="pl.html#pieces">Figury</a><a class="sec" href="pl.html#pilgrimage">Pielgrzymka</a><a class="sec" href="pl.html#play">Tryby gry</a><a class="sec" href="pl.html#garden">Ogród</a><a class="press" href="press.html">Dla prasy</a><details class="langs"><summary aria-label="Język: Polski"><svg viewBox="0 0 24 24" aria-hidden="true" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z"/></svg><span>PL</span></summary><ul><li><a href="beta.html" hreflang="en" lang="en">English</a></li><li><a href="beta-es.html" hreflang="es" lang="es">Español</a></li><li><a href="beta-pt.html" hreflang="pt-BR" lang="pt-BR">Português</a></li><li><a href="beta-fr.html" hreflang="fr" lang="fr">Français</a></li><li><a href="beta-de.html" hreflang="de" lang="de">Deutsch</a></li><li><a href="beta-it.html" hreflang="it" lang="it">Italiano</a></li><li><a href="beta-pl.html" hreflang="pl" lang="pl" aria-current="true">Polski</a></li><li><a href="beta-tr.html" hreflang="tr" lang="tr">Türkçe</a></li><li><a href="beta-ru.html" hreflang="ru" lang="ru">Русский</a></li><li><a href="beta-ja.html" hreflang="ja" lang="ja">日本語</a></li><li><a href="beta-ko.html" hreflang="ko" lang="ko">한국어</a></li><li><a href="beta-zh.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li></ul></details><a class="beta" href="beta-pl.html" aria-current="page">Beta na Androida</a></nav></header>
+<main>
+<div class="hero">
+<img src="logo.png" alt="Court of Squares" width="520">
+<p>Spokojne szachy z ośmioma wyjątkowymi figurami. Pomóż przetestować grę na Androidzie przed premierą.</p>
+</div>
+
+<h1>Dołącz do bety na Androida</h1>
+<p>To nic nie kosztuje i zajmuje około minuty. We wszystkich trzech krokach używaj <b>tego samego konta Google</b>, którego używa Sklep Play na twoim telefonie z Androidem.</p>
+
+<ol class="steps">
+<li>
+<h2>Dołącz do grupy testerów</h2>
+<p>Zaloguj się na konto Google i kliknij <b>Dołącz do grupy</b> (Join group). Nie będziesz dostawać e-maili z grupy.</p>
+<!-- The tester group: cos-android-testers@googlegroups.com -->
+<a class="button" href="https://groups.google.com/g/cos-android-testers" rel="noopener">Dołącz do grupy testerów</a>
+</li>
+<li>
+<h2>Zostań testerem</h2>
+<p>Otwórz ten link i dotknij <b>Zostań testerem</b> (Become a tester). Jeśli zobaczysz informację, że aplikacja nie jest jeszcze dostępna, odczekaj kilka minut po kroku 1 i otwórz link ponownie.</p>
+<a class="button" href="https://play.google.com/apps/testing/com.courtofsquares.game" rel="noopener">Zostań testerem</a>
+</li>
+<li>
+<h2>Pobierz grę z Google Play</h2>
+<p>Zainstaluj Court of Squares z Google Play na telefonie lub tablecie z Androidem.</p>
+<a class="button" href="https://play.google.com/store/apps/details?id=com.courtofsquares.game" rel="noopener">Otwórz w Google Play</a>
+</li>
+</ol>
+
+<h2>Jak możesz pomóc</h2>
+<ul>
+<li><b>Zostań w becie co najmniej dwa tygodnie.</b> Google pozwala wydać nową grę dopiero wtedy, gdy testerzy spędzą w becie 14 dni, więc to naprawdę pomaga.</li>
+<li><b>Zagraj kilka razy:</b> partię z komputerem, łamigłówkę dnia i Ogród, a jeśli możesz, także partię online.</li>
+<li><b>Daj znać, co wydaje się niejasne, wolne lub zepsute.</b> Zostaw prywatną opinię na stronie gry w Google Play, napisz na naszym <a href="https://discord.gg/DWXYmJSMmR" rel="noopener">Discord</a> albo na adres <a href="mailto:courtofsquares@gmail.com?subject=Android%20beta%20feedback">courtofsquares@gmail.com</a>. Możesz pisać po polsku.</li>
+</ul>
+
+<h2>Warto wiedzieć</h2>
+<ul>
+<li><b>Postępy i odblokowane nagrody przejdą do pełnej wersji.</b> Beta to ta sama gra w Google Play, więc w dniu premiery dostaniesz po prostu aktualizację. Połącz konto w Ustawienia › Konto, by niczego nie stracić przy zmianie telefonu.</li>
+<li>Gra jest darmowa i bez reklam. Opcjonalny Court Pass to prawdziwy jednorazowy zakup – również w becie – i po premierze nadal będzie twój.</li>
+<li>Z bety możesz wypisać się w każdej chwili na stronie „Zostań testerem”.</li>
+</ul>
+<p class="note">Problem z dołączeniem? Upewnij się, że na tej stronie i w Sklepie Play jesteś zalogowany na to samo konto Google. Jeśli gra nadal nie pojawia się w Sklepie Play, napisz do nas – pomożemy.</p>
+</main>
+<footer><div class="social"><a href="https://discord.gg/DWXYmJSMmR" rel="noopener">Discord</a> · <a href="https://www.youtube.com/@CourtofSquares" rel="noopener">YouTube</a> · <a href="https://www.tiktok.com/@courtofsquares" rel="noopener">TikTok</a> · <a href="https://www.instagram.com/courtofsquares/" rel="noopener">Instagram</a> · <a href="https://x.com/CourtofSquares" rel="noopener">X</a> · <a href="https://www.facebook.com/profile.php?id=61595226989676" rel="noopener">Facebook</a></div><div>Court of Squares · <a href="mailto:courtofsquares@gmail.com">courtofsquares@gmail.com</a></div><div class="legal"><a href="press.html">Dla prasy</a> · <a href="beta-pl.html">Beta na Androida</a> · <a href="privacy.html">Prywatność</a> · <a href="terms.html">Warunki</a> · <a href="delete-account.html">Usuń konto</a> · <a href="licenses.html">Licencje</a></div><div class="legal-note">Dokumenty prawne i materiały prasowe są dostępne po angielsku.</div></footer>
+
+<script>
+// Language menu: close when clicking elsewhere or pressing Escape.
+(() => {
+  const d = document.querySelector('header .langs'); if (!d) return;
+  document.addEventListener('click', e => { if (d.open && !d.contains(e.target)) d.open = false; });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && d.open) { d.open = false; d.querySelector('summary').focus(); } });
+})();
+</script>
+</body>
+</html>

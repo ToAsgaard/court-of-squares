@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Court of Squares · 새로운 기물 8종과 함께하는 편안한 체스</title>
+<meta name="description" content="Court of Squares는 새로운 기물 8종, 직접 꾸리는 군대, 로그라이트 순례, 데일리 퍼즐로 자라는 정원, 온라인 대전을 갖춘 편안하고 그림 같은 체스 게임입니다. iPhone, iPad, Android, Steam 출시 예정.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Court of Squares · 새로운 기물 8종과 함께하는 편안한 체스">
+<meta property="og:description" content="익숙한 규칙 그대로에, 활을 쏘는 궁수, 연속 점프로 잡는 광대, 그리고 새로운 기물 6종이 더해집니다. iPhone, iPad, Android, Steam 출시 예정.">
+<meta property="og:image" content="https://toasgaard.github.io/court-of-squares/og-image.jpg">
+<meta property="og:url" content="https://toasgaard.github.io/court-of-squares/ko.html">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1a120b">
+<link rel="alternate" hreflang="en" href="https://toasgaard.github.io/court-of-squares/index.html">
+<link rel="alternate" hreflang="es" href="https://toasgaard.github.io/court-of-squares/es.html">
+<link rel="alternate" hreflang="pt-BR" href="https://toasgaard.github.io/court-of-squares/pt.html">
+<link rel="alternate" hreflang="fr" href="https://toasgaard.github.io/court-of-squares/fr.html">
+<link rel="alternate" hreflang="de" href="https://toasgaard.github.io/court-of-squares/de.html">
+<link rel="alternate" hreflang="it" href="https://toasgaard.github.io/court-of-squares/it.html">
+<link rel="alternate" hreflang="pl" href="https://toasgaard.github.io/court-of-squares/pl.html">
+<link rel="alternate" hreflang="tr" href="https://toasgaard.github.io/court-of-squares/tr.html">
+<link rel="alternate" hreflang="ru" href="https://toasgaard.github.io/court-of-squares/ru.html">
+<link rel="alternate" hreflang="ja" href="https://toasgaard.github.io/court-of-squares/ja.html">
+<link rel="alternate" hreflang="ko" href="https://toasgaard.github.io/court-of-squares/ko.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://toasgaard.github.io/court-of-squares/zh.html">
+<link rel="alternate" hreflang="x-default" href="https://toasgaard.github.io/court-of-squares/">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif+KR:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+:root{--walnut:#1a120b;--lacquer:#241910;--ivory:#f1e7d3;--soft:#c9b9a1;--gilt:#d9b25c;--gilt-deep:#a8823a;--blue:#3a5db0;--garnet:#a8262c;--rule:#3b2c1c}
+body{background:var(--walnut);color:var(--ivory);font:500 20px/1.6 'Cormorant Garamond','Noto Serif KR',Georgia,serif}
+a{color:var(--gilt)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gilt);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* Header */
+
+/* Hero */
+.hero-art{display:block;width:100%;height:auto;aspect-ratio:2400/1029;object-fit:cover;background:#2a1d12}
+@media (max-width:700px){.hero-art{aspect-ratio:1000/833}}
+.pitch{text-align:center;padding:34px 20px 0;max-width:820px;margin:0 auto}
+.pitch h1{font:700 clamp(28px,4.4vw,46px)/1.15 'Cinzel','Noto Serif KR',Georgia,serif;color:var(--ivory);margin:0 0 14px}
+.pitch p{font-size:22px;color:var(--soft);margin:0 auto;max-width:660px}
+.pitch .status{margin:20px auto 0;color:var(--gilt);font-style:italic}
+.actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:22px 0 0}
+.btn{display:inline-block;font:600 16px/1 'Cinzel','Noto Serif KR',Georgia,serif;letter-spacing:.03em;text-decoration:none;padding:15px 22px;border-radius:999px;border:1px solid var(--gilt);color:var(--gilt)}
+.btn.primary{background:var(--gilt);color:var(--walnut)}
+.btn:hover{background:#e7c573;border-color:#e7c573;color:var(--walnut)}
+
+/* Where to get it */
+.stores-block{max-width:900px;margin:30px auto 0;padding:0 20px;text-align:center}
+.stores-block .free{margin:0 0 14px;color:var(--gilt);font-style:italic;font-size:21px}
+.platforms{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.platform{background:var(--lacquer);border:1px solid var(--rule);border-radius:16px;padding:20px 18px 22px;display:flex;flex-direction:column;align-items:center;gap:4px}
+.platform.live{border-color:var(--gilt-deep);background:linear-gradient(180deg,#2f2213,var(--lacquer));box-shadow:0 0 0 1px rgba(217,178,92,.25),0 18px 40px rgba(0,0,0,.35)}
+.stores-block .platform h2{font:700 21px/1.2 'Cinzel','Noto Serif KR',Georgia,serif;color:var(--ivory);margin:0;border:0;padding:0}
+.platform .where{margin:0 0 12px;color:var(--soft);font-size:18px}
+.platform .soon{display:inline-block;font:600 15px/1 'Cinzel','Noto Serif KR',Georgia,serif;letter-spacing:.03em;color:var(--soft);border:1px dashed var(--gilt-deep);border-radius:999px;padding:14px 20px}
+.platform .carry{margin:10px 0 0;font-size:16px;line-height:1.35;color:var(--soft)}
+.stores-block .also{margin:16px 0 0;color:var(--soft);font-size:18px}
+@media (max-width:760px){.platforms{grid-template-columns:1fr}.platform{padding:16px}.platform.live{order:-1}}
+
+/* Socials, front and centre */
+.follow{text-align:center;max-width:820px;margin:34px auto 0;padding:0 20px}
+.follow p{margin:0 0 14px;color:var(--soft)}
+.socials{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.socials a{text-decoration:none;font:600 16px/1 'Cinzel','Noto Serif KR',Georgia,serif;letter-spacing:.03em;color:var(--gilt);background:var(--lacquer);border:1px solid var(--rule);border-radius:999px;padding:13px 20px}
+.socials a:hover{border-color:var(--gilt);color:var(--ivory)}
+
+/* Sections */
+main.home{max-width:1120px;padding:0 20px}
+main.home section{padding:76px 0 0}
+main.home h2,.community h2{font:700 clamp(26px,3.4vw,36px)/1.2 'Cinzel','Noto Serif KR',Georgia,serif;color:var(--gilt);margin:0 0 10px;border:0;padding:0}
+.lede{color:var(--soft);font-size:21px;max-width:720px;margin:0 0 26px}
+
+/* Videos */
+.video{position:relative;aspect-ratio:16/9;width:100%;background:#0e0905 center/cover no-repeat;border:1px solid var(--rule);border-radius:16px;overflow:hidden;box-shadow:0 24px 50px rgba(0,0,0,.45)}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video .start{position:absolute;inset:0;display:grid;place-items:center;background:rgba(10,6,3,.25);border:0;cursor:pointer;color:var(--walnut)}
+.video .start span{display:grid;place-items:center;width:84px;height:84px;border-radius:50%;background:var(--gilt);box-shadow:0 8px 24px rgba(0,0,0,.5);font-size:30px;padding-left:6px}
+.video .start:hover span{background:#e7c573}
+.video-note{margin:10px 0 0;font-size:17px;color:var(--soft);font-style:italic}
+
+/* Meet the court: the one bold element */
+.court{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:28px;align-items:center;background:radial-gradient(120% 90% at 30% 0%,#2e2013 0%,var(--lacquer) 55%,#1d140c 100%);border:1px solid var(--rule);border-radius:18px;padding:22px}
+.pedestals{grid-column:1/-1;display:grid;grid-template-columns:repeat(8,1fr);gap:6px}
+.pedestals button{appearance:none;background:none;border:0;border-bottom:2px solid transparent;color:var(--soft);cursor:pointer;padding:6px 2px 8px;font:600 13px/1.2 'Cinzel','Noto Serif KR',Georgia,serif;display:flex;flex-direction:column;align-items:center;gap:6px}
+.pedestals img{height:92px;width:auto;filter:saturate(.7) brightness(.78);transition:filter .2s,transform .2s}
+.pedestals button[aria-selected="true"]{color:var(--gilt);border-bottom-color:var(--gilt)}
+.pedestals button[aria-selected="true"] img,.pedestals button:hover img{filter:none;transform:translateY(-3px)}
+.portrait{display:flex;gap:20px;align-items:center}
+.portrait img{height:330px;width:auto;flex:none;filter:drop-shadow(0 18px 24px rgba(0,0,0,.55))}
+.portrait h3{font:700 32px/1.1 'Cinzel','Noto Serif KR',Georgia,serif;color:var(--ivory);margin:0 0 4px}
+.portrait .worth{color:var(--gilt);font-style:italic;margin:0 0 10px}
+.portrait p{margin:0}
+.board-wrap{display:flex;flex-direction:column;align-items:center;gap:12px}
+.board{display:grid;grid-template-columns:repeat(9,1fr);width:min(100%,430px);aspect-ratio:1;border:6px solid #3a2716;border-radius:6px;box-shadow:0 0 0 1px var(--gilt-deep),0 20px 40px rgba(0,0,0,.45)}
+.sq{position:relative;background:#dccaa6}
+.sq.dk{background:#8a6744}
+.sq::after{content:"";position:absolute;inset:0;margin:auto;border-radius:50%;opacity:0;transform:scale(.3);transition:opacity .3s,transform .3s;transition-delay:var(--d,0s)}
+.sq.move::after{width:32%;height:32%;background:var(--blue);opacity:1;transform:none}
+.sq.cap::after{width:72%;height:72%;box-shadow:inset 0 0 0 3px var(--garnet);opacity:1;transform:none}
+.sq.both::after{width:72%;height:72%;box-shadow:inset 0 0 0 3px var(--blue);background:radial-gradient(circle,var(--blue) 0 22%,transparent 24%);opacity:1;transform:none}
+.sq.shoot::after{width:74%;height:74%;opacity:1;transform:none;background:radial-gradient(circle,var(--garnet) 0 17%,transparent 19% 42%,var(--garnet) 44% 55%,transparent 57%)}
+.sq.jump::after{width:42%;height:42%;background:var(--garnet);border-radius:3px;opacity:1;transform:rotate(45deg)}
+.sq .glyph{position:absolute;inset:8%;display:grid;place-items:center;font:700 clamp(14px,3vw,24px)/1 'Cinzel','Noto Serif KR',Georgia,serif;color:var(--walnut);background:var(--gilt);border-radius:50%;box-shadow:0 2px 6px rgba(0,0,0,.4)}
+.sq .foe{position:absolute;inset:20%;border-radius:50%;background:#24160d;box-shadow:inset 0 0 0 2px #c9b48c}
+.legend{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 16px;font-size:16px;color:var(--soft);margin:0;padding:0;list-style:none}
+.legend li{display:flex;align-items:center;gap:7px;margin:0}
+.legend i{display:inline-block;width:16px;height:16px;border-radius:50%;flex:none}
+.l-move{background:var(--blue);transform:scale(.55)}
+.l-both{box-shadow:inset 0 0 0 2px var(--blue);background:radial-gradient(circle,var(--blue) 0 24%,transparent 26%)}
+.l-cap{box-shadow:inset 0 0 0 2px var(--garnet)}
+.l-shoot{background:radial-gradient(circle,var(--garnet) 0 17%,transparent 19% 42%,var(--garnet) 44% 58%,transparent 60%)}
+.l-jump{background:var(--garnet);transform:rotate(45deg) scale(.7);border-radius:2px!important}
+.l-foe{background:#24160d;box-shadow:inset 0 0 0 2px #c9b48c}
+@media (max-width:860px){.court{grid-template-columns:1fr;padding:16px}.portrait img{height:220px}.pedestals{grid-template-columns:repeat(4,1fr)}.pedestals img{height:72px}}
+@media (max-width:460px){.portrait{flex-direction:column;align-items:flex-start}.portrait img{height:180px}}
+@media (prefers-reduced-motion:reduce){.sq::after,.pedestals img{transition:none}}
+
+/* Pilgrimage */
+.camp{margin:0 0 26px}
+.camp img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--rule);box-shadow:0 18px 40px rgba(0,0,0,.4)}
+.camp figcaption{margin-top:10px;color:var(--soft);font-style:italic;font-size:18px}
+.pilgrim{background:linear-gradient(180deg,#22180f 0%,#1c140c 100%);border:1px solid var(--rule);border-radius:18px;padding:28px 26px 30px}
+.road{list-style:none;margin:6px 0 10px;padding:0;display:grid;grid-template-columns:repeat(16,1fr);align-items:center;position:relative}
+.road::before{content:"";position:absolute;left:3%;right:3%;top:50%;border-top:2px dashed var(--gilt-deep);opacity:.6}
+.road li{position:relative;display:grid;place-items:center;margin:0}
+.road span{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--walnut);border:2px solid var(--gilt-deep);font:600 14px/1 'Cinzel','Noto Serif KR',Georgia,serif;color:var(--soft)}
+.road .relic span{border-color:var(--blue);color:var(--ivory);box-shadow:0 0 0 4px rgba(58,93,176,.25)}
+.road .boss span{width:46px;height:46px;background:var(--garnet);border-color:var(--gilt);color:var(--ivory);font-size:16px}
+.road .boss.relic span{box-shadow:0 0 0 4px rgba(58,93,176,.45)}
+.road .free span{background:#3a2a17;color:var(--ivory)}
+.road .more span{border-style:dashed;font-size:20px;color:var(--gilt)}
+.road-key{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:16px;color:var(--soft);margin:0 0 26px;padding:0;list-style:none}
+.road-key li{display:flex;align-items:center;gap:8px;margin:0}
+.road-key i{width:14px;height:14px;border-radius:50%;border:2px solid var(--gilt-deep);background:var(--walnut)}
+.road-key .k-boss{background:var(--garnet);border-color:var(--gilt)}
+.road-key .k-relic{border-color:var(--blue);box-shadow:0 0 0 3px rgba(58,93,176,.3)}
+.road-key .k-free{background:#3a2a17}
+.loop{list-style:none;margin:0 0 30px;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;counter-reset:step}
+.loop li{counter-increment:step;margin:0}
+.loop h3{font:700 19px/1.3 'Cinzel','Noto Serif KR',Georgia,serif;color:var(--ivory);margin:0 0 6px;display:flex;align-items:center;gap:10px}
+.loop h3::before{content:counter(step);display:grid;place-items:center;width:28px;height:28px;flex:none;border-radius:50%;background:var(--gilt);color:var(--walnut);font-size:15px}
+.loop p{margin:0;color:var(--soft)}
+.pilgrim h3.sub{font:700 20px/1.3 'Cinzel','Noto Serif KR',Georgia,serif;color:var(--gilt);margin:0 0 4px}
+.pilgrim .sub-lede{margin:0 0 14px;color:var(--soft)}
+.relics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:0 0 30px}
+.relics div{background:rgba(0,0,0,.18);border:1px solid var(--rule);border-left:3px solid var(--blue);border-radius:10px;padding:12px 14px}
+.relics b{display:block;font:600 15px/1.3 'Cinzel','Noto Serif KR',Georgia,serif;color:var(--ivory);margin-bottom:4px}
+.relics span{display:block;font-size:17px;line-height:1.35;color:var(--soft)}
+.journey-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.journey-facts h3{font:700 18px/1.3 'Cinzel','Noto Serif KR',Georgia,serif;color:var(--gilt);margin:0 0 4px}
+.journey-facts p{margin:0;color:var(--soft)}
+@media (max-width:860px){
+ .pilgrim{padding:20px 16px 24px}
+ .road{grid-template-columns:repeat(8,1fr);row-gap:14px}
+ .road::before{display:none}
+ .loop,.journey-facts{grid-template-columns:1fr;gap:20px}
+ .relics{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:420px){.road span{width:30px;height:30px;font-size:13px}.road .boss span{width:38px;height:38px}.relics{grid-template-columns:1fr}}
+
+/* Ways to play */
+.modes{display:grid;grid-template-columns:repeat(3,1fr);gap:0 36px}
+.modes .group{border-top:2px solid var(--gilt-deep);padding-top:4px}
+.modes h3{font:700 18px/1.3 'Cinzel','Noto Serif KR',Georgia,serif;color:var(--ivory);margin:20px 0 2px}
+.modes .group > h3:first-child{color:var(--gilt);font-size:15px;letter-spacing:.04em;margin-top:10px}
+.modes p{margin:0;color:var(--soft)}
+@media (max-width:860px){.modes{grid-template-columns:1fr;gap:28px}}
+
+/* Garden */
+.garden-view{position:relative;aspect-ratio:1400/787;border-radius:16px;overflow:hidden;border:1px solid var(--rule);box-shadow:0 24px 50px rgba(0,0,0,.45);background:#2a1d12}
+.garden-view img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s ease}
+.garden-view img.on{opacity:1}
+.seasons{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:12px 0 0;padding:0;list-style:none}
+.seasons li{margin:0}
+.seasons button{appearance:none;width:100%;height:100%;text-align:left;cursor:pointer;padding:14px 16px 16px;border-radius:12px;color:var(--ivory);border:2px solid transparent;opacity:.6;transition:opacity .25s,border-color .25s;font:inherit}
+.seasons button:hover{opacity:.85}
+.seasons button[aria-selected="true"]{opacity:1;border-color:var(--gilt)}
+.seasons b{display:block;font:700 18px/1.3 'Cinzel','Noto Serif KR',Georgia,serif;margin-bottom:4px}
+.seasons span{font-size:18px;line-height:1.4;display:block;opacity:.92}
+.spring button{background:linear-gradient(160deg,#3c4e2c,#26301c)}
+.summer button{background:linear-gradient(160deg,#5c4b1e,#33290f)}
+.autumn button{background:linear-gradient(160deg,#6a2f1a,#3a1a0f)}
+.winter button{background:linear-gradient(160deg,#2e3d52,#1b2431)}
+.garden-note{margin:12px 0 0;color:var(--soft);font-style:italic}
+@media (max-width:760px){.seasons{grid-template-columns:repeat(2,1fr)}.seasons span{font-size:16px}}
+@media (prefers-reduced-motion:reduce){.garden-view img,.seasons button{transition:none}}
+
+/* Piece sets */
+.sets{display:grid;grid-template-columns:1fr;gap:18px}
+.sets figure{margin:0;background:var(--lacquer);border:1px solid var(--rule);border-radius:14px;padding:16px 16px 12px;display:flex;flex-direction:column}
+.sets img{display:block;width:100%;height:auto;aspect-ratio:1600/457;object-fit:contain}
+.sets figcaption{margin-top:10px;display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 12px}
+.sets figcaption b{font:600 17px/1.3 'Cinzel','Noto Serif KR',Georgia,serif;color:var(--gilt)}
+.sets figcaption span{font-size:18px;color:var(--soft)}
+.sets-note{margin:14px 0 0;color:var(--soft);font-style:italic}
+
+/* Save, watch, share */
+.keep{display:grid;grid-template-columns:repeat(3,1fr);gap:0 36px}
+.keep > div{border-top:2px solid var(--gilt-deep);padding-top:12px;margin-bottom:26px}
+.keep h3{font:700 18px/1.3 'Cinzel','Noto Serif KR',Georgia,serif;color:var(--ivory);margin:0 0 4px}
+.keep p{margin:0;color:var(--soft)}
+@media (max-width:860px){.keep{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.keep{grid-template-columns:1fr}}
+
+/* Calm by design */
+.calm{columns:2;column-gap:44px;margin:0;padding-left:1.1em}
+.calm li{break-inside:avoid;margin:0 0 12px}
+.calm b{color:var(--ivory)}
+@media (max-width:700px){.calm{columns:1}}
+
+/* Community */
+.community{margin-top:80px;background:var(--lacquer);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:56px 0 60px}
+.community .creators{margin:-10px 0 22px;color:var(--soft);font-size:19px;max-width:720px}
+.community .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
+.mail{position:relative}
+.mail button.btn{background:none;cursor:pointer}
+.mail button.btn:hover,.mail button.btn[aria-expanded="true"]{background:#e7c573;color:var(--walnut)}
+.mail-menu{position:absolute;left:0;bottom:calc(100% + 10px);z-index:4;min-width:260px;background:#2c2015;border:1px solid var(--gilt-deep);border-radius:14px;padding:14px;box-shadow:0 14px 34px rgba(0,0,0,.5)}
+.mail-menu p{margin:0 0 10px;color:var(--ivory);font-size:19px}
+.mail-menu button,.mail-menu a{display:block;width:100%;text-align:left;font:600 15px/1 'Cinzel','Noto Serif KR',Georgia,serif;letter-spacing:.03em;color:var(--gilt);background:var(--walnut);border:1px solid var(--rule);border-radius:10px;padding:12px 14px;margin-top:8px;cursor:pointer;text-decoration:none}
+.mail-menu button:hover,.mail-menu a:hover{border-color:var(--gilt)}
+@media (max-width:520px){.mail-menu{left:auto;right:0}}
+footer{background:#120c07}
+footer .legal{margin-top:6px}
+
+/* Language menu */
+header.top nav .langs{position:relative}
+header.top nav .langs summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;padding:6px 0;font:600 15px/1 'Cinzel',Georgia,serif;letter-spacing:.03em;color:#b8a894}
+header.top nav .langs summary::-webkit-details-marker{display:none}
+header.top nav .langs summary:hover,header.top nav .langs[open] summary{color:#d9b25c}
+header.top nav .langs ul{position:absolute;right:0;top:calc(100% + 10px);z-index:10;margin:0;padding:8px;list-style:none;min-width:180px;background:#1f160e;border:1px solid #a8823a;border-radius:12px;box-shadow:0 14px 34px rgba(0,0,0,.5)}
+header.top nav .langs li{margin:0}
+header.top nav .langs ul a{display:block;padding:8px 12px;border-radius:8px;font:500 17px/1.2 Georgia,serif;letter-spacing:0;color:#f1e7d3;text-decoration:none}
+header.top nav .langs ul a:hover{background:#2c2015}
+header.top nav .langs ul a[aria-current]{color:#d9b25c}
+@media (max-width:520px){header.top nav .press{display:none}}
+footer .legal-note{margin-top:6px;font-size:13px;opacity:.75}
+.lang-note{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 14px;padding:10px 16px;background:#2c2015;border-bottom:1px solid #3b2c1c;color:#f1e7d3;font-size:17px;text-align:center}
+.lang-note[hidden]{display:none}
+.lang-note a{color:#d9b25c;font-weight:600}
+.lang-note button{appearance:none;background:none;border:0;color:#c9b9a1;font-size:20px;line-height:1;cursor:pointer;padding:2px 6px}
+header.top nav a,h1,h2,h3,.button,.btn{font-family:'Cinzel','Noto Serif KR',Georgia,serif}
+body{line-height:1.75}
+h1,h2,h3{word-break:keep-all;overflow-wrap:anywhere}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"VideoGame","name":"Court of Squares","url":"https://toasgaard.github.io/court-of-squares/ko.html","inLanguage":"ko","image":"https://toasgaard.github.io/court-of-squares/og-image.jpg","description":"새로운 기물 8종, 직접 꾸리는 군대, 로그라이트 순례, 데일리 퍼즐 정원, 온라인 대전을 갖춘 편안한 체스 게임.","genre":["Chess","Strategy","Puzzle"],"gamePlatform":["iOS","Android","PC"],"playMode":["SinglePlayer","MultiPlayer"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"sameAs":["https://www.youtube.com/@CourtofSquares","https://www.tiktok.com/@courtofsquares","https://www.instagram.com/courtofsquares/","https://x.com/CourtofSquares","https://www.facebook.com/profile.php?id=61595226989676"]}
+</script>
+</head>
+<body>
+<header class="top"><nav><a class="home" href="ko.html">Court of Squares</a><a class="sec" href="#pieces">기물</a><a class="sec" href="#pilgrimage">순례</a><a class="sec" href="#play">플레이 방식</a><a class="sec" href="#garden">정원</a><a class="press" href="press.html">프레스 키트</a><details class="langs"><summary aria-label="언어: 한국어"><svg viewBox="0 0 24 24" aria-hidden="true" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z"/></svg><span>KO</span></summary><ul><li><a href="index.html" hreflang="en" lang="en">English</a></li><li><a href="es.html" hreflang="es" lang="es">Español</a></li><li><a href="pt.html" hreflang="pt-BR" lang="pt-BR">Português</a></li><li><a href="fr.html" hreflang="fr" lang="fr">Français</a></li><li><a href="de.html" hreflang="de" lang="de">Deutsch</a></li><li><a href="it.html" hreflang="it" lang="it">Italiano</a></li><li><a href="pl.html" hreflang="pl" lang="pl">Polski</a></li><li><a href="tr.html" hreflang="tr" lang="tr">Türkçe</a></li><li><a href="ru.html" hreflang="ru" lang="ru">Русский</a></li><li><a href="ja.html" hreflang="ja" lang="ja">日本語</a></li><li><a href="ko.html" hreflang="ko" lang="ko" aria-current="true">한국어</a></li><li><a href="zh.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li></ul></details><a class="beta" href="beta-ko.html">Android 베타</a></nav></header>
+
+<picture>
+<source media="(max-width:700px)" srcset="hero-mobile.webp">
+<source srcset="hero-1400.webp 1400w, hero-2400.webp 2400w" sizes="100vw">
+<img class="hero-art" src="hero-1400.webp" alt="해 질 녘 성의 테라스, 대리석 체스판 위에서 마주한 하얀 퀸과 검은 나이트" width="2400" height="1029" fetchpriority="high">
+</picture>
+
+<div class="pitch">
+<h1>새로운 기물 8종과 함께하는 편안한 체스</h1>
+<p>익숙한 규칙을 화려한 테이블 위에서, 잔잔한 음악과 미끄러지듯 움직이는 기물과 함께. 여기에 활을 쏘는 궁수, 연속 점프로 잡는 광대, 직접 꾸리는 군대, 그리고 데일리 퍼즐과 함께 자라는 정원까지.</p>
+</div>
+
+<div class="stores-block" id="get">
+<p class="free">무료 플레이, 광고 없음.</p>
+<div class="platforms">
+<div class="platform">
+<h2>iPhone &amp; iPad</h2>
+<p class="where">App Store</p>
+<!-- When it's live, replace the next line with:
+<a class="btn primary" href="https://apps.apple.com/app/idYOUR_APP_ID" rel="noopener">Download on the App Store</a> -->
+<span class="soon">출시 예정</span>
+</div>
+<div class="platform live">
+<h2>Android</h2>
+<p class="where">Google Play</p>
+<!-- When it's live, replace the next line with:
+<a class="btn primary" href="https://play.google.com/store/apps/details?id=com.courtofsquares.game" rel="noopener">Get it on Google Play</a> -->
+<a class="btn primary" href="beta-ko.html">지금 베타 참여하기</a>
+<p class="carry">진행 상황과 해금한 보상은 정식 버전으로 이어집니다.</p>
+</div>
+<div class="platform">
+<h2>PC</h2>
+<p class="where">Steam</p>
+<!-- When it's live, replace the next line with:
+<a class="btn primary" href="https://store.steampowered.com/app/YOUR_APP_ID" rel="noopener">Get it on Steam</a> -->
+<span class="soon">출시 예정</span>
+</div>
+</div>
+<p class="also"><a href="#trailer">트레일러 보기</a> · 모든 플랫폼에서 하나의 계정으로, 하던 곳부터 이어서 플레이하세요.</p>
+</div>
+
+
+<div class="follow">
+<p>새로운 기물, 클립, 개발 일지, 출시 소식을 모든 채널에서 전해 드려요.</p>
+<div class="socials" role="navigation" aria-label="Court of Squares 팔로우">
+<a href="https://discord.gg/DWXYmJSMmR" rel="noopener">Discord</a>
+<a href="https://www.youtube.com/@CourtofSquares" rel="noopener">YouTube</a>
+<a href="https://www.tiktok.com/@courtofsquares" rel="noopener">TikTok</a>
+<a href="https://www.instagram.com/courtofsquares/" rel="noopener">Instagram</a>
+<a href="https://x.com/CourtofSquares" rel="noopener">X</a>
+<a href="https://www.facebook.com/profile.php?id=61595226989676" rel="noopener">Facebook</a>
+</div>
+</div>
+
+<main class="home">
+
+<section id="trailer">
+<h2>트레일러</h2>
+<div class="video" data-yt="0lBtSt2Io14" data-title="Court of Squares 트레일러"></div>
+<p class="video-note">화면에 나타나면 음소거 상태로 재생됩니다. 스피커를 누르면 소리가 켜집니다.</p>
+</section>
+
+<section id="pieces">
+<h2>궁정을 소개합니다</h2>
+<p class="lede">다른 어떤 체스 세트에도 없는 기물 8종. 저마다 고유한 움직임과 게임 속 짧은 레슨이 있습니다. 기물을 골라 움직임을 확인해 보세요.</p>
+<div class="court">
+<div class="pedestals" role="tablist" aria-label="새로운 기물 8종"></div>
+<div class="portrait" id="portrait" role="tabpanel" aria-live="polite">
+<img id="p-img" src="piece-archer.webp" alt="" width="200" height="330">
+<div><h3 id="p-name">궁수</h3><p class="worth" id="p-worth"></p><p id="p-rule"></p></div>
+</div>
+<div class="board-wrap">
+<div class="board" id="board" role="img" aria-label=""></div>
+<ul class="legend">
+<li><i class="l-both"></i>이동 또는 잡기</li>
+<li><i class="l-move"></i>이동만</li>
+<li><i class="l-cap"></i>잡기만</li>
+<li><i class="l-shoot"></i>사격 후 제자리 유지</li>
+<li><i class="l-foe"></i>적</li>
+<li><i class="l-jump"></i>점프 후 착지</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="pilgrimage">
+<h2>순례</h2>
+<p class="lede">끝없는 로그라이트 여정. 작은 순례자 무리를 이끌고 점점 커지고 영리해지는 군대와 전투를 이어 가세요. 잃은 기물은 영영 돌아오지 않으니, 허용한 잡기 하나하나가 남은 여정 내내 영향을 줍니다.</p>
+<div class="pilgrim">
+<figure class="camp"><img src="pilgrim-camp.webp" alt="순례 야영지: 해 질 녘 모닥불 주위의 내 무리, 다음 전투 상대인 폰의 장벽, 성유물, 십일조 상점" width="1600" height="900" loading="lazy" decoding="async"><figcaption>전투 사이의 야영지: 무리를 살피고, 다음 적을 가늠하고, 성유물을 고르고, 상점에서 십일조를 쓰세요.</figcaption></figure>
+<ol class="road" aria-label="여정: 1~15단계와 그 너머, 5단계마다 보스, 3단계마다 성유물">
+<li class="free"><span>1</span></li>
+<li class="free"><span>2</span></li>
+<li class="free relic"><span>3</span></li>
+<li><span>4</span></li>
+<li class="boss"><span>5</span></li>
+<li class="relic"><span>6</span></li>
+<li><span>7</span></li>
+<li><span>8</span></li>
+<li class="relic"><span>9</span></li>
+<li class="boss"><span>10</span></li>
+<li><span>11</span></li>
+<li class="relic"><span>12</span></li>
+<li><span>13</span></li>
+<li><span>14</span></li>
+<li class="boss relic"><span>15</span></li>
+<li class="more"><span aria-hidden="true">&#8734;</span></li>
+</ol>
+<ul class="road-key">
+<li><i class="k-free"></i>처음 3단계 무료</li>
+<li><i class="k-relic"></i>성유물 선택</li>
+<li><i class="k-boss"></i>보스</li>
+<li>군대가 버티는 한 계속</li>
+</ul>
+
+<ol class="loop">
+<li><h3>전투</h3><p>단계의 군대를 50수 이내에 이기세요. 무승부는 없습니다. 수가 다 떨어지면 판 위의 점수가 더 많은 쪽이 이기고, 동점이면 적이 이깁니다.</p></li>
+<li><h3>야영</h3><p>승리하면 십일조를 얻습니다. 모집병(5명 중 1명은 반값)에 쓰거나, 정찰병을 보내 다음 적의 배치를 정확히 확인하고, 출발 전에 군대를 재배치하세요.</p></li>
+<li><h3>성유물 선택</h3><p>3단계마다 성유물 3개 중 하나를 고릅니다. 모두 남은 여정 동안 규칙을 내게 유리하게 바꿔 줍니다.</p></li>
+</ol>
+
+<h3 class="sub">성유물 8종</h3>
+<p class="sub-lede">신중하게 고르세요. 효과는 중첩되며, 여정마다 등장 순서가 다릅니다.</p>
+<div class="relics">
+<div><b>긴 행군의 장화</b><span>모든 전투에서 15수가 늘어납니다.</span></div>
+<div><b>십일조 징수관의 주머니</b><span>승리할 때마다 십일조를 50% 더 받습니다.</span></div>
+<div><b>야전 의무병의 가방</b><span>승리할 때마다 쓰러진 기물 하나가 군대로 돌아옵니다.</span></div>
+<div><b>병참관의 인장</b><span>모집병 비용이 25% 줄어듭니다.</span></div>
+<div><b>세 번째 줄의 깃발</b><span>군대를 세 줄까지 배치할 수 있습니다.</span></div>
+<div><b>재기</b><span>처음 패배한 전투는 여정을 끝내는 대신 다시 치릅니다.</span></div>
+<div><b>언덕의 군기</b><span>‘킹 오브 더 힐’이 적용됩니다. 중앙에 도달한 킹이 승리합니다.</span></div>
+<div><b>자비의 칙서</b><span>점수가 같은 채로 수가 다 떨어지면 전투는 내 승리입니다.</span></div>
+</div>
+
+<div class="journey-facts">
+<div><h3>만나게 될 상대</h3><p>골짜기의 궁수대, 광대 극단, 수도원 수비대 같은 테마 부대. 5단계마다 텅 빈 궁정이나 잿빛 왕의 근위대 같은 보스 궁정이 더 큰 군대를 이끌고 나타납니다.</p></div>
+<div><h3>나만의 방식으로</h3><p>킹, 비숍, 나이트, 룩, 폰 4개로 시작합니다. 게임의 모든 기물을 쓰는 소집전 버전이나 익숙한 6종으로 하는 클래식 버전을 쉬움, 보통, 어려움 중에서 골라 플레이하세요.</p></div>
+<div><h3>순위표 정상으로</h3><p>버전과 난이도마다 돌파한 단계 수로 순위를 매기는 순위표가 있습니다. 랭크 여정은 서버가 전투마다 확인하므로 모든 기록이 진짜입니다.</p></div>
+</div>
+</div>
+</section>
+
+<section id="play">
+<h2>플레이 방식</h2>
+<p class="lede">일반 체스를 두거나 새로운 기물을 더해 보세요. 시계는 원할 때만 켜지고, 어떤 대국에도 ‘킹 오브 더 힐’ 같은 특별 규칙을 넣을 수 있습니다.</p>
+<div class="modes">
+<div class="group"><h3>내 속도대로</h3>
+<h3>클래식</h3><p>익숙한 체스를 컴퓨터와, 또는 같은 기기에서 친구와.</p>
+<h3>소집전</h3><p>포인트 예산 안에서 나만의 군대를 꾸려 전투에 나서세요.</p>
+<h3>드래프트</h3><p>나와 상대가 공동 풀에서 번갈아 기물을 고릅니다.</p>
+<h3>폰 폭풍</h3><p>양쪽 모두 킹과 폰의 벽만으로 싸웁니다. 짧고 날카로우면서 의외로 깊이 있는 모드.</p>
+</div>
+<div class="group"><h3>도전</h3>
+<h3><a href="#pilgrimage" style="color:inherit">순례</a></h3><p>단계마다 성유물을 모으고 야영할 때마다 군대를 재정비하는 끝없는 로그라이트 여정.</p>
+<h3>데일리 퍼즐</h3><p>매일 새로운 퍼즐. 풀 때마다 직접 꾸미는 정원이 자라납니다.</p>
+<h3>주간 도전</h3><p>모두가 같은 군대와 맞섭니다. 가장 적은 수로 이겨 그 주의 순위표 1위에 오르세요.</p>
+<h3>레슨</h3><p>각 기물, 체크메이트, 무승부, 캐슬링 등을 다루는 짧은 레슨.</p>
+</div>
+<div class="group"><h3>온라인</h3>
+<h3>랭크전</h3><p>평민에서 군주까지 올라가세요. 모든 랭크전을 서버가 확인하므로 순위가 공정하게 유지됩니다.</p>
+<h3>친구</h3><p>친구와 대국하고, 이모트를 보내고, 맞대결 전적을 기록하세요.</p>
+<h3>정원 방문</h3><p>다른 플레이어의 정원을 둘러보고 꽃을 남겨 보세요.</p>
+<h3>어디서나 하나의 계정</h3><p>로그인하면 휴대폰, 태블릿, PC가 같은 진행 상황을 공유합니다.</p>
+</div>
+</div>
+</section>
+
+<section id="garden">
+<h2>사계절의 정원</h2>
+<p class="lede">데일리 퍼즐을 풀 때마다 정원이 자랍니다. 길과 화단, 장식을 배치하고 일 년 내내 달라지는 모습을 지켜보세요. 계절 테이블과 장식도 얻을 수 있습니다.</p>
+<div class="garden-view" aria-live="polite">
+<img src="garden-spring.webp" alt="튤립, 수선화, 새 둥지로 둘러싸인 봄의 정원" width="1400" height="787" loading="lazy" decoding="async" data-season="spring" class="on">
+<img src="garden-summer.webp" alt="해바라기, 장미, 라벤더로 둘러싸인 여름의 같은 정원" width="1400" height="787" loading="lazy" decoding="async" data-season="summer">
+<img src="garden-autumn.webp" alt="호박, 단풍잎, 도토리로 둘러싸인 가을의 같은 정원" width="1400" height="787" loading="lazy" decoding="async" data-season="autumn">
+<img src="garden-winter.webp" alt="눈, 호랑가시나무, 솔방울로 둘러싸인 겨울의 같은 정원" width="1400" height="787" loading="lazy" decoding="async" data-season="winter">
+</div>
+<ol class="seasons" role="tablist" aria-label="계절">
+<li class="spring"><button type="button" role="tab" aria-selected="true" data-season="spring"><b>봄</b><span>피어나는 꽃, 새싹, 은은한 아침 햇살.</span></button></li>
+<li class="summer"><button type="button" role="tab" aria-selected="false" data-season="summer"><b>여름</b><span>가득 찬 화단과 길고 황금빛인 저녁.</span></button></li>
+<li class="autumn"><button type="button" role="tab" aria-selected="false" data-season="autumn"><b>가을</b><span>흩날리는 낙엽, 등불, 그리고 핼러윈 이벤트.</span></button></li>
+<li class="winter"><button type="button" role="tab" aria-selected="false" data-season="winter"><b>겨울</b><span>서리, 고요한 눈, 그리고 겨울 축제.</span></button></li>
+</ol>
+<p class="garden-note">한 플레이어의 정원이 보낸 일 년. 화단, 조각상, 트로피는 놓아둔 자리에 그대로 있고, 계절만 그 주위에서 바뀝니다.</p>
+</section>
+
+<section id="sets">
+<h2>내 취향대로</h2>
+<p class="lede">테이블, 배경, 음악, 기물 세트를 고르세요. 문장, 깃발, 계절 테이블을 얻고, 익숙해진 기물은 브론즈부터 플래티넘까지 금박으로 장식하세요.</p>
+<div class="sets">
+<figure><img src="set-basic.webp" alt="베이직 세트: 상아색과 금색의 클래식한 킹, 퀸, 비숍, 나이트, 룩, 폰" loading="lazy" decoding="async" width="1600" height="457"><figcaption><b>베이직</b><span>클래식한 대국을 위한 익숙한 모양.</span></figcaption></figure>
+<figure><img src="set-court.webp" alt="파란색과 금색의 궁정 세트" loading="lazy" decoding="async" width="1600" height="457"><figcaption><b>궁정</b><span>저마다 개성을 지닌 수많은 세트 중 하나.</span></figcaption></figure>
+<figure><img src="set-cute.webp" alt="분홍색과 금색의 큐트 세트로 만나는 새로운 기물 8종: 광대, 순례자, 전령, 수녀원장, 궁수, 나이트라이더, 창기병, 매사냥꾼" loading="lazy" decoding="async" width="1600" height="457"><figcaption><b>큐트</b><span>세트마다 새로운 기물 8종 모두를 저마다의 모습으로 담았습니다.</span></figcaption></figure>
+<figure><img src="set-halloween.webp" alt="핼러윈 세트" loading="lazy" decoding="async" width="1600" height="457"><figcaption><b>핼러윈</b><span>계절 세트는 한 해의 이벤트와 함께 찾아옵니다.</span></figcaption></figure>
+</div>
+<p class="sets-note">컬렉션의 일부일 뿐이에요. 게임에서 더 많은 세트, 테이블, 배경이 기다리고 있습니다.</p>
+</section>
+
+<section id="keep">
+<h2>저장하고, 다시 보고, 공유하세요</h2>
+<p class="lede">대국을 온전히 내 것으로 만들어 주는 작은 기능들.</p>
+<div class="keep">
+<div><h3>나의 군대</h3><p>소집전용 군대를 꾸리고 마음에 드는 군대를 저장하세요. 코드로 공유하면 친구가 그대로 붙여 넣을 수 있습니다.</p></div>
+<div><h3>리플레이</h3><p>최근 대국을 다시 보세요. 최근 5, 10, 25판을 보관할 수 있습니다.</p></div>
+<div><h3>나중에 이어 하기</h3><p>컴퓨터와의 대국이나 같은 기기에서 둔 대국을 저장하고 언제든 이어서 두세요. 온라인에서는 대국 저장을 제안할 수 있고, 두 사람 모두 30일 안에 마무리하면 됩니다.</p></div>
+<div><h3>순간을 공유하세요</h3><p>대국이 끝나면 결과 이미지를, 휴대폰에서는 대국의 짧은 영상 클립도 공유할 수 있습니다.</p></div>
+<div><h3>관전 모드</h3><p>컴퓨터끼리 음악과 함께 대국을 계속 이어 가게 해 보세요. 조용한 저녁의 좋은 친구가 되어 줍니다.</p></div>
+</div>
+</section>
+
+<section id="calm">
+<h2>편안함을 위한 설계</h2>
+<ul class="calm">
+<li><b>광고는 절대 없습니다.</b> 게임은 무료입니다. 선택 사항인 Court Pass는 한 번 구매로 순례 전체, 정원 꾸미기, 얻은 모든 꾸미기 아이템을 사용할 수 있게 해 줍니다.</li>
+<li><b>원할 때만 시계를 켜세요.</b> 1분 불릿부터 30분 클래시컬까지 고를 수 있습니다.</li>
+<li><b>기물을 길게 누르면</b> 정확한 움직임을 확인할 수 있습니다.</li>
+<li><b>클로즈업 또는 위에서 내려다보는 체스판,</b> 좌표, 가능한 수, 이동 궤적 표시를 원하는 대로.</li>
+<li><b>어떤 기기에서도 편안하게:</b> 글자 크기 조절, 손가락으로 확대, 오래된 휴대폰과 배터리 절약을 위한 가벼운 효과.</li>
+<li><b>한국어를 포함한 12개 언어:</b> 영어, 스페인어, 포르투갈어, 프랑스어, 독일어, 이탈리아어, 폴란드어, 튀르키예어, 러시아어, 일본어, 중국어.</li>
+</ul>
+</section>
+</main>
+
+<div class="community" id="community">
+<div class="wrap">
+<h2>궁정에 합류하세요</h2>
+<p class="lede">새로운 기물, 계절 이벤트, 출시 소식을 받아 보거나 출시 전 테스트를 도와주세요. 베타에서 얻은 모든 것은 정식 버전으로 이어집니다.</p>
+<p class="creators">Court of Squares 영상을 만드시나요? 보내 주시면 소개할 수도 있어요. 로고, 아트, 스크린샷은 <a href="press.html">프레스 키트</a>(영어)에 있습니다.</p>
+<div class="row">
+<a class="btn primary" href="beta-ko.html">Android 베타 참여하기</a>
+<a class="btn" href="https://discord.gg/DWXYmJSMmR" rel="noopener">Discord 참여하기</a>
+<div class="mail">
+<button class="btn" type="button" id="mail-btn" aria-expanded="false" aria-controls="mail-menu">이메일 보내기</button>
+<div class="mail-menu" id="mail-menu" hidden>
+<p>courtofsquares@gmail.com</p>
+<button type="button" id="mail-copy">주소 복사</button>
+<a href="mailto:courtofsquares@gmail.com">메일 앱 열기</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<footer><div class="social"><a href="https://discord.gg/DWXYmJSMmR" rel="noopener">Discord</a> · <a href="https://www.youtube.com/@CourtofSquares" rel="noopener">YouTube</a> · <a href="https://www.tiktok.com/@courtofsquares" rel="noopener">TikTok</a> · <a href="https://www.instagram.com/courtofsquares/" rel="noopener">Instagram</a> · <a href="https://x.com/CourtofSquares" rel="noopener">X</a> · <a href="https://www.facebook.com/profile.php?id=61595226989676" rel="noopener">Facebook</a></div><div>Court of Squares · <a href="mailto:courtofsquares@gmail.com">courtofsquares@gmail.com</a></div><div class="legal"><a href="press.html">프레스 키트</a> · <a href="beta-ko.html">Android 베타</a> · <a href="privacy.html">개인정보 처리방침</a> · <a href="terms.html">이용약관</a> · <a href="delete-account.html">계정 삭제</a> · <a href="licenses.html">라이선스</a></div><div class="legal-note">법률 문서와 프레스 키트는 영어로 제공됩니다.</div></footer>
+
+<script>
+// The eight new pieces and how they move. 9 x 9 board, the piece in the middle, forward is up.
+const C = 4;
+const P = [
+  {id:'archer', name:'궁수', worth:3, rule:"모든 방향으로 한 칸 움직이지만, 이동으로는 절대 잡지 않습니다. 사이 칸이 비어 있으면 일직선으로 정확히 두 칸 떨어진 적을 쏘고 제자리에 머뭅니다."},
+  {id:'jester', name:'광대', worth:1, rule:"대각선으로 한 칸 움직입니다. 인접한 적을 대각선으로 뛰어넘어 그 뒤의 빈칸에 착지하며 잡고, 같은 수에 점프를 이어 가며 점프할 때마다 기물을 잡을 수 있습니다."},
+  {id:'nightrider', name:'나이트라이더', worth:4, rule:"나이트처럼 L자로 뛰고, 착지할 칸이 비어 있는 한 같은 방향으로 계속 일직선으로 뛸 수 있습니다."},
+  {id:'lancer', name:'창기병', worth:3, rule:"앞으로는 원하는 만큼 곧장 돌진하고, 옆이나 뒤로는 한 칸 움직입니다. 대각선 앞 한 칸의 기물도 잡을 수 있습니다."},
+  {id:'herald', name:'전령', worth:3, rule:"한 방향으로 세 칸, 옆으로 한 칸 길게 L자로 뜁니다. 기물을 뛰어넘을 수 있고 항상 같은 색 칸에 머뭅니다."},
+  {id:'falconer', name:'매사냥꾼', worth:3, rule:"한 방향으로 세 칸, 옆으로 두 칸 기물을 뛰어넘어 이동합니다. 모든 방향으로 한 칸 움직일 수도 있습니다."},
+  {id:'abbess', name:'수녀원장', worth:4, rule:"위, 아래, 왼쪽, 오른쪽으로 곧게 두 칸까지(뛰어넘기 불가), 또는 대각선으로 한 칸 움직입니다."},
+  {id:'pilgrim', name:'순례자', worth:1, rule:"대각선 앞으로 한 칸 움직입니다. 바로 앞이나 양옆 한 칸의 기물을 잡으며, 마지막 줄에서 승격합니다."}
+];
+const ALL8 = [[1,0],[-1,0],[0,1],[0,-1],[1,1],[1,-1],[-1,1],[-1,-1]];
+const DIAG = [[1,1],[1,-1],[-1,1],[-1,-1]];
+const ORTH = [[1,0],[-1,0],[0,1],[0,-1]];
+function leaps(a,b){ const s=new Set(); for (const [x,y] of [[a,b],[b,a]]) for (const sx of [1,-1]) for (const sy of [1,-1]) s.add((x*sx)+','+(y*sy)); return [...s].map(t=>t.split(',').map(Number)); }
+const inB = (f,r) => f>=0 && f<9 && r>=0 && r<9;
+
+// Each mark: square plus kind (move | cap | both | shoot | jump | foe). Later marks on a square win.
+function marks(id){
+  const m = new Map(); const add = (dx,dy,kind) => { const f=C+dx, r=C+dy; if (inB(f,r)) m.set(r*9+f,kind); };
+  switch (id){
+    case 'archer': ALL8.forEach(([x,y])=>{ add(x,y,'move'); add(2*x,2*y,'shoot'); }); break;
+    case 'jester': DIAG.forEach(([x,y])=>add(x,y,'move')); add(1,1,'foe'); add(2,2,'jump'); add(3,3,'foe'); add(4,4,'jump'); break;
+    case 'nightrider': leaps(1,2).forEach(([x,y])=>{ for (let k=1;k<9;k++) add(x*k,y*k,'both'); }); break;
+    case 'lancer': for (let k=1;k<9;k++) add(0,k,'both'); [[1,0],[-1,0],[0,-1]].forEach(([x,y])=>add(x,y,'both')); add(1,1,'cap'); add(-1,1,'cap'); break;
+    case 'herald': leaps(3,1).forEach(([x,y])=>add(x,y,'both')); break;
+    case 'falconer': leaps(3,2).forEach(([x,y])=>add(x,y,'both')); ALL8.forEach(([x,y])=>add(x,y,'both')); break;
+    case 'abbess': ORTH.forEach(([x,y])=>{ add(x,y,'both'); add(2*x,2*y,'both'); }); DIAG.forEach(([x,y])=>add(x,y,'both')); break;
+    case 'pilgrim': add(1,1,'move'); add(-1,1,'move'); add(0,1,'cap'); add(1,0,'cap'); add(-1,0,'cap'); break;
+  }
+  return m;
+}
+
+const board = document.getElementById('board');
+const squares = [];
+for (let r=8; r>=0; r--) for (let f=0; f<9; f++){
+  const d = document.createElement('div');
+  d.className = 'sq' + ((f+r)%2===0 ? ' dk' : '');
+  board.appendChild(d); squares[r*9+f] = d;
+}
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const row = document.querySelector('.pedestals');
+
+function show(i){
+  const p = P[i];
+  [...row.children].forEach((b,j)=>{ b.setAttribute('aria-selected', String(j===i)); b.tabIndex = j===i ? 0 : -1; });
+  const img = document.getElementById('p-img');
+  img.src = `piece-${p.id}.webp`; img.alt = `The ${p.name}`;
+  document.getElementById('p-name').textContent = p.name;
+  document.getElementById('p-worth').textContent = (p.worth===1 ? `군대 편성 비용: ${p.worth}포인트` : `군대 편성 비용: ${p.worth}포인트`);
+  document.getElementById('p-rule').textContent = p.rule;
+  squares.forEach(s=>{ s.classList.remove('move','cap','both','shoot','jump'); s.innerHTML=''; s.style.removeProperty('--d'); });
+  squares[C*9+C].innerHTML = `<span class="glyph" aria-hidden="true">${p.name[0]}</span>`;
+  const list = marks(p.id);
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    for (const [idx,kind] of list){
+      const s = squares[idx];
+      if (kind==='foe'){ s.innerHTML = '<span class="foe"></span>'; continue; }
+      if (!reduce){ const f=idx%9, r=(idx-f)/9; s.style.setProperty('--d', (Math.hypot(f-C,r-C)*0.05).toFixed(2)+'s'); }
+      s.classList.add(kind);
+    }
+  }));
+  board.setAttribute('aria-label', `${p.name} 움직임: ${p.rule}`);
+}
+
+P.forEach((p,i)=>{
+  const b = document.createElement('button');
+  b.type = 'button'; b.setAttribute('role','tab'); b.setAttribute('aria-controls','portrait');
+  b.innerHTML = `<img src="piece-${p.id}.webp" alt="" height="92"><span>${p.name}</span>`;
+  b.addEventListener('click', ()=>show(i));
+  b.addEventListener('keydown', e=>{
+    const n = e.key==='ArrowRight' ? (i+1)%P.length : e.key==='ArrowLeft' ? (i+P.length-1)%P.length : -1;
+    if (n>=0){ e.preventDefault(); show(n); row.children[n].focus(); }
+  });
+  row.appendChild(b);
+});
+show(0);
+
+// Email us: copy the address or open the mail app.
+(() => {
+  const btn = document.getElementById('mail-btn'), menu = document.getElementById('mail-menu'), copy = document.getElementById('mail-copy');
+  const address = 'courtofsquares@gmail.com';
+  const close = () => { menu.hidden = true; btn.setAttribute('aria-expanded','false'); };
+  btn.addEventListener('click', e => { e.stopPropagation(); const open = menu.hidden; menu.hidden = !open; btn.setAttribute('aria-expanded', String(open)); if (open) copy.focus(); });
+  document.addEventListener('click', e => { if (!menu.contains(e.target)) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !menu.hidden){ close(); btn.focus(); } });
+  copy.addEventListener('click', async () => {
+    let ok = false;
+    try { await navigator.clipboard.writeText(address); ok = true; }
+    catch (_) {
+      const t = document.createElement('textarea'); t.value = address; t.setAttribute('readonly',''); t.style.position='fixed'; t.style.opacity='0';
+      document.body.appendChild(t); t.select(); try { ok = document.execCommand('copy'); } catch (_) {} t.remove();
+    }
+    copy.textContent = ok ? "복사됨" : "위 주소를 선택해 복사하세요";
+    setTimeout(() => { copy.textContent = "주소 복사"; }, 2200);
+  });
+})();
+
+// Videos: each <div class="video" data-yt="VIDEO_ID"> loads when it nears the screen, plays muted while at least
+// half of it is in view and pauses when scrolled away. With reduced motion set, it waits for a tap instead.
+(() => {
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const send = (frame, func) => { try { frame.contentWindow.postMessage(JSON.stringify({event:'command', func, args:[]}), '*'); } catch (_) {} };
+  const load = (box, play) => {
+    if (box.querySelector('iframe')) return box.querySelector('iframe');
+    const id = box.dataset.yt;
+    const f = document.createElement('iframe');
+    f.src = `https://www.youtube.com/embed/${id}?enablejsapi=1&mute=1&playsinline=1&rel=0&modestbranding=1${play ? '&autoplay=1' : ''}&origin=${encodeURIComponent(location.origin)}`;
+    f.title = box.dataset.title || "동영상";
+    f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    f.referrerPolicy = 'strict-origin-when-cross-origin';
+    f.allowFullscreen = true;
+    f.addEventListener('load', () => {
+      f.dataset.ready = '1';
+      send(f, 'mute');
+      // The player takes a moment to start listening, so ask a few times while it's in view.
+      [300, 1000, 2000].forEach(ms => setTimeout(() => { if (box.dataset.visible === '1' && !reduce) send(f, 'playVideo'); }, ms));
+    });
+    box.querySelector('.start')?.remove();
+    box.appendChild(f);
+    return f;
+  };
+  document.querySelectorAll('.video[data-yt]').forEach(box => {
+    box.style.backgroundImage = `url(https://i.ytimg.com/vi/${box.dataset.yt}/hqdefault.jpg)`;
+    const start = document.createElement('button');
+    start.type = 'button'; start.className = 'start'; start.setAttribute('aria-label', "재생: " + (box.dataset.title || "동영상"));
+    start.innerHTML = '<span aria-hidden="true">&#9654;</span>';
+    start.addEventListener('click', () => { const f = load(box, true); if (f.dataset.ready) send(f, 'playVideo'); });
+    box.appendChild(start);
+    if (reduce || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(entries => entries.forEach(e => {
+      const visible = e.intersectionRatio >= 0.5;
+      box.dataset.visible = visible ? '1' : '0';
+      if (e.isIntersecting && !box.querySelector('iframe')) load(box, false);   // preload as it nears
+      const f = box.querySelector('iframe');
+      if (f && f.dataset.ready) send(f, visible ? 'playVideo' : 'pauseVideo');
+    }), { threshold: [0, 0.5], rootMargin: '200px 0px' }).observe(box);
+  });
+})();
+
+// Garden seasons: tap a season, or let it turn on its own while in view (stops once you choose one).
+(() => {
+  const view = document.querySelector('.garden-view'); if (!view) return;
+  const imgs = [...view.querySelectorAll('img')], tabs = [...document.querySelectorAll('.seasons button')];
+  const order = tabs.map(t => t.dataset.season);
+  let current = 0, timer = null, chosen = false;
+  const show = i => {
+    current = i;
+    imgs.forEach(im => im.classList.toggle('on', im.dataset.season === order[i]));
+    tabs.forEach((t, j) => { t.setAttribute('aria-selected', String(j === i)); t.tabIndex = j === i ? 0 : -1; });
+  };
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => { chosen = true; clearInterval(timer); show(i); });
+    t.addEventListener('keydown', e => {
+      const n = e.key === 'ArrowRight' ? (i + 1) % tabs.length : e.key === 'ArrowLeft' ? (i + tabs.length - 1) % tabs.length : -1;
+      if (n >= 0) { e.preventDefault(); chosen = true; clearInterval(timer); show(n); tabs[n].focus(); }
+    });
+  });
+  imgs.forEach(im => { im.loading = 'eager'; });   // so the next season is ready to fade in
+  show(0);
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(([e]) => {
+    clearInterval(timer);
+    if (e.isIntersecting && !chosen) timer = setInterval(() => show((current + 1) % order.length), 3500);
+  }, { threshold: 0.6 }).observe(view);
+})();
+</script>
+
+<script>
+// Language menu: close when clicking elsewhere or pressing Escape.
+(() => {
+  const d = document.querySelector('header .langs'); if (!d) return;
+  document.addEventListener('click', e => { if (d.open && !d.contains(e.target)) d.open = false; });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && d.open) { d.open = false; d.querySelector('summary').focus(); } });
+})();
+</script>
+</body>
+</html>

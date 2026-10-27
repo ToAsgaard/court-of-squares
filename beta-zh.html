@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Android 测试版 · Court of Squares</title>
+<meta name="description" content="加入 Court of Squares 的 Android 测试：拥有八枚独特棋子的安静自在国际象棋。只需三步，即可在 Google Play 上开始测试。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="Court of Squares · Android 测试版">
+<meta property="og:description" content="拥有八枚独特棋子的安静自在国际象棋。在 Google Play 上加入 Android 测试。">
+<meta property="og:image" content="https://toasgaard.github.io/court-of-squares/og-image.jpg">
+<link rel="alternate" hreflang="en" href="https://toasgaard.github.io/court-of-squares/beta.html">
+<link rel="alternate" hreflang="es" href="https://toasgaard.github.io/court-of-squares/beta-es.html">
+<link rel="alternate" hreflang="pt-BR" href="https://toasgaard.github.io/court-of-squares/beta-pt.html">
+<link rel="alternate" hreflang="fr" href="https://toasgaard.github.io/court-of-squares/beta-fr.html">
+<link rel="alternate" hreflang="de" href="https://toasgaard.github.io/court-of-squares/beta-de.html">
+<link rel="alternate" hreflang="it" href="https://toasgaard.github.io/court-of-squares/beta-it.html">
+<link rel="alternate" hreflang="pl" href="https://toasgaard.github.io/court-of-squares/beta-pl.html">
+<link rel="alternate" hreflang="tr" href="https://toasgaard.github.io/court-of-squares/beta-tr.html">
+<link rel="alternate" hreflang="ru" href="https://toasgaard.github.io/court-of-squares/beta-ru.html">
+<link rel="alternate" hreflang="ja" href="https://toasgaard.github.io/court-of-squares/beta-ja.html">
+<link rel="alternate" hreflang="ko" href="https://toasgaard.github.io/court-of-squares/beta-ko.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://toasgaard.github.io/court-of-squares/beta-zh.html">
+<link rel="alternate" hreflang="x-default" href="https://toasgaard.github.io/court-of-squares/beta.html">
+<link rel="icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif+SC:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.steps{counter-reset:step;list-style:none;padding:0;margin:20px 0}
+.steps>li{counter-increment:step;position:relative;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 20px 18px 64px;margin:14px 0}
+.steps>li::before{content:counter(step);position:absolute;left:18px;top:16px;width:32px;height:32px;border-radius:50%;background:var(--gold);color:#1a1209;font:700 17px/32px 'Cinzel','Noto Serif SC',Georgia,serif;text-align:center}
+.steps h2{border:0;margin:0 0 4px;padding:0;font-size:19px}
+.steps p{margin:4px 0 12px;color:var(--muted)}
+.steps .button{margin-top:2px}
+.note{color:var(--muted);font-size:15px}
+
+/* Language menu */
+header.top nav .langs{position:relative}
+header.top nav .langs summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;padding:6px 0;font:600 15px/1 'Cinzel',Georgia,serif;letter-spacing:.03em;color:#b8a894}
+header.top nav .langs summary::-webkit-details-marker{display:none}
+header.top nav .langs summary:hover,header.top nav .langs[open] summary{color:#d9b25c}
+header.top nav .langs ul{position:absolute;right:0;top:calc(100% + 10px);z-index:10;margin:0;padding:8px;list-style:none;min-width:180px;background:#1f160e;border:1px solid #a8823a;border-radius:12px;box-shadow:0 14px 34px rgba(0,0,0,.5)}
+header.top nav .langs li{margin:0}
+header.top nav .langs ul a{display:block;padding:8px 12px;border-radius:8px;font:500 17px/1.2 Georgia,serif;letter-spacing:0;color:#f1e7d3;text-decoration:none}
+header.top nav .langs ul a:hover{background:#2c2015}
+header.top nav .langs ul a[aria-current]{color:#d9b25c}
+@media (max-width:520px){header.top nav .press{display:none}}
+footer .legal-note{margin-top:6px;font-size:13px;opacity:.75}
+.lang-note{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 14px;padding:10px 16px;background:#2c2015;border-bottom:1px solid #3b2c1c;color:#f1e7d3;font-size:17px;text-align:center}
+.lang-note[hidden]{display:none}
+.lang-note a{color:#d9b25c;font-weight:600}
+.lang-note button{appearance:none;background:none;border:0;color:#c9b9a1;font-size:20px;line-height:1;cursor:pointer;padding:2px 6px}
+header.top nav a,h1,h2,h3,.button,.btn{font-family:'Cinzel','Noto Serif SC',Georgia,serif}
+body{font-family:Georgia,'Noto Serif SC',serif}
+body{line-height:1.75}
+h1,h2,h3{word-break:keep-all;overflow-wrap:anywhere}
+</style>
+</head>
+<body>
+<header class="top"><nav><a class="home" href="zh.html">Court of Squares</a><a class="sec" href="zh.html#pieces">棋子</a><a class="sec" href="zh.html#pilgrimage">朝圣之旅</a><a class="sec" href="zh.html#play">玩法</a><a class="sec" href="zh.html#garden">花园</a><a class="press" href="press.html">媒体资料</a><details class="langs"><summary aria-label="语言: 简体中文"><svg viewBox="0 0 24 24" aria-hidden="true" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z"/></svg><span>ZH</span></summary><ul><li><a href="beta.html" hreflang="en" lang="en">English</a></li><li><a href="beta-es.html" hreflang="es" lang="es">Español</a></li><li><a href="beta-pt.html" hreflang="pt-BR" lang="pt-BR">Português</a></li><li><a href="beta-fr.html" hreflang="fr" lang="fr">Français</a></li><li><a href="beta-de.html" hreflang="de" lang="de">Deutsch</a></li><li><a href="beta-it.html" hreflang="it" lang="it">Italiano</a></li><li><a href="beta-pl.html" hreflang="pl" lang="pl">Polski</a></li><li><a href="beta-tr.html" hreflang="tr" lang="tr">Türkçe</a></li><li><a href="beta-ru.html" hreflang="ru" lang="ru">Русский</a></li><li><a href="beta-ja.html" hreflang="ja" lang="ja">日本語</a></li><li><a href="beta-ko.html" hreflang="ko" lang="ko">한국어</a></li><li><a href="beta-zh.html" hreflang="zh-Hans" lang="zh-Hans" aria-current="true">简体中文</a></li></ul></details><a class="beta" href="beta-zh.html" aria-current="page">Android 测试版</a></nav></header>
+<main>
+<div class="hero">
+<img src="logo.png" alt="Court of Squares" width="520">
+<p>拥有八枚独特棋子的安静自在国际象棋。在正式推出前，帮助我们在 Android 上测试。</p>
+</div>
+
+<h1>加入 Android 测试</h1>
+<p>免费参与，大约一分钟即可完成。三个步骤都请使用与你 Android 手机上 Play 商店<b>相同的 Google 账户</b>。</p>
+
+<ol class="steps">
+<li>
+<h2>加入测试者群组</h2>
+<p>用你的 Google 账户登录，然后点击<b>加入群组</b>（Join group）。你不会收到该群组的邮件。</p>
+<!-- The tester group: cos-android-testers@googlegroups.com -->
+<a class="button" href="https://groups.google.com/g/cos-android-testers" rel="noopener">加入测试者群组</a>
+</li>
+<li>
+<h2>成为测试者</h2>
+<p>打开此链接并点按<b>成为测试者</b>（Become a tester）。如果提示应用暂不可用，请在第 1 步后等几分钟再打开。</p>
+<a class="button" href="https://play.google.com/apps/testing/com.courtofsquares.game" rel="noopener">成为测试者</a>
+</li>
+<li>
+<h2>从 Google Play 下载</h2>
+<p>在 Android 手机或平板上通过 Google Play 安装 Court of Squares。</p>
+<a class="button" href="https://play.google.com/store/apps/details?id=com.courtofsquares.game" rel="noopener">在 Google Play 中打开</a>
+</li>
+</ol>
+
+<h2>你可以这样帮忙</h2>
+<ul>
+<li><b>请至少保留测试资格两周。</b>Google 要求测试者在测试中满 14 天后，新游戏才能上线，所以你的坚持真的很有帮助。</li>
+<li><b>多玩几次：</b>与电脑下一局，试试每日谜题和花园，有条件的话再下一局在线对局。</li>
+<li><b>告诉我们哪里让人困惑、卡顿或出了问题。</b>你可以在游戏的 Google Play 页面留下私密反馈，在我们的 <a href="https://discord.gg/DWXYmJSMmR" rel="noopener">Discord</a> 里留言，或发邮件到 <a href="mailto:courtofsquares@gmail.com?subject=Android%20beta%20feedback">courtofsquares@gmail.com</a>。可以用中文写。</li>
+</ul>
+
+<h2>须知</h2>
+<ul>
+<li><b>你的进度和解锁内容都会保留到正式版。</b>测试版就是 Google Play 上的同一款游戏，正式推出时你只需接收更新。建议在 设置 › 账户 中绑定账户，换手机也不会丢失。</li>
+<li>游戏免费且没有广告。可选的 Court Pass 即使在测试中也是真实的一次性购买，正式推出后依然归你所有。</li>
+<li>你可以随时通过“成为测试者”页面退出测试。</li>
+</ul>
+<p class="note">无法加入？请确认你在本页面和 Play 商店中登录的是同一个 Google 账户。如果 Play 商店仍然看不到游戏，请发邮件给我们，我们会帮你解决。</p>
+</main>
+<footer><div class="social"><a href="https://discord.gg/DWXYmJSMmR" rel="noopener">Discord</a> · <a href="https://www.youtube.com/@CourtofSquares" rel="noopener">YouTube</a> · <a href="https://www.tiktok.com/@courtofsquares" rel="noopener">TikTok</a> · <a href="https://www.instagram.com/courtofsquares/" rel="noopener">Instagram</a> · <a href="https://x.com/CourtofSquares" rel="noopener">X</a> · <a href="https://www.facebook.com/profile.php?id=61595226989676" rel="noopener">Facebook</a></div><div>Court of Squares · <a href="mailto:courtofsquares@gmail.com">courtofsquares@gmail.com</a></div><div class="legal"><a href="press.html">媒体资料</a> · <a href="beta-zh.html">Android 测试版</a> · <a href="privacy.html">隐私</a> · <a href="terms.html">条款</a> · <a href="delete-account.html">删除账户</a> · <a href="licenses.html">许可</a></div><div class="legal-note">法律文件和媒体资料仅提供英文版本。</div></footer>
+
+<script>
+// Language menu: close when clicking elsewhere or pressing Escape.
+(() => {
+  const d = document.querySelector('header .langs'); if (!d) return;
+  document.addEventListener('click', e => { if (d.open && !d.contains(e.target)) d.open = false; });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && d.open) { d.open = false; d.querySelector('summary').focus(); } });
+})();
+</script>
+</body>
+</html>
